@@ -11,8 +11,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavbarMain />
         <Bandeau/>
+        <NavbarMain />
         <Cards />
         <Footer />
       </div>
