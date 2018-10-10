@@ -1,0 +1,31 @@
+.Bandeau_calendrier{
+    background-color:blue;
+    color:white;
+    font-size:12px;
+    font-weight:bold;
+    padding:2%;
+}
+
+.Bandeau_sponsors{
+    background-color:green;
+    color:white;
+    font-size:25px;
+    font-weight:normal;
+    padding:2%;
+}
+
+.Bandeau{
+    height:100px;
+}
+
+
+
+@media (max-width: 640px) {
+    .Bandeau_sponsors{
+        display:none;
+    }
+    .Bandeau_calendrier{
+        padding-top:6%;
+        padding-right:6%;
+    }
+}
