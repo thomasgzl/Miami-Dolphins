@@ -1,0 +1,29 @@
+.image1 {
+  width: 100%
+}
+.flyM {
+  display: flex;
+  background-color: rgb(36, 36, 36);
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+}
+.news_title1 {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #fe7c00;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: #105579;
+}
+.liste_news {
+  padding-top: 60px;
+  list-style-type: none;
+  font-size: 20px;
+}
+.paragraphe_news {
+  padding-top: 15px;
+  text-align: start!important;
+  text-align: justify!important;
+}
