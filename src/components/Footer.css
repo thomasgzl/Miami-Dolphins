@@ -6,3 +6,13 @@ img {
     width: 150px;
     height: 150px;
 }
+
+p {
+    color: rgba(255, 255, 255, 0.863);
+}
+
+.lien {
+    display : flex;
+    align-items: center;
+    justify-content: center;
+}

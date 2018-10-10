@@ -7,8 +7,20 @@ class Footer extends Component {
         return (
             <Container fluid className="footer">
                 <Row>
-                    <Col>
+                    <Col className="lien">
+                        <p></p>
+                    </Col>
+                    <Col className="lien">
+                        <p></p>
+                    </Col>
+                    <Col className="lien">
                         <img src="https://i.imgur.com/RBbGC0P.png" alt="logo" />
+                    </Col>
+                    <Col className="lien">
+                        <p></p>
+                    </Col>
+                    <Col className="lien">
+                        <p></p>
                     </Col>
                 </Row>
             </Container>
