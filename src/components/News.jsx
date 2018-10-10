@@ -9,7 +9,7 @@ const Cards = (props) => {
         <Card inverse>  
         
          <Container fluid>
-             <Row>
+             <Row className="newsRow">
 
                     <Col lg={4}>
                     <div className="div-wrapper">
@@ -46,7 +46,7 @@ const Cards = (props) => {
 
             </Row>
 
-        <Row>
+        <Row className="newsRow">
 
                     <Col lg={4}>
                     <div className="div-wrapper">
