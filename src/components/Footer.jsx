@@ -14,7 +14,13 @@ class Footer extends Component {
                         <p></p>
                     </Col>
                     <Col className="lien">
+                        <p></p>
+                    </Col>
+                    <Col className="lien">
                         <img src="https://i.imgur.com/RBbGC0P.png" alt="logo" />
+                    </Col>
+                    <Col className="lien">
+                        <p></p>
                     </Col>
                     <Col className="lien">
                         <p></p>
