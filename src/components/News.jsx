@@ -11,7 +11,7 @@ const Cards = (props) => {
          <Container fluid>
              <Row className="newsRow">
 
-                    <Col lg={4}>
+                    <Col className="hit" lg={4}>
                     <div className="div-wrapper">
                     <CardImg width="100%" src="https://i.imgur.com/6rkipxV.png" alt="Card image cap" />  
                     <CardImgOverlay>
@@ -22,7 +22,7 @@ const Cards = (props) => {
                     </div>
                     </Col>
 
-                    <Col lg={4}>
+                    <Col className="hit" lg={4}>
                     <div className="div-wrapper">
                     <CardImg width="100%" src="https://i.imgur.com/ZuYbEDF.png" alt="Card image cap" />
                     <CardImgOverlay>
@@ -33,7 +33,7 @@ const Cards = (props) => {
                     </div>
                     </Col>
 
-                    <Col lg={4}>
+                    <Col className="hit" lg={4}>
                     <div className="div-wrapper">
                     <CardImg width="100%" src="https://i.imgur.com/uForrpi.png" alt="Card image cap" />
                     <CardImgOverlay>
@@ -48,7 +48,7 @@ const Cards = (props) => {
 
         <Row className="newsRow">
 
-                    <Col lg={4}>
+                    <Col className="hit" lg={4}>
                     <div className="div-wrapper">
                     <CardImg width="100%" src="https://i.imgur.com/S1DHnr3.png" alt="Card image cap" />
                     <CardImgOverlay>
@@ -59,7 +59,7 @@ const Cards = (props) => {
                     </div>
                     </Col>
 
-                    <Col lg={4}>
+                    <Col className="hit" lg={4}>
                     <div className="div-wrapper">
                     <CardImg width="100%" src="https://i.imgur.com/oSvqsqk.png" alt="Card image cap" />
                     <CardImgOverlay>
@@ -70,7 +70,7 @@ const Cards = (props) => {
                     </div>
                     </Col>
 
-                    <Col lg={4}>
+                    <Col className="hit" lg={4}>
                     <div className="div-wrapper">
                     <CardImg width="100%" src="https://i.imgur.com/Dyu3IfX.png" alt="Card image cap" />
                     <CardImgOverlay>

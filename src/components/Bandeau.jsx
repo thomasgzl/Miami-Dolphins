@@ -9,8 +9,8 @@ class Bandeau extends Component{
         return(
             <Container fluid >
                 <Row  className="Bandeau">
-                    <Col lg="4" xs="12" className="Bandeau_calendrier">
-                        <Row >
+                    <Col lg="3" xs="12" className="Bandeau_calendrier">
+                        <Row  >
                             <Col lg="3" xs="3">
                                 <p>Date</p>     
                                 <p>Mois</p>  
@@ -27,7 +27,7 @@ class Bandeau extends Component{
                             </Col>
                         </Row>
                     </Col>
-                    <Col lg="8" className="Bandeau_sponsors" >
+                    <Col lg="9" className="Bandeau_sponsors" >
                         <Example/> 
                     </Col>
                 
