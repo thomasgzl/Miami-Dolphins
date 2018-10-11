@@ -1,0 +1,36 @@
+.Bandeau{
+
+}
+.Bandeau_calendrier{
+    background-color: rgba(29, 29, 29,0.5);
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    display:flex;
+    text-align: center;
+    align-items: center;
+    padding-top:1%;
+    height:10%;
+
+}
+
+.Bandeau_sponsors{
+    color:white;
+    font-weight:normal;
+    padding:0;
+    display:flex;
+}
+
+.boutonAdd {
+    width: 50%;
+}
+
+@media (max-width: 1000px) {
+    .Bandeau_sponsors{
+        display:none;
+    }
+    .Bandeau_calendrier{
+        padding-top:6%;
+        padding-right:6%;
+    }
+}

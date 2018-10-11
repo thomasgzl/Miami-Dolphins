@@ -1,0 +1,36 @@
+.newsRow {
+    padding-top: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+h2 {
+    font-size: 26px;
+}
+.hit{
+    padding-bottom: 3%;
+}
+
+.backimg {
+    background-color: rgba(29, 29, 29, 0.7);
+    width: 100%;
+
+}
+
+.div-wrapper:hover {
+    -ms-transform: scale(1.);
+    -webkit-transform: scale(1.1); 
+    transform: scale(1.1); 
+}
+
+.div-wrapper {
+    position: relative;
+    transition: transform 1s;
+
+}
+
+.div-wrapper .backimg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
