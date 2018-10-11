@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Clean Sports';
+    src: url('CleanSports.ttf') format('truetype'),
+        url('CleanSports.svg#CleanSports') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EA Sports Covers SC';
+    src: url('EASportsCoversSC-Bold.ttf') format('truetype'),
+        url('EASportsCoversSC-Bold.svg#EASportsCoversSC-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sports World';
+    src: url('SportsWorld.ttf') format('truetype'),
+        url('SportsWorld.svg#SportsWorld') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EA Sports Covers SC';
+    src: url('EASportsCoversSC-BoldOutline.ttf') format('truetype'),
+        url('EASportsCoversSC-BoldOutline.svg#EASportsCoversSC-BoldOutline') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EA Sports Covers SC';
+    src: url('EASportsCoversSC-Bold_1.ttf') format('truetype'),
+        url('EASportsCoversSC-Bold_1.svg#EASportsCoversSC-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sports World';
+    src: url('SportsWorld_1.ttf') format('truetype'),
+        url('SportsWorld_1.svg#SportsWorld') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clean Sports Stencil';
+    src: url('CleanSportsStencil.ttf') format('truetype'),
+        url('CleanSportsStencil.svg#CleanSportsStencil') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clean Sports Stencil';
+    src: url('CleanSportsStencil_1.ttf') format('truetype'),
+        url('CleanSportsStencil_1.svg#CleanSportsStencil') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clean Sports';
+    src: url('CleanSports_1.ttf') format('truetype'),
+        url('CleanSports_1.svg#CleanSports') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EA Sports Covers SC';
+    src: url('EASportsCoversSC-BoldOutline_1.ttf') format('truetype'),
+        url('EASportsCoversSC-BoldOutline_1.svg#EASportsCoversSC-BoldOutline') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+.Navigation {
+    font-family: 'Clean Sports';
+
+}
+
+
+.container-navbar {
+    justify-content: center;
+    text-align: center;
+    align-items: center!;
+    background:transparent;
+}
+
+.container-item {
+    justify-content: center;
+    text-align: center!;
+    align-items: center;
+    background:transparent;
+}
+
+.collapse-container {
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background:transparent;
+}
+
+@media (max-width: 765px) {
+    .hidden-xs{
+    display:none;
+} 
+}

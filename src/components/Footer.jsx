@@ -16,7 +16,7 @@ class Footer extends Component {
                     <Col md className="lien_section_footer">
                         <p></p>
                     </Col>
-                    <Col md className="lien_section_footer">
+                    <Col className="lien_section_footer">
                         <p></p>
                     </Col>
                     <Col md className="lien_section_footer">
