@@ -50,19 +50,19 @@ class NavbarMain extends Component {
             <Collapse className="collapse-container" isOpen={this.state.isOpen} navbar>
               <Nav className="container-item" justified pills navbar>
                 <NavItem>
-                  <NavLink active className="white" href="/Historique/">Historique</NavLink>
+                  <NavLink className="white" href="/Historique/"></NavLink>
+                </NavItem> 
+                <NavItem>
+                  <NavLink className="white" href="/Equipe/"></NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="white" href="/Equipe/">Equipe</NavLink>
+                  <NavLink top className="hidden-xs white" href="/"><img className="hidden-xs" src="https://i.imgur.com/aRib5Ux.png" alt="Logo"></img></NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink top className="hidden-xs white" href="/"><img className="hidden-xs" width="100%" src="https://i.imgur.com/JXboZ1e.png" alt="Logo"></img></NavLink>
+                  <NavLink className="white" href="/" exact><p className="typo">NEWS</p></NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="white" href="/News">News</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="white" href="/Calendrier">Calendrier</NavLink>
+                  <NavLink className="white" href="/Calendrier"></NavLink>
                 </NavItem>
 
               </Nav>
