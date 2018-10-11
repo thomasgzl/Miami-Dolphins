@@ -10,7 +10,7 @@ import NewsZoom05 from './components/NewsZoom05';
 
 
 
-class App extends Component {
+class HomeZoom extends Component {
   render() {
     return (
       
@@ -33,4 +33,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default HomeZoom;
