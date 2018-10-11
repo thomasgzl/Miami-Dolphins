@@ -2,10 +2,6 @@
     background-color: rgb(41, 39, 39);
 }
 
-p {
-    color: rgba(255, 255, 255, 0.863);
-}
-
 .lien_section_footer {
     display : flex;
     align-items: center;
@@ -13,9 +9,40 @@ p {
     margin-bottom: 10px;
 }
 
-.logo_reseau {
+.logo_reseau_fb {
     width : 30px;
     height: 30px;
+}
+
+.logo_reseau_twitter {
+    width : 30px;
+    height: 30px;
+}
+
+.logo_reseau_insta {
+    width : 30px;
+    height: 30px;
+}
+
+.logo_reseau_youtube {
+    width : 40px;
+    height: 40px;
+}
+
+.logo_reseau_twitter:hover {
+    content: url(https://i.imgur.com/UCOs2Vl.png);
+}
+
+.logo_reseau_fb:hover {
+    content: url(https://i.imgur.com/9mG29OE.png);
+}
+
+.logo_reseau_insta:hover {
+    content: url(https://i.imgur.com/2HWyVXc.png);
+}
+
+.logo_reseau_youtube:hover {
+    content: url(https://i.imgur.com/duMfUij.png);
 }
 
 @media screen and (max-width: 575px) {
