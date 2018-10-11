@@ -20,9 +20,6 @@ const items = [
     src: 'http://image.noelshack.com/fichiers/2018/41/3/1539199602-qcwunpr.png',
   },
   {
-    src: 'https://image.noelshack.com/fichiers/2018/41/3/1539199602-vqqtt26.png',
-  },
-  {
     src: 'https://image.noelshack.com/fichiers/2018/41/3/1539199602-timyqig-2.png',
   },
 ];

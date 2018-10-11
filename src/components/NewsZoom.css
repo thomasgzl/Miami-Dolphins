@@ -27,3 +27,13 @@
   text-align: start!important;
   text-align: justify!important;
 }
+
+.navlink {
+  text-decoration: none;
+  color: #105579;
+}
+
+.navlink:hover {
+  text-decoration: none;
+  color: #f68220;
+}

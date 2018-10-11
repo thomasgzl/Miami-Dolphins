@@ -34,3 +34,14 @@ h2 {
     left: 0;
     bottom: 0;
 }
+
+.linkNav {
+    text-decoration: none;
+    color: white;
+}
+
+.linkNav:hover {
+    text-decoration: none;
+    color: #f68220;
+}
+

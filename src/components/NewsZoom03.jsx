@@ -21,11 +21,11 @@ class NewsZoom03 extends Component {
             
             <Col lg="4" md="6" sm="12" className="image2"><h3 className="news_title1"><strong>Les dernières News</strong></h3>
             <ul>
-                <li className="liste_news"><NavLink to="/newszoom01">Huitième Touchdown pour Kenyan Drake</NavLink></li>
-                <li className="liste_news"><NavLink to="/newszoom02">Le Hard Rock Stadium fait peau neuve !</NavLink></li>
-                <li className="liste_news"><NavLink to="/">Bobby McCain : l'homme volant !</NavLink></li>
-                <li className="liste_news"><NavLink to="/newszoom04">Adam Mer-Gase, le nouveau coach !</NavLink></li>
-                <li className="liste_news"><NavLink to="/newszoom05">Une équipe prête au combat !</NavLink></li>
+                <li className="liste_news"><NavLink to="/newszoom01" className="navlink">Huitième Touchdown pour Kenyan Drake</NavLink></li>
+                <li className="liste_news"><NavLink to="/newszoom02" className="navlink">Le Hard Rock Stadium fait peau neuve !</NavLink></li>
+                <li className="liste_news"><NavLink to="/newszoom00" className="navlink">Bobby McCain : l'homme volant !</NavLink></li>
+                <li className="liste_news"><NavLink to="/newszoom04" className="navlink">Adam Mer-Gase, le nouveau coach !</NavLink></li>
+                <li className="liste_news"><NavLink to="/newszoom05" className="navlink">Une équipe prête au combat !</NavLink></li>
             </ul>
           </Col>
             
