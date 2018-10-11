@@ -2,14 +2,25 @@
     background-color: rgb(41, 39, 39);
 }
 
-
-
 p {
     color: rgba(255, 255, 255, 0.863);
 }
 
-.lien {
+.lien_section_footer {
     display : flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
+    margin-bottom: 10px;
+}
+
+.logo_reseau {
+    width : 30px;
+    height: 30px;
+}
+
+@media screen and (max-width: 575px) {
+
+    .lien_section_footer {
+        margin-bottom: 10px; 
+    }
 }
