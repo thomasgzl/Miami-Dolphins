@@ -8,16 +8,16 @@ class Footer extends Component {
             <Container fluid className="footer">
                 <Row className="ligne_section_footer">
                     <Col md className="lien_section_footer">
-                        <p>section</p>
+                        <p></p>
                     </Col>
                     <Col md className="lien_section_footer">
-                        <p>section</p>
+                        <p></p>
                     </Col>
                     <Col md className="lien_section_footer">
-                        <p>section</p>
+                        <p></p>
                     </Col>
                     <Col md className="lien_section_footer">
-                        <p>section</p>
+                        <p></p>
                     </Col>
                     <Col md className="lien_section_footer">
                         <img src="https://i.imgur.com/JXboZ1e.png" alt="logo" />
