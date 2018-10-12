@@ -1,4 +1,3 @@
-SQUELETTE 
-/Reactstrap intégré
-/App.js propre
-/Dossier "components" pour mettre chaque composants dedans.
+Miami Dolphins
+
+Site de présentation de l'équipe de football américain des Miami Dolphins
