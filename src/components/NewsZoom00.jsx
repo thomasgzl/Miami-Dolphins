@@ -33,16 +33,3 @@ class NewsZoom00 extends Component {
 }
  
 export default NewsZoom00;
-
-
-
-
-
-
-
-
-
-
-
-
-
