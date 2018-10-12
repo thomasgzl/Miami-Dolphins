@@ -1,0 +1,45 @@
+.container-navbar {
+    justify-content: center;
+    text-align: center;
+    align-items: center!;
+    background:transparent;
+}
+
+.container-item {
+    justify-content: center;
+    text-align: center!;
+    align-items: center;
+    background:transparent;
+}
+
+.collapse-container {
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background:transparent;
+}
+
+.white {
+    font-size: 30px;
+}
+
+.typo {
+    color: rgba(29, 29, 29, 0.7);
+    padding-left: 40%;
+}
+.typo:hover {
+    color: #f68220;
+}
+
+.hidden-xs {
+    height: 150px;
+    width: 150px;
+}
+
+@media (max-width: 765px) {
+    .hidden-xs{
+    display:none;
+} 
+}
