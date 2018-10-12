@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavbarMain from './components/NavbarMain';
 import Bandeau from './components/Bandeau';
