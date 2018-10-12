@@ -25,7 +25,6 @@ class App extends Component {
 
         <BrowserRouter>
                 <Switch>
-
             <Route path="/" component={Cards} exact/>
             <Route path="/newszoom00" component={NewsZoom00}/>
             <Route path="/newszoom01" component={NewsZoom01}/>
@@ -33,13 +32,9 @@ class App extends Component {
             <Route path="/newszoom03" component={NewsZoom03}/>
             <Route path="/newszoom04" component={NewsZoom04}/>
             <Route path="/newszoom05" component={NewsZoom05}/>
-
                 </Switch>
              </BrowserRouter>
-             
-        <Footer />
-
-    
+         <Footer />    
       </div>
     );
   }
