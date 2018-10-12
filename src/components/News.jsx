@@ -5,18 +5,12 @@ import './News.css';
 
 import { NavLink } from 'react-router-dom';
 
-
 const Cards = (props) => {
-
   return (
-
     <div>
-        <Card inverse>  
-        
+        <Card inverse>         
          <Container fluid>
-             <Row className="newsRow">
-             
-
+             <Row className="newsRow">     
                     <Col className="hit" lg={4}>
                     <div className="div-wrapper">
                     <CardImg width="100%" src="https://i.imgur.com/6rkipxV.png" alt="Card image cap" />
@@ -50,11 +44,9 @@ const Cards = (props) => {
                     </CardImgOverlay>
                     </div>
                     </Col>
-
             </Row>
 
         <Row className="newsRow">
-
                     <Col className="hit" lg={4}>
                     <div className="div-wrapper">
                     <CardImg width="100%" src="https://i.imgur.com/S1DHnr3.png" alt="Card image cap" />
@@ -87,9 +79,7 @@ const Cards = (props) => {
                     </CardImgOverlay>
                     </div>
                     </Col>
-
          </Row>
-
         </Container>
         </Card>
     </div>
