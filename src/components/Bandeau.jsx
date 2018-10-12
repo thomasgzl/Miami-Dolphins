@@ -23,7 +23,7 @@ class Bandeau extends Component{
                                 <p>Heure</p>
                             </Col>
                             <Col lg="3" xs="3">
-                                <a href="public/index.html"><img className="boutonAdd" src="https://i.imgur.com/T2Y9Mcw.png" alt="boutonAdd"/> </a>     
+                                <a href="/Calendrier"><img className="boutonAdd" src="https://i.imgur.com/T2Y9Mcw.png" alt="boutonAdd"/> </a>     
                             </Col>
                         </Row>
                     </Col>

@@ -1,0 +1,80 @@
+
+
+.colonne1{
+    position:relative;
+    background-color:#E6E6FA;
+    border-bottom:1px solid black;
+    display:flex;
+    align-items: center;
+    text-align: center;
+}
+
+.colonne2{
+    background-color:whitesmoke;
+    border-bottom:1px solid black;
+    display:flex;
+    align-items: center;
+    text-align: right;
+}
+.colonne3{
+    background-color:whitesmoke;
+    border-bottom:1px solid black;
+    display:flex;
+    align-items: center;
+    text-align: center;
+
+}
+.colonne4{
+    background-color:whitesmoke;
+    border-bottom:1px solid black;
+    display:flex;
+    align-items: center;
+    text-align: left;
+}
+.colonne5{
+    background-color:#E6E6FA;
+    border-bottom:1px solid black;
+    display:flex;
+    align-items: center;
+    text-align: center;
+}
+
+
+.colonne1:after {
+    content: '';
+    height: 80%; 
+    width: 1px;
+  
+    position: absolute;
+    right: 0;
+    top: 15%; 
+  
+    background-color: #000000; 
+  }
+
+  .colonne4:after {
+    content: '';
+    height: 80%; 
+    width: 1px;
+  
+    position: absolute;
+    right: 0;
+    top: 15%; 
+  
+    background-color: #000000; 
+  }
+
+
+@media (max-width: 640px) {
+    .colonne5, .colonne1:after, .colonne4:after  {
+        display: none;
+    }
+
+    .imgCalendrier{
+        display:none;
+    }
+    .Calendrier-table{
+        padding-bottom:10px;
+        padding-right:40px;
+    }
+}

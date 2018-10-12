@@ -14,6 +14,7 @@ import NewsZoom02 from './components/NewsZoom02';
 import NewsZoom03 from './components/NewsZoom03';
 import NewsZoom04 from './components/NewsZoom04';
 import NewsZoom05 from './components/NewsZoom05';
+import Calendrier from './components/Calendrier';
 
 
 class App extends Component {
@@ -22,7 +23,6 @@ class App extends Component {
       <div className="App">
         <Bandeau/>
         <NavbarMain />
-
         <BrowserRouter>
                 <Switch>
             <Route path="/" component={Cards} exact/>
@@ -32,6 +32,7 @@ class App extends Component {
             <Route path="/newszoom03" component={NewsZoom03}/>
             <Route path="/newszoom04" component={NewsZoom04}/>
             <Route path="/newszoom05" component={NewsZoom05}/>
+            <Route path="/calendrier" component={Calendrier}/>
                 </Switch>
              </BrowserRouter>
          <Footer />    

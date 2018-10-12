@@ -53,7 +53,7 @@ class NavbarMain extends Component {
                   <NavLink className="white" href="/" exact><p className="typo">NEWS</p></NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="white" href="/Calendrier"></NavLink>
+                  <NavLink className="white" href="/Calendrier">Calendrier</NavLink>
                 </NavItem>
 
               </Nav>
