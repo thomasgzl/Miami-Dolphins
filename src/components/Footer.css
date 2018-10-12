@@ -49,5 +49,6 @@
 
     .lien_section_footer {
         margin-bottom: 10px; 
-    }
+        display: inline-block;   
+     }
 }
