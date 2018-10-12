@@ -13,22 +13,16 @@ import NewsZoom05 from './components/NewsZoom05';
 class HomeZoom extends Component {
   render() {
     return (
-      
-      <BrowserRouter>
-      
+       <BrowserRouter>
         <Switch>
-
           <Route path="/" component={NewsZoom00} exact/>
           <Route path="/newszoom01" component={NewsZoom01}/>
           <Route path="/newszoom02" component={NewsZoom02}/>
           <Route path="/newszoom03" component={NewsZoom03}/>
           <Route path="/newszoom04" component={NewsZoom04}/>
           <Route path="/newszoom05" component={NewsZoom05}/>
-
-        </Switch>
-        
-      </BrowserRouter>
-      
+        </Switch>        
+      </BrowserRouter>      
     );
   }
 }
