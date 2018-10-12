@@ -4,7 +4,6 @@ import './App.css';
 import NavbarMain from './components/NavbarMain';
 import Bandeau from './components/Bandeau';
 import Footer from './components/Footer';
-import HomeZoom from './HomeZoom';
 import Cards from './components/News';
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
