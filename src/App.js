@@ -15,7 +15,7 @@ import NewsZoom04 from './components/NewsZoom04';
 import NewsZoom05 from './components/NewsZoom05';
 import Calendrier from './components/Calendrier';
 
-const data = [
+const dataCalendrier = [
   {id:"00001",
   DateMatch:"2018-12-14T13:49:44.725Z",
   EquipeA:"Miami Dolphins",
@@ -41,7 +41,7 @@ const data = [
 class App extends Component {
   constructor(props){
     super(props)
-    this.state={donneesCalendrierPourBandeau:data}
+    this.state={donneesCalendrierPourBandeau:dataCalendrier}
   }
 
   handleChange=(nextEventdeCalendrier)=>{

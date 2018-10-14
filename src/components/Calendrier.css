@@ -7,6 +7,7 @@
     display:flex;
     align-items: center;
     text-align: center;
+    justify-content: center;
 }
 
 .colonne2{
@@ -37,6 +38,7 @@
     display:flex;
     align-items: center;
     text-align: center;
+    justify-content: center;
 }
 
 
@@ -76,5 +78,13 @@
     .Calendrier-table{
         padding-bottom:10px;
         padding-right:40px;
+    }
+
+    .Calendrier-title{
+        font-size: 16px;
+        font-weight: bold;
+    }
+    [class*="colonne"]{
+        border:none;
     }
 }
