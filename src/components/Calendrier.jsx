@@ -1,38 +1,6 @@
 import React,{Component} from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import './Calendrier.css'
-
-const data = [
-    {id:"00001",
-    Jour:"Samedi",
-    Date:"26",
-    Mois:"Octobre",
-    EquipeA:"Miami Dolphins",
-    EquipeB:"Bears",
-    Score:"18-21",
-    Heure:"21h",
-    Chaine:"Eleven"},
-
-    {id:"00002",
-    Jour:"Vendredi",
-    Date:"26",
-    Mois:"Novembre",
-    EquipeA:"Miami Dolphins",
-    EquipeB:"Patriots",
-    Score:"25-11",
-    Heure:"20h",
-    Chaine:"Bein"},
-
-    {id:"00003",
-    Jour:"Dimanche",
-    Date:"20",
-    Mois:"Decembre",
-    EquipeA:"Jets",
-    EquipeB:"Miami Dolphins",
-    Score:"38-41",
-    Heure:"22h",
-    Chaine:"Espn"}
-]
+import './Calendrier.css';
 
 const logo = { 
     "Jets":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-jets-equipe.png", 
@@ -46,22 +14,58 @@ const chaineTV = {
     "Eleven": "https://image.noelshack.com/fichiers/2018/41/4/1539278965-eleven-chaine-1.png",
     "Bein":"https://image.noelshack.com/fichiers/2018/41/4/1539278965-bein-chaine.jpg",
     "Espn":"https://image.noelshack.com/fichiers/2018/41/4/1539278965-espn-chaine.png"
+
 }
 
+const tab_mois = {1:"Janvier",2:"Fevrier",3:"Mars",4:"Avril",5:"Mai",6:"Juin",7:"Juillet",8:"Aout",9:"Septembre",10:"Octobre",11:"Novembre",12:"Decembre"}
 
- 
 
 class Calendrier extends Component{
+    constructor(props){
+        super(props)
+        this.state={donnees:props.aPasseracalendrier}
+        this.nextMatch=this.nextMatch.bind(this)
+        this.orderMatch=this.orderMatch.bind(this)
+    }
+    
+    
+    orderMatch(){
+        let da='';
+        let db='';
+
+        function SortTime(a,b){ 
+            da=new Date(a.DateMatch);
+            db=new Date(b.DateMatch);
+            return (da>db)?1:-1;
+            }
+        let result=this.state.donnees.sort(SortTime);
+        return result;
+        }
+    
+    nextMatch(){
+        for (let i=0;i<this.state.donnees.length;i++){
+            if(new Date(this.state.donnees[i].DateMatch)>new Date){
+                return(i)
+            }
+        }    
+    }
+
+    componentDidMount(){
+        this.setState({
+            donnees:this.orderMatch(this.state.donnees), 
+        })
+    } 
+
     render(){
         return(
             <div className="Calendrier">
-                <Container>
+                <Container >
                 <ul>
-                    {data.map((match,index)=><Row className="Calendrier-table">
+                    {this.state.donnees.map((match,index)=>
+                    <Row className="Calendrier-table">
                         <Col lg="2" xs="12" className="colonne1">
                                 <div>
-                                        <p>{match.Jour} {match.Date} {match.Mois}</p>
-                                        <p>{match.Heure}</p>
+                                        <p>{match.DateMatch.substring(8,10)}-{tab_mois[match.DateMatch.substring(5,7)]}-{match.DateMatch.substring(0,4)}</p>
                                 </div> 
                         </Col>
                         <Col lg="3" xs="4" className="colonne2">
@@ -76,13 +80,14 @@ class Calendrier extends Component{
                         <Col lg="2" className="colonne5">
                             <p>  <img className="imgCalendrier" src={chaineTV[match.Chaine]}></img> </p>
                         </Col> 
-                        
-                    </Row>)}
+                    </Row>)
+                }
                 </ul>
                 </Container>
             </div>
         )
     }
+    
 }
 
 export default Calendrier;

@@ -3,7 +3,6 @@ import React,{Component} from 'react';
 import {
     Carousel,
     CarouselItem,
-    CarouselCaption
   } from 'reactstrap';
 
 const items = [
@@ -66,7 +65,6 @@ class Example extends Component {
           key={item.src}
         >
           <img src={item.src} alt={item.altText} />
-          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
       );
     });
