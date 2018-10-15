@@ -58,13 +58,14 @@ class Calendrier extends Component{
 
     render(){
         return(
-            <div className="Calendrier">
+            <div className="GlobalCalendrier">
 
                 <Container >
                     <h1 className="Calendrier-title">Calendrier des matchs</h1>
+                    <div className="Calendrier">
                 <ul>
                     {this.state.donnees.map((match,index)=>
-                    <Row className="Calendrier-table">
+                    <Row className="Calendrier_ligneTableau">
                         <Col lg="2" xs="12" className="colonne1">
                                 <div>
                                         <p className="DateMatchDesktop">{match.DateMatch.substring(8,10)} {tab_mois[match.DateMatch.substring(5,7)]} {match.DateMatch.substring(0,4)}</p>
@@ -85,6 +86,7 @@ class Calendrier extends Component{
                     </Row>)
                 }
                 </ul>
+                </div>
                 </Container>
             </div>
         )

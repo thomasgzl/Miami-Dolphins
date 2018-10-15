@@ -22,7 +22,24 @@
 
 .boutonAdd {
     width: 50%;
+    transform:scale(1, 1);
+    transition: 0.5s;
 }
+
+.boutonAdd:hover {
+    transform:scale(1.5, 1.5)
+}
+
+.Bandeau_texte{
+    transform:scale(1, 1);
+    transition: 0.5s;
+}
+
+
+.Bandeau_ligneTableau:hover{
+    transform:scale(1.5, 1.5)
+}
+
 
 @media (max-width: 1000px) {
     .Bandeau_sponsors{
