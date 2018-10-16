@@ -4,7 +4,7 @@ import './App.css';
 import NavbarMain from './components/NavbarMain';
 import Bandeau from './components/Bandeau';
 import Footer from './components/Footer';
-import Cards from './components/News';
+import News from './components/News';
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NewsZoom00 from './components/NewsZoom00';
@@ -24,7 +24,7 @@ class App extends Component {
 
         <BrowserRouter>
                 <Switch>
-            <Route path="/" component={Cards} exact/>
+            <Route path="/" component={News} exact/>
             <Route path="/newszoom00" component={NewsZoom00}/>
             <Route path="/newszoom01" component={NewsZoom01}/>
             <Route path="/newszoom02" component={NewsZoom02}/>

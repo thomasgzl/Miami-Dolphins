@@ -5,7 +5,7 @@ import './News.css';
 
 import { NavLink } from 'react-router-dom';
 
-const Cards = (props) => {
+const News = (props) => {
   return (
     <div>
         <Card inverse>         
@@ -25,7 +25,7 @@ const Cards = (props) => {
 
                     <Col className="hit" lg={4}>
                     <NavLink to="/newszoom01" className="linkNav"><div className="div-wrapper">
-                    <CardImg width="100%" src="https://i.imgur.com/ZuYbEDF.png" alt="Card image cap" />
+                    <CardImg width="100%" className="clique" src="https://i.imgur.com/ZuYbEDF.png" alt="Card image cap" />
                     <CardImgOverlay>
                     <div className="backimg">
                     <CardTitle> <h2>Huitième Touchdown pour Kenyan Drake</h2></CardTitle>
@@ -86,4 +86,4 @@ const Cards = (props) => {
   );
 };
 
-export default Cards;
+export default News;
