@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Example from './CarouselBandeau';
 import { NavLink } from 'react-router-dom';
 
-const tab_mois = {1:"Janvier",2:"Fevrier",3:"Mars",4:"Avril",5:"Mai",6:"Juin",7:"Juillet",8:"Aout",9:"Septembre",10:"Octobre",11:"Novembre",12:"Decembre"}
+const tab_mois = {'01':"Janvier",'02':"Fevrier",'03':"Mars",'04':"Avril",'05':"Mai",'06':"Juin",'07':"Juillet",'08':"Aout",'09':"Septembre",10:"Octobre",11:"Novembre",12:"Decembre"}
 
 
 class Bandeau extends Component{
@@ -23,16 +23,14 @@ class Bandeau extends Component{
                 Chaine:"Espn"}
             }
     }
+    /* charger les fonctions tri par date */
     componentDidMount(){
         this.setState({
             donnees:this.orderMatch(this.state.donnees), 
             nextEvent:this.state.donnees[this.nextMatch()]
         })
-        console.log('c passer dans componentdidmount')
-        console.log(this.state.nextEvent,'ya rien ou quoi')
-
     } 
-
+/* fonction tri par date croissante */
     orderMatch(){
         let da='';
         let db='';
@@ -42,18 +40,13 @@ class Bandeau extends Component{
             return (da>db)?1:-1;
             }
         let result=this.state.donnees.sort(SortTime);
-        console.log('c passer dans orderMatch')
-        console.log(this.state.nextEvent,'ya rien ou quoi')
-
         return result;
         }
-    
+    //fonction qui rend le prochain match
     nextMatch(){
         for (let i=0;i<this.state.donnees.length;i++){
             if(new Date(this.state.donnees[i].DateMatch)>new Date){
-                console.log('c passer dans nextMatch')
-                console.log(this.state.nextEvent,'ya rien ou quoi')
-                return(i)
+               return(i)
             }
         }    
     }
@@ -62,9 +55,6 @@ class Bandeau extends Component{
     
 
     render(){
-        console.log('c passer dans render')
-        console.log(this.state.nextEvent,'ya rien ou quoi')
-
         return(
             
             <Container fluid >
@@ -73,7 +63,7 @@ class Bandeau extends Component{
                         <Row >
                             <Col lg="3" xs="3">
                                 <p className="Bandeau_texte">{this.state.nextEvent.DateMatch.substring(8,10)}</p>   
-                                <p className="Bandeau_texte">{tab_mois[this.state.nextEvent.DateMatch.substring(5,7)]}</p>  
+                                <p className="Bandeau_texte">{tab_mois[parseInt(this.state.nextEvent.DateMatch.substring(5,7))]}</p>  
                             </Col>
                             <Col lg="3" xs="3">
                                 <p className="Bandeau_texte">{this.state.nextEvent.EquipeA}</p>  
