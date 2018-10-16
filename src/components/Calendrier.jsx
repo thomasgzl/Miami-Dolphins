@@ -67,7 +67,7 @@ class Calendrier extends Component{
                     <Row className="Calendrier_ligneTableau">
                         <Col lg="2" xs="12" className="colonne1">
                                 <div>
-                                        <p className="DateMatchDesktop">{match.DateMatch.substring(8,10)} {tab_mois[parseInt(match.DateMatch.substring(5,7))]} {match.DateMatch.substring(0,4)}</p>
+                                        <p className="DateMatchDesktop">{match.DateMatch.substring(8,10)} {tab_mois[match.DateMatch.substring(5,7)]} {match.DateMatch.substring(0,4)}</p>
                                 </div> 
                         </Col>
                         <Col lg="3" xs="4" className="colonne2">
