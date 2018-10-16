@@ -7,7 +7,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -15,6 +14,8 @@ import {
   Container, Row, Col
 } from 'reactstrap';
 import './NavbarMain.css';
+import { NavLink } from 'react-router-dom';
+
 
 
 class NavbarMain extends Component {
@@ -41,19 +42,19 @@ class NavbarMain extends Component {
             <Collapse className="collapse-container" isOpen={this.state.isOpen} navbar>
               <Nav className="container-item" justified pills navbar>
                 <NavItem>
-                  <NavLink className="white" href="/Historique/"></NavLink>
+                  <NavLink to="/Historique/" className="white" href></NavLink>
                 </NavItem> 
                 <NavItem>
-                  <NavLink className="white" href="/Equipe/"></NavLink>
+                  <NavLink to="/Equipe/" className="white" ></NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink top className="hidden-xs white" href="/"><img className="hidden-xs" src="https://i.imgur.com/aRib5Ux.png" alt="Logo"></img></NavLink>
+                  <NavLink to="/" top className="hidden-xs white" ><img className="hidden-xs" src="https://i.imgur.com/aRib5Ux.png" alt="Logo"></img></NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="white" href="/" exact><p className="typo">NEWS</p></NavLink>
+                  <NavLink to="/"  exact><p className="typo white" >NEWS</p></NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="white" href="/Calendrier"></NavLink>
+                  <NavLink to="/Calendrier"> <p className="typo white">CALENDRIER</p></NavLink>
                 </NavItem>
 
               </Nav>
