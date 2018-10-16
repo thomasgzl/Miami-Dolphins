@@ -17,8 +17,7 @@ const chaineTV = {
 
 }
 
-const tab_mois = {1:"Janvier",2:"Fevrier",3:"Mars",4:"Avril",5:"Mai",6:"Juin",7:"Juillet",8:"Aout",9:"Septembre",10:"Octobre",11:"Novembre",12:"Decembre"}
-
+ const tab_mois = {'01':"Janvier",'02':"Fevrier",'03':"Mars",'04':"Avril",'05':"Mai",'06':"Juin",'07':"Juillet",'08':"Aout",'09':"Septembre",10:"Octobre",11:"Novembre",12:"Decembre"}
 
 class Calendrier extends Component{
     constructor(props){
@@ -68,7 +67,7 @@ class Calendrier extends Component{
                     <Row className="Calendrier_ligneTableau">
                         <Col lg="2" xs="12" className="colonne1">
                                 <div>
-                                        <p className="DateMatchDesktop">{match.DateMatch.substring(8,10)} {tab_mois[match.DateMatch.substring(5,7)]} {match.DateMatch.substring(0,4)}</p>
+                                        <p className="DateMatchDesktop">{match.DateMatch.substring(8,10)} {tab_mois[parseInt(match.DateMatch.substring(5,7))]} {match.DateMatch.substring(0,4)}</p>
                                 </div> 
                         </Col>
                         <Col lg="3" xs="4" className="colonne2">
