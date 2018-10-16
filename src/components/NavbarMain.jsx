@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import {
   Collapse,
   Navbar,
@@ -11,21 +10,18 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
-  Container, Row, Col
-} from 'reactstrap';
-import './NavbarMain.css';
+  DropdownItem } from 'reactstrap';
 
+  import './NavbarMain.css';
 
-class NavbarMain extends Component {
+class NavbarMain extends React.Component {
   constructor(props) {
     super(props);
 
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
-    }
-    
+    };
   }
   toggle() {
     this.setState({
@@ -34,32 +30,29 @@ class NavbarMain extends Component {
   }
   render() {
     return (
-      <div className="Navigation" >
-        <Container className="container-navbar" fluid>
-          <Navbar color="white" light fixed expand="md">
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse className="collapse-container" isOpen={this.state.isOpen} navbar>
-              <Nav className="container-item" justified pills navbar>
-                <NavItem>
-                  <NavLink className="white" href="/Historique/"></NavLink>
-                </NavItem> 
-                <NavItem>
-                  <NavLink className="white" href="/Equipe/"></NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink top className="hidden-xs white" href="/"><img className="hidden-xs" src="https://i.imgur.com/aRib5Ux.png" alt="Logo"></img></NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="white" href="/" exact><p className="typo">NEWS</p></NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="white" href="/Calendrier"></NavLink>
-                </NavItem>
+      <div>
+        <Navbar className="Navigation" light expand="md">
+        <img className="logoNav" src="https://i.imgur.com/aRib5Ux.png" alt="logoNavbar" />
+          <NavbarBrand href="/"> <h4 className="links">MIAMI DOLPHINS</h4> </NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+            <NavItem>
+                <NavLink href="/components/"> <h4 className="links">Historique</h4> </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/components/"> <h4 className="links">Équipe</h4> </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/components/"> <h4 className="links">News</h4> </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/components/"> <h4 className="links"> Calendrier </h4> </NavLink>
+              </NavItem>
 
-              </Nav>
-            </Collapse>
-          </Navbar>
-        </Container>
+            </Nav>
+          </Collapse>
+        </Navbar>
       </div>
     );
   }

@@ -1,18 +1,28 @@
-.Bandeau{
-
-}
 .Bandeau_calendrier{
-    background-color: rgba(29, 29, 29,0.5);
+    background-color: rgba(01, 86, 121, 0.7);
     color:white;
-    font-size:15px;
-    font-weight:bold;
-    display:flex;
+    font-size:12px;
     text-align: center;
     align-items: center;
     padding-top:1%;
-    height:10%;
-
+    height:5%;
 }
+
+.bouton {
+    background-color: transparent;
+    border-color: transparent;
+    color: white;
+    font-size: 20px;
+}
+
+.bouton:hover {
+    color: #f5811f;
+}
+
+.bouton:active {
+    outline: none;
+}
+
 
 .Bandeau_sponsors{
     color:white;
@@ -22,10 +32,9 @@
     overflow-x: hidden;
 }
 
-.boutonAdd {
-    width: 50%;
+.domicile {
+    font-weight: bold;
 }
-
 @media (max-width: 1000px) {
     .Bandeau_sponsors{
         display:none;

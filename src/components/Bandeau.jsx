@@ -7,28 +7,27 @@ import Example from './CarouselBandeau';
 class Bandeau extends Component{
     render(){
         return(
-            <Container fluid >
+            <Container fluid>
                 <Row  className="Bandeau">
                     <Col lg="3" xs="12" className="Bandeau_calendrier">
                         <Row  >
-                            <Col lg="3" xs="3">
-                                <p>Date</p>     
-                                <p>Mois</p>  
+                            <Col >
+                                <h6 className="m-0">27</h6>     
+                                <p>NOV.</p>  
                             </Col>
-                            <Col lg="3" xs="3">
-                                <p>EquipeA</p>  
-                                <p>EquipeB</p>
+                            <Col >
+                                <p className="m-0 domicile">DOLPHINS</p>  
+                                <p>SEAHAWKS</p>
                             </Col>
-                            <Col lg="3" xs="3">
-                                <p>Heure</p>
+                            <Col >
+                                <h3>20:30</h3>
                             </Col>
-                            <Col lg="3" xs="3">
-                                <a href="public/index.html"><img className="boutonAdd" src="https://i.imgur.com/T2Y9Mcw.png" alt="boutonAdd"/> </a>     
+                            <Col >
+                            <button className="bouton"> + </button>
                             </Col>
                         </Row>
                     </Col>
                     <Col lg="9" className="Bandeau_sponsors" >
-                        <Example/> 
                     </Col>
                 
                 </Row>

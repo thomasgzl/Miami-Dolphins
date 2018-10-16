@@ -5,6 +5,7 @@ import NavbarMain from './components/NavbarMain';
 import Bandeau from './components/Bandeau';
 import Footer from './components/Footer';
 import News from './components/News';
+import Home from './components/Home';
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NewsZoom00 from './components/NewsZoom00';
@@ -20,19 +21,8 @@ class App extends Component {
     return (
       <div className="App">
         <Bandeau/>
-        <NavbarMain />
-
-        <BrowserRouter>
-                <Switch>
-            <Route path="/" component={News} exact/>
-            <Route path="/newszoom00" component={NewsZoom00}/>
-            <Route path="/newszoom01" component={NewsZoom01}/>
-            <Route path="/newszoom02" component={NewsZoom02}/>
-            <Route path="/newszoom03" component={NewsZoom03}/>
-            <Route path="/newszoom04" component={NewsZoom04}/>
-            <Route path="/newszoom05" component={NewsZoom05}/>
-                </Switch>
-             </BrowserRouter>
+        <NavbarMain />   
+        <Home />     
          <Footer />    
       </div>
     );
