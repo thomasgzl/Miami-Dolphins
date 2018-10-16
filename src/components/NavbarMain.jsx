@@ -6,11 +6,14 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  DropdownItem,
+  Container, Row, Col
+} from 'reactstrap';
+import './NavbarMain.css';
+import { NavLink } from 'react-router-dom';
 
   import './NavbarMain.css';
 
@@ -38,16 +41,16 @@ class NavbarMain extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
             <NavItem>
-                <NavLink href="/components/"> <h4 className="links">Historique</h4> </NavLink>
+                <NavLink to="/Historique/"> <h4 className="links">Historique</h4> </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/"> <h4 className="links">Équipe</h4> </NavLink>
+                <NavLink to="/Equipe/"> <h4 className="links">Équipe</h4> </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/"> <h4 className="links">News</h4> </NavLink>
+                <NavLink to="/News/"> <h4 className="links">News</h4> </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/"> <h4 className="links"> Calendrier </h4> </NavLink>
+                <NavLink to="/Calendrier/"> <h4 className="links">Calendrier</h4> </NavLink>
               </NavItem>
 
             </Nav>

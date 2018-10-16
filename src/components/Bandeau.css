@@ -35,6 +35,7 @@
 .domicile {
     font-weight: bold;
 }
+
 @media (max-width: 1000px) {
     .Bandeau_sponsors{
         display:none;
