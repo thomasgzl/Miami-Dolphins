@@ -63,7 +63,7 @@ class Bandeau extends Component{
                         <Row >
                             <Col lg="3" xs="3">
                                 <p className="Bandeau_texte">{this.state.nextEvent.DateMatch.substring(8,10)}</p>   
-                                <p className="Bandeau_texte">{tab_mois[parseInt(this.state.nextEvent.DateMatch.substring(5,7))]}</p>  
+                                <p className="Bandeau_texte">{tab_mois[this.state.nextEvent.DateMatch.substring(5,7)]}</p>  
                             </Col>
                             <Col lg="3" xs="3">
                                 <p className="Bandeau_texte">{this.state.nextEvent.EquipeA}</p>  
