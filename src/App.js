@@ -4,9 +4,10 @@ import './App.css';
 import NavbarMain from './components/NavbarMain';
 import Bandeau from './components/Bandeau';
 import Footer from './components/Footer';
-import Cards from './components/News';
+import News from './components/News';
+import Home from './components/Home';
 
-import {Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import NewsZoom00 from './components/NewsZoom00';
 import NewsZoom01 from './components/NewsZoom01';
 import NewsZoom02 from './components/NewsZoom02';
@@ -78,17 +79,20 @@ const dataCalendrier = [
 class App extends Component {
   constructor(props){
     super(props)
-    this.state={donneesPourCalendrier:dataCalendrier}
+    this.state={
+      donneesPourCalendrier:dataCalendrier,
+    }
   }
-
+  
 
   render() {
     return (
       <div className="App">
         <Bandeau aPasserDansBandeau={this.state.donneesPourCalendrier}/>
-        <NavbarMain />
+        <NavbarMain />    
                 <Switch>
-                  <Route exact path="/" component={Cards}/>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/news" component={News} />
                   <Route path="/newszoom00" component={NewsZoom00}/>
                   <Route path="/newszoom01" component={NewsZoom01}/>
                   <Route path="/newszoom02" component={NewsZoom02}/>
@@ -98,11 +102,10 @@ class App extends Component {
                   <Route path="/calendrier" render={()=><Calendrier aPasseracalendrier={this.state.donneesPourCalendrier}/>}/>
                   <Route path="/historique" render={()=><Historique aPasserahistorique={this.state.donneesPourHistorique}/>}/>
                 </Switch>
-         <Footer />    
-      </div>
+         <Footer />
+         </div>    
     );
   }
 }
 
 export default App;
-

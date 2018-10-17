@@ -17,7 +17,8 @@ const chaineTV = {
 
 }
 
-const tab_mois = {'01':"Janvier",'02':"Fevrier",'03':"Mars",'04':"Avril",'05':"Mai",'06':"Juin",'07':"Juillet",'08':"Aout",'09':"Septembre",'10':"Octobre",'11':"Novembre",'12':"Decembre"}
+
+ const tab_mois = {'01':"Janvier",'02':"Fevrier",'03':"Mars",'04':"Avril",'05':"Mai",'06':"Juin",'07':"Juillet",'08':"Aout",'09':"Septembre",10:"Octobre",11:"Novembre",12:"Decembre"}
 
 
 class Calendrier extends Component{
@@ -59,7 +60,6 @@ class Calendrier extends Component{
     render(){
         return(
             <div className="GlobalCalendrier">
-
                 <Container >
                     <h1 className="Calendrier-title">Calendrier des matchs</h1>
                     <div className="Calendrier">

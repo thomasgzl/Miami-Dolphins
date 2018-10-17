@@ -1,4 +1,9 @@
-.App {
-  text-align: center;
+.background {
+    background-image: url('https://i.imgur.com/HE65fOn.png');
+    padding-bottom: 300px;
 }
 
+.none {
+    background: white;
+    border: none;
+}

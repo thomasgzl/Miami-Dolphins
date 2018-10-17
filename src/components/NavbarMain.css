@@ -1,45 +1,30 @@
-.container-navbar {
-    justify-content: center;
-    text-align: center;
-    align-items: center!;
-    background:transparent;
+.Navigation {
+    background-color: transparent;
+    background: transparent;
+    border-bottom: solid;
+    border-color: white;
+    border-width: 1px;
+    transition: 1.5s;
 }
 
-.container-item {
-    justify-content: center;
-    text-align: center!;
-    align-items: center;
-    background:transparent;
+.Navigation:hover {
+    background-color: rgba(01, 86, 121, 0.7);
+    transition: 0.8s;
+    border-color: transparent;
 }
 
-.collapse-container {
-    margin: 0px;
-    padding: 0px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    background:transparent;
+h4.links {
+    color: rgba(29, 29, 29);
+    font-size: 17px;
+    margin-right: 50px;
 }
 
-.white {
-    font-size: 30px;
+h4.links:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
 }
 
-.typo {
-    color: rgba(29, 29, 29, 0.7);
-    padding-left: 40%;
-}
-.typo:hover {
-    color: #f68220;
-}
-
-.hidden-xs {
-    height: 150px;
-    width: 150px;
-}
-
-@media (max-width: 765px) {
-    .hidden-xs{
-    display:none;
-} 
+.logoNav {
+    height: 100px;
+    margin-left: 500px;
 }

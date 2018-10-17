@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import {
   Collapse,
   Navbar,
@@ -15,18 +14,16 @@ import {
 } from 'reactstrap';
 import './NavbarMain.css';
 import { NavLink } from 'react-router-dom';
+import './NavbarMain.css';
 
-
-
-class NavbarMain extends Component {
+class NavbarMain extends React.Component {
   constructor(props) {
     super(props);
 
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
-    }
-    
+    };
   }
   toggle() {
     this.setState({
@@ -35,32 +32,28 @@ class NavbarMain extends Component {
   }
   render() {
     return (
-      <div className="Navigation" >
-        <Container className="container-navbar" fluid>
-          <Navbar color="white" light fixed expand="md">
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse className="collapse-container" isOpen={this.state.isOpen} navbar>
-              <Nav className="container-item" justified pills navbar>
-                <NavItem>
-                  <NavLink to="/Historique/" className="white" ></NavLink>
-                </NavItem> 
-                <NavItem>
-                  <NavLink to="/Equipe/" className="white" ></NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/" top className="hidden-xs white" ><img className="hidden-xs" src="https://i.imgur.com/aRib5Ux.png" alt="Logo"></img></NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/"  exact><p className="typo white" >NEWS</p></NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/Calendrier"> <p className="typo white">CALENDRIER</p></NavLink>
-                </NavItem>
-
-              </Nav>
-            </Collapse>
-          </Navbar>
-        </Container>
+      <div>
+        <Navbar className="Navigation" light expand="md">
+        <NavbarBrand href="/"> <h4 className="links">MIAMI DOLPHINS</h4> </NavbarBrand>
+        <img className="logoNav" src="https://i.imgur.com/aRib5Ux.png" alt="logoNavbar" />
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+            <NavItem>
+                <NavLink to="/Historique/"> <h4 className="links">Historique</h4> </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/Equipe/"> <h4 className="links">Équipe</h4> </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/News/"> <h4 className="links">News</h4> </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/Calendrier/"> <h4 className="links">Calendrier</h4> </NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
       </div>
     );
   }
