@@ -28,9 +28,6 @@ class Bandeau extends Component{
             donnees:this.orderMatch(this.state.donnees), 
             nextEvent:this.state.donnees[this.nextMatch()]
         })
-        console.log('c passer dans componentdidmount')
-        console.log(this.state.nextEvent,'ya rien ou quoi')
-
     } 
 
     orderMatch(){
@@ -42,17 +39,13 @@ class Bandeau extends Component{
             return (da>db)?1:-1;
             }
         let result=this.state.donnees.sort(SortTime);
-        console.log('c passer dans orderMatch')
-        console.log(this.state.nextEvent,'ya rien ou quoi')
 
         return result;
         }
     
     nextMatch(){
         for (let i=0;i<this.state.donnees.length;i++){
-            if(new Date(this.state.donnees[i].DateMatch)>new Date){
-                console.log('c passer dans nextMatch')
-                console.log(this.state.nextEvent,'ya rien ou quoi')
+            if(new Date(this.state.donnees[i].DateMatch)>new Date){                
                 return(i)
             }
         }    
@@ -62,9 +55,6 @@ class Bandeau extends Component{
     
 
     render(){
-        console.log('c passer dans render')
-        console.log(this.state.nextEvent,'ya rien ou quoi')
-
         return(
             
             <Container fluid >
