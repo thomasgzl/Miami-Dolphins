@@ -50,3 +50,7 @@ h2 {
     text-decoration: none;
     color: #f68220;
 }
+
+.clique:hover {
+    background-color: rgba(29, 29, 29, 0.7);
+}
