@@ -56,29 +56,27 @@ class Bandeau extends Component{
 
     render(){
         return(
-            
-            <Container fluid >
+            <Container fluid>
                 <Row  className="Bandeau">
                     <Col lg="3" xs="12" className="Bandeau_calendrier">
-                        <Row >
-                            <Col lg="3" xs="3">
-                                <p className="Bandeau_texte">{this.state.nextEvent.DateMatch.substring(8,10)}</p>   
-                                <p className="Bandeau_texte">{tab_mois[this.state.nextEvent.DateMatch.substring(5,7)]}</p>  
+                        <Row  >
+                            <Col >
+                                <h6 className="m-0">{this.state.nextEvent.DateMatch.substring(8,10)}</h6>     
+                                <p>{tab_mois[this.state.nextEvent.DateMatch.substring(5,7)]}</p>  
                             </Col>
-                            <Col lg="3" xs="3">
-                                <p className="Bandeau_texte">{this.state.nextEvent.EquipeA}</p>  
-                                <p className="Bandeau_texte">{this.state.nextEvent.EquipeB}</p>
+                            <Col >
+                                <p className="m-0 domicile">{this.state.nextEvent.EquipeA}</p>  
+                                <p>{this.state.nextEvent.EquipeB}</p>
                             </Col>
-                            <Col lg="3" xs="3">
-                                <p className="Bandeau_texte">{this.state.nextEvent.DateMatch.substring(11,16)}</p>
+                            <Col >
+                                <h3>{this.state.nextEvent.DateMatch.substring(11,16)}</h3>
                             </Col>
-                            <Col lg="3" xs="3">
-                            <NavLink to="/Calendrier"><img className="boutonAdd" src="https://i.imgur.com/T2Y9Mcw.png" alt="boutonAdd"/> </NavLink>     
+                            <Col >
+                            <NavLink to="/Calendrier"> <button className="bouton"> + </button> </NavLink>  
                             </Col>
                         </Row>
                     </Col>
                     <Col lg="9" className="Bandeau_sponsors" >
-                        <Example/> 
                     </Col>
                 
                 </Row>
