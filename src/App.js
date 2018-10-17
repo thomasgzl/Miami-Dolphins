@@ -6,7 +6,7 @@ import Bandeau from './components/Bandeau';
 import Footer from './components/Footer';
 import Cards from './components/News';
 
-import {Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import NewsZoom00 from './components/NewsZoom00';
 import NewsZoom01 from './components/NewsZoom01';
 import NewsZoom02 from './components/NewsZoom02';
@@ -71,6 +71,7 @@ class App extends Component {
       <div className="App">
         <Bandeau aPasserDansBandeau={this.state.donneesPourCalendrier}/>
         <NavbarMain />
+
                 <Switch>
                   <Route exact path="/" component={Cards}/>
                   <Route path="/newszoom00" component={NewsZoom00}/>
