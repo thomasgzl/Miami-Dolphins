@@ -58,7 +58,6 @@ class Calendrier extends Component{
     render(){
         return(
             <div className="GlobalCalendrier">
-
                 <Container >
                     <h1 className="Calendrier-title">Calendrier des matchs</h1>
                     <div className="Calendrier">

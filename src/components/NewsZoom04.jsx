@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 class NewsZoom04 extends Component {
   render() {
     return (
-      <div>
+      <div className="backgroundNews">
         <Container fluid>
           <Row>
             <Col className="offset-lg-1" lg="6" md="6" sm="12">

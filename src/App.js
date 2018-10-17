@@ -63,18 +63,20 @@ const dataCalendrier = [
 class App extends Component {
   constructor(props){
     super(props)
-    this.state={donneesPourCalendrier:dataCalendrier}
+    this.state={
+      donneesPourCalendrier:dataCalendrier,
+    }
   }
-
+  
 
   render() {
     return (
       <div className="App">
         <Bandeau aPasserDansBandeau={this.state.donneesPourCalendrier}/>
-        <NavbarMain />   
-        <Home />     
+        <NavbarMain />    
                 <Switch>
-                  <Route exact path="/" component={Cards}/>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/news" component={News} />
                   <Route path="/newszoom00" component={NewsZoom00}/>
                   <Route path="/newszoom01" component={NewsZoom01}/>
                   <Route path="/newszoom02" component={NewsZoom02}/>
@@ -83,8 +85,8 @@ class App extends Component {
                   <Route path="/newszoom05" component={NewsZoom05}/>
                   <Route path="/calendrier" render={()=><Calendrier aPasseracalendrier={this.state.donneesPourCalendrier}/>}/>
                 </Switch>
-         <Footer />    
-      </div>
+         <Footer />
+         </div>    
     );
   }
 }

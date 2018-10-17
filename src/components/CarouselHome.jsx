@@ -6,8 +6,8 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap';
-
 import './Home.css';
+import { NavLink } from 'react-router-dom';
 
 const items = [
   {
@@ -74,7 +74,7 @@ class CarouselHome extends Component {
         >
           <h1 className="TitreCarousel">{item.src}</h1>
           <p className="TextCarousel"> {item.caption} </p>
-          <button className="BoutonCarousel">Voir l'article</button>
+          <NavLink to="/newszoom00" className="linkNav"><button className="BoutonCarousel">Voir l'article</button></NavLink>
         </CarouselItem>
       );
     });
@@ -85,7 +85,7 @@ class CarouselHome extends Component {
         next={this.next}
         previous={this.previous}
       >
-        <CarouselIndicators className="controls" items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
         <CarouselControl  direction="prev" directionText="Previous" onClickHandler={this.previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
