@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
+import React, { Component } from 'react';
+import { Card, CardTitle, CardImg, CardImgOverlay } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
 import './News.css';
 import { NavLink } from 'react-router-dom';
@@ -37,14 +37,19 @@ const dataNews = [
   
 ]
 
-const News = (props) => {
+class News extends Component {
+  state = { 
+   }
+
+  render() { 
   return (
  
-    <div>
+    <div className="backgroundNews">
         <Card inverse>  
          <Container fluid>
          {dataNews.map(carteNews => (  
-             <Row  key={carteNews.id} className="newsRow">     
+             <Row  key={carteNews.id} className="newsRow"> 
+                  <Col lg={8}>
                     <Col className="hit" lg={4}>
                     <NavLink to="/newszoom00" className="linkNav"><div className="div-wrapper">
                     <CardImg width="100%" src={carteNews.image} alt="img1" />
@@ -54,7 +59,9 @@ const News = (props) => {
                     </div>
                     </CardImgOverlay>
                     </div>
-                    </NavLink></Col> 
+                    </NavLink>
+                    </Col> 
+                    </Col> 
 
         </Row> ))}
         </Container> 
@@ -62,5 +69,6 @@ const News = (props) => {
     </div> 
   );
 };
+}
 
 export default News;

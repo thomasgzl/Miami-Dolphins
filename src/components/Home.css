@@ -9,7 +9,20 @@
 
 .TitreCarousel {
     color:white;
+    margin-left: 30px;
     
+}
+
+.carousel-control-prev {
+    padding-right: 12%!important;
+}
+
+.carousel-control-next {
+    padding-left: 12%!important;
+}
+
+.carousel-indicators {
+    display:none!important;
 }
 
 .BoutonCarousel {
@@ -28,5 +41,11 @@
 
 .TextCarousel {
     color:white;
+    margin-left: 30px;
+    margin-right: 30px;
     
+}
+
+.home-bg {
+    padding-bottom: 161px;
 }

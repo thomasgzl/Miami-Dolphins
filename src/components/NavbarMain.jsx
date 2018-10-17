@@ -34,8 +34,8 @@ class NavbarMain extends React.Component {
     return (
       <div>
         <Navbar className="Navigation" light expand="md">
+        <NavbarBrand href="/"> <h4 className="links">MIAMI DOLPHINS</h4> </NavbarBrand>
         <img className="logoNav" src="https://i.imgur.com/aRib5Ux.png" alt="logoNavbar" />
-          <NavbarBrand href="/"> <h4 className="links">MIAMI DOLPHINS</h4> </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
