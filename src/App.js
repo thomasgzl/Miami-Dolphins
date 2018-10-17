@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import News from './components/News';
 import Home from './components/Home';
 
-import {Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import NewsZoom00 from './components/NewsZoom00';
 import NewsZoom01 from './components/NewsZoom01';
 import NewsZoom02 from './components/NewsZoom02';
