@@ -1,0 +1,32 @@
+.carouselNewsHome {
+    padding-top: 2%;
+    margin-top: 5%;
+    margin-left: 3%;
+    padding-bottom: 2%;
+    background-color: rgba(01, 86, 121, 0.7);
+    border-radius: 1%;
+}
+
+.TitreCarousel {
+    color:white;
+    
+}
+
+.BoutonCarousel {
+    background-color: rgba(204, 204, 204, 0.7);
+    border-color: transparent;
+    color: white;
+    margin-left: 45%;
+    border-radius: 5%;
+}
+
+.BoutonCarousel:hover {
+    background-color: white;
+    color: rgba(01, 86, 121);
+    border-radius: 5%;
+}
+
+.TextCarousel {
+    color:white;
+    
+}

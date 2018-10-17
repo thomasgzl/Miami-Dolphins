@@ -1,5 +1,7 @@
 .image1 {
-  width: 100%
+  width: 100%;
+  display: flex;
+  text-align: center;
 }
 .flyM {
   display: flex;
@@ -8,6 +10,7 @@
   padding-top: 20px;
   padding-bottom: 20px;
   color: white;
+  width: 100%;
 }
 .news_title1 {
   display: flex;
@@ -26,6 +29,7 @@
   padding-top: 15px;
   text-align: start!important;
   text-align: justify!important;
+  font-size: 1.1em;
 }
 
 .navlink {
