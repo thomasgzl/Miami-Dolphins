@@ -42,7 +42,7 @@ class NavbarMain extends Component {
             <Collapse className="collapse-container" isOpen={this.state.isOpen} navbar>
               <Nav className="container-item" justified pills navbar>
                 <NavItem>
-                  <NavLink to="/Historique/" className="white" href></NavLink>
+                  <NavLink to="/Historique/" className="white" ></NavLink>
                 </NavItem> 
                 <NavItem>
                   <NavLink to="/Equipe/" className="white" ></NavLink>

@@ -10,7 +10,7 @@ import { BrowserRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 ReactDOM.render(
     <BrowserRouter>
-        <App />
+        <App/>
     </BrowserRouter>
 
 , document.getElementById('root'));
