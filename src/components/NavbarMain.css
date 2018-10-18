@@ -16,23 +16,23 @@
 h4.links {
     color: rgba(29, 29, 29);
     font-size: 17px;
+    margin-right: 50px;
 }
 
 h4.links:hover {
-    color: rgba(245, 129, 31, 0.7);
-}
-
-h4.links2 {
-    color: rgba(29, 29, 29, 0.7);
-    font-size: 17px;
-}
-
-h4.links2:hover {
-    color: orange;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
 }
 
 .logoNav {
     height: 100px;
-    position: fixed;
-    right: 800px;
+    margin-left: 500px;
+}
+
+@media only screen and (max-width: 768px) {
+    .logoNav {
+        display: none;
+    }
+    
+
 }

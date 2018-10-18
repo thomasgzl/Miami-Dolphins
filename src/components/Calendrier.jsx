@@ -6,7 +6,7 @@ const logo = {
     "Jets":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-jets-equipe.png", 
     "Patriots":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-patriots.png",
     "Bears":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-bears.png",
-    "Miami Dolphins":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-miamidolphins.png",
+    "Miami":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-miamidolphins.png",
     "Bengals":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-bengals.png"
 }
 
@@ -17,7 +17,9 @@ const chaineTV = {
 
 }
 
+
  const tab_mois = {'01':"Janvier",'02':"Fevrier",'03':"Mars",'04':"Avril",'05':"Mai",'06':"Juin",'07':"Juillet",'08':"Aout",'09':"Septembre",10:"Octobre",11:"Novembre",12:"Decembre"}
+
 
 class Calendrier extends Component{
     constructor(props){
@@ -58,12 +60,11 @@ class Calendrier extends Component{
     render(){
         return(
             <div className="GlobalCalendrier">
-
                 <Container >
                     <h1 className="Calendrier-title">Calendrier des matchs</h1>
                     <div className="Calendrier">
                 <ul>
-                    {this.state.donnees.map((match,index)=>
+                    {this.state.donnees.map((match)=>
                     <Row className="Calendrier_ligneTableau">
                         <Col lg="2" xs="12" className="colonne1">
                                 <div>

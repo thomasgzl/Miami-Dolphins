@@ -13,18 +13,28 @@
     border-color: transparent;
     color: white;
     font-size: 20px;
+    transition: transform 0.6s; 
+    outline: none;
 }
 
 .bouton:hover {
     color: #f5811f;
+    transform: rotate(46deg) scale(3);
+    transition: transform 0.6s; 
+    outline: none;
 }
 
 .bouton:active {
     outline: none;
 }
 
+.bouton:focus {
+    outline: none;
+}
+
 
 .Bandeau_sponsors{
+    background-color: transparent;
     color:white;
     font-weight:normal;
     padding:0;
@@ -35,6 +45,12 @@
 .domicile {
     font-weight: bold;
 }
+
+
+.Bandeau_ligneTableau:hover{
+    transform:scale(1.5, 1.5)
+}
+
 
 @media (max-width: 1000px) {
     .Bandeau_sponsors{

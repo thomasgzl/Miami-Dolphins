@@ -10,32 +10,50 @@ import Home from './components/Home';
 import { Route, Switch } from "react-router-dom";
 import NewsZoom from './components/NewsZoom';
 import Calendrier from './components/Calendrier';
+import Historique from './components/Historique';
+
+
+import AdminJoueurs from './components/AdminJoueurs';
 
 const dataCalendrier = [
   {id:"00001",
   DateMatch:"2018-09-14T13:49:44.725Z",
-  EquipeA:"Miami Dolphins",
+  EquipeA:"Miami",
   EquipeB:"Bears",
   Score:"18-21",
   Chaine:"Eleven"},
 
   {id:"00002",
   DateMatch:"2018-12-18T13:49:44.725Z",
-  EquipeA:"Miami Dolphins",
+  EquipeA:"Miami",
   EquipeB:"Patriots",
   Score:"25-11",
   Chaine:"Bein"},
 
   {id:"00003",
-  DateMatch:"2018-10-15T00:49:44.725Z",
+  DateMatch:"2018-10-18T00:49:44.725Z",
   EquipeA:"Jets",
-  EquipeB:"Miami Dolphins",
+  EquipeB:"Miami",
+  Score:"38-41",
+  Chaine:"Espn"},
+
+  {id:"00002",
+  DateMatch:"2018-12-18T13:49:44.725Z",
+  EquipeA:"Miami ",
+  EquipeB:"Patriots",
+  Score:"25-11",
+  Chaine:"Bein"},
+
+  {id:"00003",
+  DateMatch:"2018-10-18T00:49:44.725Z",
+  EquipeA:"Jets",
+  EquipeB:"Miami",
   Score:"38-41",
   Chaine:"Espn"},
 
   {id:"00004",
   DateMatch:"2018-12-15T21:00:00.725Z",
-  EquipeA:"Miami Dolphins",
+  EquipeA:"Miami",
   EquipeB:"Bears",
   Score:"18-21",
   Chaine:"Eleven"},
@@ -48,7 +66,7 @@ const dataCalendrier = [
   Chaine:"Bein"},
 
   {id:"00006",
-  DateMatch:"2017-10-15T13:49:44.725Z",
+  DateMatch:"2017-06-01T13:49:44.725Z",
   EquipeA:"Jets",
   EquipeB:"Bears",
   Score:"38-41",
@@ -58,9 +76,11 @@ const dataCalendrier = [
 class App extends Component {
   constructor(props){
     super(props)
-    this.state={donneesPourCalendrier:dataCalendrier}
+    this.state={
+      donneesPourCalendrier:dataCalendrier,
+    }
   }
-
+  
 
   render() {
     return (
@@ -73,9 +93,11 @@ class App extends Component {
                   <Route path="/news" component={News}/>
                   <Route path="/newszoom" component={NewsZoom}/>
                   <Route path="/calendrier" render={()=><Calendrier aPasseracalendrier={this.state.donneesPourCalendrier}/>}/>
+                  <Route path="/adminjoueurs" component={AdminJoueurs}/>
+
                 </Switch>
-         <Footer />    
-      </div>
+         <Footer />
+         </div>    
     );
   }
 }

@@ -14,8 +14,7 @@ import {
 } from 'reactstrap';
 import './NavbarMain.css';
 import { NavLink } from 'react-router-dom';
-
-  import './NavbarMain.css';
+import './NavbarMain.css';
 
 class NavbarMain extends React.Component {
   constructor(props) {
@@ -35,8 +34,8 @@ class NavbarMain extends React.Component {
     return (
       <div>
         <Navbar className="Navigation" light expand="md">
+        <NavbarBrand href="/"> <h4 className="links">MIAMI DOLPHINS</h4> </NavbarBrand>
         <img className="logoNav" src="https://i.imgur.com/aRib5Ux.png" alt="logoNavbar" />
-          <NavbarBrand href="/"> <h4 className="links">MIAMI DOLPHINS</h4> </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -52,7 +51,7 @@ class NavbarMain extends React.Component {
               <NavItem>
                 <NavLink to="/Calendrier/"> <h4 className="links">Calendrier</h4> </NavLink>
               </NavItem>
-              </Nav>
+            </Nav>
           </Collapse>
         </Navbar>
       </div>
