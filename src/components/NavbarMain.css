@@ -28,3 +28,11 @@ h4.links:hover {
     height: 100px;
     margin-left: 500px;
 }
+
+@media only screen and (max-width: 768px) {
+    .logoNav {
+        display: none;
+    }
+    
+
+}
