@@ -52,8 +52,7 @@ class NavbarMain extends React.Component {
               <NavItem>
                 <NavLink to="/Calendrier/"> <h4 className="links">Calendrier</h4> </NavLink>
               </NavItem>
-
-            </Nav>
+              </Nav>
           </Collapse>
         </Navbar>
       </div>
