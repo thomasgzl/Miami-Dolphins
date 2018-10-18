@@ -101,6 +101,7 @@ class App extends Component {
                   <Route path="/newszoom03" component={NewsZoom03}/>
                   <Route path="/newszoom04" component={NewsZoom04}/>
                   <Route path="/newszoom05" component={NewsZoom05}/>
+                  <Route path="/historique" component={Historique}/>
                   <Route path="/calendrier" render={()=><Calendrier aPasseracalendrier={this.state.donneesPourCalendrier}/>}/>
                   <Route path="/adminjoueurs" component={AdminJoueurs}/>
 
