@@ -18,6 +18,8 @@ import Calendrier from './components/Calendrier';
 import Historique from './components/Historique';
 
 
+import AdminJoueurs from './components/AdminJoueurs';
+
 const dataCalendrier = [
   {id:"00001",
   DateMatch:"2018-09-14T13:49:44.725Z",
@@ -100,7 +102,8 @@ class App extends Component {
                   <Route path="/newszoom04" component={NewsZoom04}/>
                   <Route path="/newszoom05" component={NewsZoom05}/>
                   <Route path="/calendrier" render={()=><Calendrier aPasseracalendrier={this.state.donneesPourCalendrier}/>}/>
-                  <Route path="/historique" render={()=><Historique aPasserahistorique={this.state.donneesPourHistorique}/>}/>
+                  <Route path="/adminjoueurs" component={AdminJoueurs}/>
+
                 </Switch>
          <Footer />
          </div>    

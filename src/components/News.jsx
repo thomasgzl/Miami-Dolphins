@@ -46,11 +46,10 @@ class News extends Component {
  
     <div className="backgroundNews">
         <Card inverse>  
-         <Container fluid>
-         {dataNews.map(carteNews => (  
-             <Row  key={carteNews.id} className="newsRow"> 
-                  <Col lg={8}>
-                    <Col className="hit" lg={4}>
+         <Container fluid> 
+             <Row  className="newsRow"> 
+             {dataNews.map(carteNews => ( 
+                    <Col key={carteNews.id} className="hit" lg={4}>
                     <NavLink to="/newszoom00" className="linkNav"><div className="div-wrapper">
                     <CardImg width="100%" src={carteNews.image} alt="img1" />
                     <CardImgOverlay>
@@ -61,9 +60,8 @@ class News extends Component {
                     </div>
                     </NavLink>
                     </Col> 
-                    </Col> 
-
-        </Row> ))}
+            ))}
+        </Row> 
         </Container> 
         </Card> 
     </div> 
