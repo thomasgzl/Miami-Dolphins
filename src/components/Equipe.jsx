@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import './Equipe.css';
-import ProfilJoueur from './ProfilJoueur';
 import { NavLink, Link } from 'react-router-dom';
 
 const ListJoueur = [
@@ -42,7 +41,7 @@ const ListJoueur = [
         last_name: "Tanneli",
         age: 30,
         poste: "Quatterback",
-        Height: 6.4,
+        height: 6.4,
         weight: 207,
         image: "http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/14876.png&w=350&h=254",
         yard: 250,
@@ -167,34 +166,43 @@ class Equipe extends Component {
     render() {
         return (
 
-            <section className="all_players">
-                <div className="titre_poste">
-                    <h2>{this.state.titre}</h2>
+            <div className="backgroundPlayers">
+                <div className="TitrePoste">
+
+                    <h2 className="titre_poste_dynamique">{this.state.titre}</h2>
                 </div>
 
 
-                <Container className="All-Player" fluid>
+                <Container className="AllPlayer" fluid>
 
+                    <div className="Boutons">
 
-                    <Row className="Line-player" noGutters>
+                        <button className="BoutonIndiv" onClick={() => this.triquatterback()}>Quatterback</button>
+                        <button className="BoutonIndiv" onClick={() => this.triWideReceiver()}>Wide Receiver</button>
+                        <button className="BoutonIndiv" onClick={() => this.triGeneral()}>Tri Général</button>
+                    </div>
+                    <Row className="LinePlayer" >
                         {this.state.liste2.map((joueur) =>
-                            <NavLink to={{
-                                pathname: "/profiljoueur",
-                                state: {
-                                    first_name: joueur.first_name,
-                                    last_name: joueur.last_name,
-                                    age: joueur.age,
-                                    poste: joueur.poste,
-                                    height: joueur.height,
-                                    weight: joueur.weight,
-                                    image: joueur.image,
-                                    yard: joueur.yard,
-                                    tackle: joueur.tackle,
-                                    int: joueur.int,
-                                    numero: joueur.numero,
-                                }
-                            }} className="linkNav">
-                                <Col xs="12" sm="6" md="3" className="Colonne-player">
+
+                            <Col xs="12" sm="6" md="3" className="Colonne-player">
+                                <NavLink to={{
+                                    pathname: "/profiljoueur",
+                                    state: {
+                                        first_name: joueur.first_name,
+                                        last_name: joueur.last_name,
+                                        age: joueur.age,
+                                        poste: joueur.poste,
+                                        height: joueur.height,
+                                        weight: joueur.weight,
+                                        image: joueur.image,
+                                        yard: joueur.yard,
+                                        tackle: joueur.tackle,
+                                        int: joueur.int,
+                                        numero: joueur.numero,
+                                    }
+                                }} className="linkNav">
+
+
                                     <div className="container no gutter infos-joueur">
                                         <img className="image_joueur" src={joueur.image} alt="Image player"></img>
                                         <div className="bloc-name info">
@@ -203,20 +211,18 @@ class Equipe extends Component {
                                             <p className="lastname_player">{joueur.last_name}</p>
                                         </div>
                                     </div>
-                                </Col>
+                                </NavLink>
+                            </Col>
 
-                            </NavLink>
+
                         )}
                     </Row>
-                    <button onClick={() => this.triquatterback()}>Quatterback</button>
-                    <button onClick={() => this.triWideReceiver()}>Wide Receiver</button>
-                    <button onClick={() => this.triGeneral()}>Tri Général</button>
 
 
 
                 </Container>
 
-            </section>
+            </div>
 
         )
     }
