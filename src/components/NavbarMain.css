@@ -14,13 +14,14 @@
 }
 
 h4.links {
-    color: rgba(29, 29, 29);
+    color: rgb(255, 255, 255);
     font-size: 17px;
     margin-right: 50px;
+    font-weight: bold;
 }
 
 h4.links:hover {
-    color: rgb(255, 255, 255);
+    color: #f68220;
     text-decoration: none;
 }
 
@@ -29,7 +30,7 @@ h4.links:hover {
     margin-left: 500px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
     .logoNav {
         display: none;
     }
