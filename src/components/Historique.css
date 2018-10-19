@@ -236,14 +236,19 @@
     height:75%;
 }
 
+.histoireDate{
+    display: none;
+}
+
 
 @media (max-width: 640px) {
 
     .BoutonsPrevNextHistorique{
-        top:-20px;
-        left:-90px;
+        top:-100px;
+        left:-270px;
         text-align: none;
     }
+
 
 
     .allerAgauche,.allerAdroite{
