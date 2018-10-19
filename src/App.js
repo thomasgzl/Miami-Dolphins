@@ -11,6 +11,8 @@ import { Route, Switch } from "react-router-dom";
 import NewsZoom from './components/NewsZoom';
 import Calendrier from './components/Calendrier';
 import Historique from './components/Historique';
+import Equipe from './components/Equipe';
+import ProfilJoueur from './components/ProfilJoueur';
 
 
 import AdminJoueurs from './components/AdminJoueurs';
@@ -96,6 +98,8 @@ class App extends Component {
                   <Route path="/calendrier" render={()=><Calendrier aPasseracalendrier={this.state.donneesPourCalendrier}/>}/>
                   <Route path="/historique" component={Historique}/>
                   <Route path="/adminjoueurs" component={AdminJoueurs}/>
+                  <Route path="/equipe" component={Equipe}/>
+                  <Route path="/profiljoueur" component={ProfilJoueur}/>
                   <Route path="/admincalendrier" component={AdminCalendrier}/>
                 </Switch>
          <Footer />

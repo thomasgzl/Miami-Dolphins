@@ -60,7 +60,7 @@ class ProfilJoueur extends Component {
     render() {
 
         return (
-            <Container>
+            <Container className="container_profil_joueur">
                 <Row className="ligne_profil_joueur">
 
                     <Col>
@@ -68,14 +68,10 @@ class ProfilJoueur extends Component {
                     </Col>
 
                     <Col>
-                        <h2 className="nom_joueur">#8 {this.state.name} {this.state.last_name}</h2>
+                        <h2 className="nom_joueur">#{this.state.numero} {this.state.name} {this.state.last_name}</h2>
                         <h4 className="poste_joueur">{this.state.poste}</h4>
                         <Table borderless className="tableau_stats">
                             <tbody>
-                                <tr>
-                                    <th scope="row">Expérience:</th>
-                                    <td>7 ans</td>
-                                </tr>
                                 <tr>
                                     <th scope="row">Taille:</th>
                                     <td>{this.state.height}</td>
@@ -93,12 +89,8 @@ class ProfilJoueur extends Component {
                     </Col>
                 </Row>
 
-                <Row className="colonne_boutons">
-                    <Col xs="1">
-                        <button className="bouton_precedent_joueur"><img src="https://res.cloudinary.com/dzgbfpr45/image/upload/v1539768444/back.png" alt="logo precedent" /></button>
-                    </Col>
-
-                    <Col md="3" xs="7">
+                <Row className="colonne_boutons">                    
+                    <Col className="bouton_stats">
                         <div>
                             <Button color="info" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Statistiques</Button>
                             <Collapse isOpen={this.state.collapse}>
@@ -111,11 +103,7 @@ class ProfilJoueur extends Component {
                                 </Card>
                             </Collapse>
                         </div>
-                    </Col>
-
-                    <Col xs="1">
-                        <button className="bouton_suivant_joueur"><img src="https://res.cloudinary.com/dzgbfpr45/image/upload/v1539767242/next.png" alt="logo suivant" /></button>
-                    </Col>
+                    </Col>                    
                 </Row>
             </Container>
         );
