@@ -1,5 +1,5 @@
 .footer {
-    background-color: rgb(41, 39, 39);
+    background-color: rgb(0, 52, 75, 0.9);
     left: 0;
     bottom: 0;
 }
@@ -47,10 +47,3 @@
     content: url(https://i.imgur.com/duMfUij.png);
 }
 
-@media screen and (max-width: 575px) {
-
-    .lien_section_footer {
-        margin-bottom: 10px; 
-        display: inline-block;   
-     }
-}

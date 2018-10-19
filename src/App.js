@@ -16,6 +16,7 @@ import ProfilJoueur from './components/ProfilJoueur';
 
 
 import AdminJoueurs from './components/AdminJoueurs';
+import AdminCalendrier from './components/AdminCalendrier';
 
 const dataCalendrier = [
   {id:"00001",
@@ -95,11 +96,11 @@ class App extends Component {
                   <Route path="/news" component={News}/>
                   <Route path="/newszoom" component={NewsZoom}/>
                   <Route path="/calendrier" render={()=><Calendrier aPasseracalendrier={this.state.donneesPourCalendrier}/>}/>
+                  <Route path="/historique" component={Historique}/>
                   <Route path="/adminjoueurs" component={AdminJoueurs}/>
                   <Route path="/equipe" component={Equipe}/>
                   <Route path="/profiljoueur" component={ProfilJoueur}/>
-
-
+                  <Route path="/admincalendrier" component={AdminCalendrier}/>
                 </Switch>
          <Footer />
          </div>    
