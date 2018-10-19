@@ -7,11 +7,10 @@ const HistoryCard =({property})=>{
         return(
             <div id={`card-${index}`} className="HistoryCard">
                  <h5 className="histoireTitre">{titre}</h5>
-                 
                  <div className="details">
                  <img className="histoireImage" src={image} alt={index}/>
                     <p className="histoireTexte">{texte}</p>
-                    <h3 className="histoireDate">{date}</h3>
+                    <p className="histoireDate">{date}</p>
                  </div>
                
                
