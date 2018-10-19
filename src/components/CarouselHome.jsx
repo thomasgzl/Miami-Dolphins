@@ -74,7 +74,7 @@ class CarouselHome extends Component {
         >
           <h1 className="TitreCarousel">{item.src}</h1>
           <p className="TextCarousel"> {item.caption} </p>
-          <NavLink to="/newszoom00" className="linkNav"><button className="BoutonCarousel">Voir l'article</button></NavLink>
+          <NavLink to="/newszoom" className="linkNav"><button className="BoutonCarousel">Voir l'article</button></NavLink>
         </CarouselItem>
       );
     });
