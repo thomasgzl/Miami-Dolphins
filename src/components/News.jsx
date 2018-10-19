@@ -50,7 +50,7 @@ class News extends Component {
              <Row  className="newsRow"> 
              {dataNews.map(carteNews => ( 
                     <Col key={carteNews.id} className="hit" lg={4}>
-                    <NavLink to="/newszoom00" className="linkNav"><div className="div-wrapper">
+                    <NavLink to="/newszoom" className="linkNav"><div className="div-wrapper">
                     <CardImg width="100%" src={carteNews.image} alt="img1" />
                     <CardImgOverlay>
                     <div className="backimg">
