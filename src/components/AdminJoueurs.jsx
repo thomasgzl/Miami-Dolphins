@@ -1,132 +1,95 @@
-import React, { Component } from 'react';
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupButtonDropdown,
-  InputGroupDropdown,
-  Input,
-  Button,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Row,
-  Col
- } from 'reactstrap';
- import './AdminJoueurs.css';
+import React from 'react';
+import { Button, Form, FormGroup, Label, Input, FormText, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import './AdminJoueurs.css';
 
-class AdminJoueurs extends Component {
-    constructor(props) {
-        super(props);
-    
-        this.toggleDropDown = this.toggleDropDown.bind(this);
-        this.state = {
-          dropdownOpen: false,
-          splitButtonOpen: false
-        };
-      }
-    
-      toggleDropDown() {
-        this.setState({
-          dropdownOpen: !this.state.dropdownOpen
-        });
-      }
+export default class AdminJouers extends React.Component {
+  constructor(props) {
+    super(props);
 
-    render() { 
-        return ( 
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      dropdownOpen: false
+    };
+  }
 
-<div className="AdminJoueurs">
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
 
-            <InputGroup>
-            <InputGroupButtonDropdown addonType="append" isOpen={this.state.dropdownOpen} toggle={this.toggleDropDown}>
-            <DropdownToggle caret>
-              Joueur
-            </DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem>Bobby McCain</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Kenyan Drake</DropdownItem>
-            </DropdownMenu>
-          </InputGroupButtonDropdown>
-        </InputGroup>
+  render() {
+    return (
+      <Form className="AdminJoueurs">
 
-<Row >
+      <ButtonDropdown className="boutonJoueurs" isOpen={this.state.dropdownOpen} toggle={this.toggle} size="sm" block>
+        <DropdownToggle caret>
+          Robert Barakat
+        </DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem>Bobby McCain</DropdownItem>
+          <DropdownItem>Kenyan Drake</DropdownItem>
+        </DropdownMenu>
+      </ButtonDropdown>
 
-    <Col lg={4} className="PremiereLigne">
-        <InputGroup>
-            <InputGroupAddon addonType="prepend">['']</InputGroupAddon>
-            <Input placeholder="Nom/Prénom" />
-         </InputGroup>
-</Col>
-<Col lg={4} className="PremiereLigne">
-<InputGroup>
-            <InputGroupAddon addonType="prepend">[P]</InputGroupAddon>
-            <Input placeholder="Poste" />
-         </InputGroup>
-</Col>
-<Col lg={4} className="PremiereLigne">
-        <InputGroup>
-            <InputGroupAddon addonType="prepend">XP</InputGroupAddon>
-            <Input placeholder="Éxperience" />
-         </InputGroup>
-</Col>
+        <FormGroup>
+          <Input type="name" name="name" id="exampleName" placeholder="Nom / Prénom" />
+        </FormGroup>
+        <FormGroup>
+          <Input type="select" name="select" id="exampleSelect">
+            <option>Poste</option>
+            <option>Quarterback</option>
+            <option>Running Back</option>
+            <option>Wide receiver</option>
+            <option>Tight end</option>
+            <option>Guard</option>
+            <option>Tackle</option>
+            <option divider />
+            <option>Defensive End</option>
+            <option>Defensive Tackle</option>
+            <option>Linebacker</option>
+            <option>Cornerback</option>
+            <option>Safety</option>
+          </Input>
+        </FormGroup>
+        <FormGroup>
+          <Input type="yards" name="experience" id="Experience" placeholder="Éxperience" />
+        </FormGroup>
+        <FormGroup>
+          <Input type="taille" name="taille" id="taille" placeholder="Taille" />
+        </FormGroup>
+        <FormGroup>
+          <Input type="age" name="age" id="age" placeholder="Age" />
+        </FormGroup>
+        <FormGroup>
+          <Input type="poids" name="poids" id="poids" placeholder="Poids" />
+        </FormGroup>
 
-<Col lg={4}>
-        <InputGroup>
-            <InputGroupAddon addonType="prepend">CM</InputGroupAddon>
-            <Input placeholder="Taille" />
-         </InputGroup>
-         </Col>
-<Col lg={4}>
-<InputGroup>
-            <InputGroupAddon addonType="prepend">99</InputGroupAddon>
-            <Input placeholder="Age" />
-         </InputGroup>
-         </Col>
-<Col lg={4}>
-<InputGroup>
-            <InputGroupAddon addonType="prepend">KG</InputGroupAddon>
-            <Input placeholder="Poids" />
-         </InputGroup>
-</Col>
-</Row>
+        <FormGroup>
+          <Input className="Stats" type="yards" name="yards" id="yards" placeholder="Yards" />
+        </FormGroup>
+        <FormGroup>
+          <Input className="Stats" type="interceptions" name="interceptions" id="interceptions" placeholder="Interceptions" />
+        </FormGroup>
+        <FormGroup>
+          <Input className="Stats" type="tacles" name="tacles" id="tacles" placeholder="Tacles" />
+        </FormGroup>
+        <FormGroup>
+          <Input className="Stats" type="touchdown" name="touchdown" id="touchdown" placeholder="Touchdowns" />
+        </FormGroup>
 
-            <Button color="success">Ajouter</Button>
-            <Button color="danger">X</Button>
-            <Button color="warning">Modifier</Button>
+        <FormGroup>
+          <Label for="exampleFile">Photo</Label>
+          <Input type="file" name="file" id="exampleFile" />
+          <FormText color="muted">
+            Ajouter un portrait du joueur.
+          </FormText>
+        </FormGroup>
+        <Button outline color="success">Ajouter</Button>
+        <Button outline color="warning">Modifier</Button>
+        <Button outline color="danger">Supprimer</Button>
 
-
-<Row >
-<Col lg={3}>
-<InputGroup>
-            <InputGroupAddon addonType="prepend"> -- </InputGroupAddon>
-            <Input placeholder="Yards" />
-         </InputGroup>
-         </Col>
-<Col lg={3}>
-<InputGroup>
-            <InputGroupAddon addonType="prepend">IT</InputGroupAddon>
-            <Input placeholder="Interceptions" />
-         </InputGroup>
-         </Col>
-<Col lg={3}>
-<InputGroup>
-            <InputGroupAddon addonType="prepend">TC</InputGroupAddon>
-            <Input placeholder="Tacles" />
-         </InputGroup>
-         </Col>
-<Col lg={3}>
-<InputGroup>
-            <InputGroupAddon addonType="prepend">TD</InputGroupAddon>
-            <Input placeholder="Touchdowns" />
-         </InputGroup>
-</Col>
-</Row>
-
-        </div>
-
-         );
-    }
+      </Form>
+    );
+  }
 }
- 
-export default AdminJoueurs;

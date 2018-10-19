@@ -87,14 +87,13 @@ class App extends Component {
       <div className="App">
         <Bandeau aPasserDansBandeau={this.state.donneesPourCalendrier}/>
         <NavbarMain />   
-             
                 <Switch>
                   <Route exact path="/" component={Home}/>
+                  <Route path="/historique" component={Historique}/>
                   <Route path="/news" component={News}/>
                   <Route path="/newszoom" component={NewsZoom}/>
                   <Route path="/calendrier" render={()=><Calendrier aPasseracalendrier={this.state.donneesPourCalendrier}/>}/>
                   <Route path="/adminjoueurs" component={AdminJoueurs}/>
-
                 </Switch>
          <Footer />
          </div>    
