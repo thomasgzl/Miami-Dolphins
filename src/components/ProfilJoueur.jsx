@@ -68,7 +68,7 @@ class ProfilJoueur extends Component {
                     </Col>
 
                     <Col>
-                        <h2 className="nom_joueur">#8 {this.state.name} {this.state.last_name}</h2>
+                        <h2 className="nom_joueur">#{this.state.numero} {this.state.name} {this.state.last_name}</h2>
                         <h4 className="poste_joueur">{this.state.poste}</h4>
                         <Table borderless className="tableau_stats">
                             <tbody>

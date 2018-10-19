@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import './Equipe.css';
 import ProfilJoueur from './ProfilJoueur';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const ListJoueur = [
     {

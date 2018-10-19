@@ -1,0 +1,59 @@
+.ligne_profil_joueur {
+    font-size: 1.3em;
+    color: #01a6a2;
+}
+
+.image_profil_joueur {
+    margin-top: 30px;
+}
+
+.nom_joueur {
+    margin-top : 20px;
+    color: #ff731a;
+}
+
+.poste_joueur {
+    margin-top : 20px;
+    margin-bottom: 30px;
+    color: #ff731a;    
+}
+
+.categorie {
+    font-weight: bold;    
+}
+
+.tableau_stats {
+    margin-top: -20px;
+}
+
+th {
+    font-size : 0.9em;
+}
+
+td {
+    font-size: 0.8em;
+    text-align: left;
+}
+
+.body_card_joueur {
+    text-align: center;
+    color: #ff731a;
+}
+
+.bouton_suivant_joueur {
+    border: none;
+    background-color: transparent;
+    margin-left: -30px;
+
+}
+
+.bouton_precedent_joueur {
+    border: none;
+    background-color: transparent;   
+ 
+}
+
+.colonne_boutons {
+    display: flex;
+    justify-content: center;
+}

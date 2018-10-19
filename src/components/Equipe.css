@@ -18,3 +18,8 @@ padding: 0px;
 .lastname_player {
     margin-bottom: 0px;
 }
+
+div.Colonne-player {
+    margin: 2px;
+    margin-right: 0px;
+}
