@@ -87,7 +87,7 @@ class NewsZoom extends Component {
         <Container fluid>
           <Row className="background_news_zoom">
             <Col lg={5} md={6} sm={12}>
-              <img className="image1" src={this.state.newszoom.image} />
+              <img className="image1" src={this.state.newszoom.image} alt="news1Illustration" />
               <h3 className="flyM">
                 <strong>{this.state.newszoom.title}</strong>
               </h3>

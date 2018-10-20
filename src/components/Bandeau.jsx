@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import './Bandeau.css';
 import { Container, Row, Col } from 'reactstrap';
-import Example from './CarouselBandeau';
 import { NavLink } from 'react-router-dom';
 
 
@@ -46,7 +45,7 @@ class Bandeau extends Component{
     //fonction qui rend le prochain match
     nextMatch(){
         for (let i=0;i<this.state.donnees.length;i++){
-            if(new Date(this.state.donnees[i].DateMatch)>new Date){
+            if(new Date(this.state.donnees[i].DateMatch)>new Date()){
                return(i)
             }
         }    

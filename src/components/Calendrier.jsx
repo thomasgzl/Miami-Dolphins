@@ -45,7 +45,7 @@ class Calendrier extends Component{
     
     nextMatch(){
         for (let i=0;i<this.state.donnees.length;i++){
-            if(new Date(this.state.donnees[i].DateMatch)>new Date){
+            if(new Date(this.state.donnees[i].DateMatch)>new Date()){
                 return(i)
             }
         }    
@@ -72,16 +72,16 @@ class Calendrier extends Component{
                                 </div> 
                         </Col>
                         <Col lg="3" xs="4" className="colonne2">
-                            <p> <img className="imgCalendrier" src={logo[match.EquipeA]}></img> {match.EquipeA} </p>
+                            <p> <img className="imgCalendrier" src={logo[match.EquipeA]} alt="logoequipeA"></img> {match.EquipeA} </p>
                         </Col>
                         <Col lg="2" xs="4" className="colonne3">
                             <p> {match.Score} </p>
                         </Col>
                         <Col lg="3" xs="4" className="colonne4">
-                            <p> {match.EquipeB}<img className="imgCalendrier" src={logo[match.EquipeB]} ></img> </p>
+                            <p> {match.EquipeB}<img className="imgCalendrier" src={logo[match.EquipeB]} alt="logoequipeB"></img> </p>
                         </Col> 
                         <Col lg="2" className="colonne5">
-                            <p>  <img className="imgCalendrier" src={chaineTV[match.Chaine]}></img> </p>
+                            <p>  <img className="imgCalendrier" src={chaineTV[match.Chaine]} alt="logoChaine"></img> </p>
                         </Col> 
                     </Row>)
                 }

@@ -130,7 +130,7 @@ class Historique extends Component{
                             <div className="allerAgauche">
                                 <div onMouseMove={()=>this.onHoverPrev()}
                                     onMouseOut={()=>this.onHoverPrevOut()}
-                                ><img src="https://image.noelshack.com/fichiers/2018/42/3/1539780298-transparent-image8.png" width='100px' height='300px'></img></div>
+                                ><img src="https://image.noelshack.com/fichiers/2018/42/3/1539780298-transparent-image8.png" width='100px' height='300px' alt="1963club"></img></div>
                             </div>
                          </Col>
                         <Col lg={8}>
@@ -146,7 +146,7 @@ class Historique extends Component{
                             <div className="allerAdroite">
                                 <div onMouseMove={()=>this.onHoverNext()}
                                     onMouseOut={()=>this.onHoverPrevOut()}
-                                ><img src="https://image.noelshack.com/fichiers/2018/42/3/1539780298-transparent-image8.png" width='100px' height='300px'></img></div>
+                                ><img src="https://image.noelshack.com/fichiers/2018/42/3/1539780298-transparent-image8.png" width='100px' height='300px' alt="1968club"></img></div>
                             </div>
                         </Col>
                         
