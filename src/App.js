@@ -6,12 +6,14 @@ import Bandeau from './components/Bandeau';
 import Footer from './components/Footer';
 import News from './components/News';
 import Home from './components/Home';
+import ScrollToTop from './components/ScrollTop';
 
 import { Route, Switch } from "react-router-dom";
 import NewsZoom from './components/NewsZoom';
 import Calendrier from './components/Calendrier';
 import Historique from './components/Historique';
 import Equipe from './components/Equipe';
+import ProfilJoueur from './components/ProfilJoueur';
 
 
 import AdminJoueurs from './components/AdminJoueurs';
@@ -87,6 +89,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <ScrollToTop/>
         <Bandeau aPasserDansBandeau={this.state.donneesPourCalendrier}/>
         <NavbarMain />   
                 <Switch>
@@ -98,6 +101,8 @@ class App extends Component {
                   <Route path="/calendrier" render={()=><Calendrier aPasseracalendrier={this.state.donneesPourCalendrier}/>}/>
                   <Route path="/historique" component={Historique}/>
                   <Route path="/adminjoueurs" component={AdminJoueurs}/>
+                  <Route path="/equipe" component={Equipe}/>
+                  <Route path="/profiljoueur" component={ProfilJoueur}/>
                   <Route path="/admincalendrier" component={AdminCalendrier}/>
                 </Switch>
          <Footer />

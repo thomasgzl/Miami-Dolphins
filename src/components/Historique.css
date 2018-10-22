@@ -213,6 +213,8 @@
 .histoireDate{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 45px;
+    position:relative;
+    top:-30px;
 }
 
 .Historique-texteGauche{
@@ -228,7 +230,9 @@
 
 .BoutonsPrevNextHistorique{
   text-align: center;
-  position:relative;
+  justify-content: center;
+  position:absolute;
+  left:540px;
   z-index: 12;
 }
 
@@ -236,9 +240,6 @@
     height:75%;
 }
 
-.histoireDate{
-    display: none;
-}
 
 
 @media (max-width: 640px) {
