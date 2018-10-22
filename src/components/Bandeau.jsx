@@ -77,6 +77,17 @@ class Bandeau extends Component{
                         </Row>
                     </Col>
                     <Col lg="9" className="Bandeau_sponsors" >
+                    <Example />
+                        <Container fluid>
+                        <Row  className="sponsors">
+                        <Col lg={6} className="sponsorFont">
+                        <p>SPONSORISÉ PAR</p>
+                        </Col>
+                        <Col lg={6} className="sponsor">
+                        <a href="http://www.hardrock.com/" target="_blank"> <img src="https://i.imgur.com/qDItHmf.png" alt="logoSponsor" /> </a>
+                        </Col>
+                        </Row>
+                        </Container>
                     </Col>
                 
                 </Row>

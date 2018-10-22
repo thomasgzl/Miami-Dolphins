@@ -11,9 +11,9 @@ const logo = {
 }
 
 const chaineTV = {
-    "Eleven": "https://image.noelshack.com/fichiers/2018/41/4/1539278965-eleven-chaine-1.png",
-    "Bein":"https://image.noelshack.com/fichiers/2018/41/4/1539278965-bein-chaine.jpg",
-    "Espn":"https://image.noelshack.com/fichiers/2018/41/4/1539278965-espn-chaine.png"
+    "Eleven": "https://i.imgur.com/Fu7AZ2Z.png",
+    "Bein":"https://i.imgur.com/u2QvQzT.png",
+    "Espn":"https://i.imgur.com/eifpW1O.png"
 
 }
 

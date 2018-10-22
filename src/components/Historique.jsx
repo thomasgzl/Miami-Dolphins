@@ -113,56 +113,57 @@ class Historique extends Component{
         const {historique,property}=this.state;
         return(
             <Container fluid>
-                <div className="Historique-page">
-                    
-                    <h1>L'historique du club</h1>
-                   
-                <Row>
-                <Col lg={3}className="Historique-texteGauche">
-                    <p>No pro football club in history ever advanced more quickly from the first-year dregs every expansion team faces to the ultimate achievement in its sport than the Miami Dolphins did in the six-year period between 1966 and 1972. In 1966, they began their pro football life as the ninth member of the American Football League. Six years later, Miami became the only National Football League team ever to record a perfect season... </p>
-                </Col>
+                <div >
+                        <Row className="Historique-page">
+                                <Col lg={3}className="Historique-texteGauche">
+                                    <p>No pro football club in history ever advanced more quickly from the first-year dregs every expansion team faces to the ultimate achievement in its sport than the Miami Dolphins did in the six-year period between 1966 and 1972. In 1966, they began their pro football life as the ninth member of the American Football League. Six years later, Miami became the only National Football League team ever to record a perfect season... </p>
+                                </Col>
 
-              
-              
-                <Col lg={8} className="Historique-carousel">
-                     <Row>
-                         <Col lg={2}>
-                            <div className="allerAgauche">
-                                <div onMouseMove={()=>this.onHoverPrev()}
-                                    onMouseOut={()=>this.onHoverPrevOut()}
-                                ><img src="https://image.noelshack.com/fichiers/2018/42/3/1539780298-transparent-image8.png" width='100px' height='300px' alt="1963club"></img></div>
-                            </div>
-                         </Col>
-                        <Col lg={8}>
-                                <div className="global-slider">
-                                    <div className={`Card-slider active-slide-${property.index}`}>
-                                        <div className="Card-slider-wrapper" style={{'transform':`translateX(-${property.index*(100/historique.length)}%)`}}>
-                                            {historique.map(property=><HistoryCard key={property._id} property={property}/>)}
-                                        </div>
+                            
+                                <Col lg={8} className="Historique-carousel">
+                                <h1 className="Historique-titre">L'historique du club</h1>
+
+                                    <Row className="rowCarouselImage">
+                                        <Col lg={2}>
+                                            <div className="allerAgauche">
+                                                <div onMouseMove={()=>this.onHoverPrev()}
+                                                    onMouseOut={()=>this.onHoverPrevOut()}
+                                                ><img src="https://image.noelshack.com/fichiers/2018/42/3/1539780298-transparent-image8.png" width='100px' height='300px'></img></div>
+                                            </div>
+                                        </Col>
+                                        <Col lg={8}>
+                                                <div className="global-slider">
+                                                    <div className={`Card-slider active-slide-${property.index}`}>
+                                                        <div className="Card-slider-wrapper" style={{'transform':`translateX(-${property.index*(100/historique.length)}%)`}}>
+                                                            {historique.map(property=><HistoryCard key={property._id} property={property}/>)}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </Col>
+                                        <Col lg={2}>
+                                            <div className="allerAdroite">
+                                                <div onMouseMove={()=>this.onHoverNext()}
+                                                    onMouseOut={()=>this.onHoverPrevOut()}
+                                                ><img src="https://image.noelshack.com/fichiers/2018/42/3/1539780298-transparent-image8.png" width='100px' height='300px'></img></div>
+                                            </div>
+                                        </Col>
+                                        
+                                    </Row>
+                                    <div className="BoutonsPrevNextHistorique">
+                                        <Button className="boutonsPrev"
+                                                onClick={()=> this.prevProperty()}
+                                                disabled={property.index ===0}
+                                                >Prev</Button>
+                                            <Button className="boutonsNext"
+                                                onClick={()=> this.nextProperty()}
+                                                disabled={property.index ===
+                                                data.historique.length-1}
+                                                >Next</Button>
                                     </div>
-                                </div>
-                        </Col>
-                        <Col lg={2}>
-                            <div className="allerAdroite">
-                                <div onMouseMove={()=>this.onHoverNext()}
-                                    onMouseOut={()=>this.onHoverPrevOut()}
-                                ><img src="https://image.noelshack.com/fichiers/2018/42/3/1539780298-transparent-image8.png" width='100px' height='300px' alt="1968club"></img></div>
-                            </div>
-                        </Col>
-                        
-                </Row>
-                <Button className="boutonsPrev"
-                        onClick={()=> this.prevProperty()}
-                        disabled={property.index ===0}
-                        >Prev</Button>
-                    <Button className="boutonsNext"
-                        onClick={()=> this.nextProperty()}
-                        disabled={property.index ===
-                        data.historique.length-1}
-                        >Next</Button>
-                </Col>
+                                    
+                                </Col>
                 
-                </Row>
+                        </Row>
               
                 </div>       
                 </Container>

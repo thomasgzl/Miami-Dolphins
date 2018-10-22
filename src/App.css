@@ -1,3 +1,7 @@
+.App {
+    font-family: 'Exo 2', serif;
+}
+
 .background {
     background-image: url('https://i.imgur.com/HE65fOn.png');
     padding-bottom: 300px;
