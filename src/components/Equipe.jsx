@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'reactstrap';
 import './Equipe.css';
 import { NavLink } from 'react-router-dom';
 
-
 class Equipe extends Component {
     constructor(props) {
         super(props);
@@ -20,9 +19,6 @@ class Equipe extends Component {
             titre: "Equipe Générale",
         };
     }
-
-
-
 
     componentDidMount() {
 
@@ -63,9 +59,6 @@ class Equipe extends Component {
     }
 
 
-
-
-
     render() {
         if (this.state.isloading) {
             return (
@@ -73,7 +66,7 @@ class Equipe extends Component {
         }
 
         else {
-
+           
             return (
 
                 <div className="backgroundPlayers">
@@ -122,7 +115,6 @@ class Equipe extends Component {
                                 </Col>
                             )}
                         </Row>
-
 
 
                     </Container>
