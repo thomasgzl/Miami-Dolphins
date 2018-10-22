@@ -6,7 +6,6 @@ import Bandeau from './components/Bandeau';
 import Footer from './components/Footer';
 import News from './components/News';
 import Home from './components/Home';
-import ScrollToTop from './components/ScrollTop';
 
 import { Route, Switch } from "react-router-dom";
 import NewsZoom from './components/NewsZoom';
@@ -89,7 +88,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <ScrollToTop/>
         <Bandeau aPasserDansBandeau={this.state.donneesPourCalendrier}/>
         <NavbarMain />   
                 <Switch>
