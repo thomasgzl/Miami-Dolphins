@@ -83,7 +83,7 @@ class NewsZoom extends Component {
 
   render() {
     return (
-      <div>
+      <div className="backgroundNewsZoom">
         <Container fluid>
           <Row className="background_news_zoom">
             <Col lg={5} sm={12}>
