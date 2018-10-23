@@ -14,63 +14,69 @@ class Bandeau extends Component{
         this.orderMatch=this.orderMatch.bind(this)
         this.nextMatch=this.nextMatch.bind(this)
         this.state={
-            donnees:props.aPasserDansBandeau,
-            nextEvent:
-                {id:"00006",
-                DateMatch:"2017-10-15T13:49:44.725Z",
-                EquipeA:"Jets",
-                EquipeB:"Bears",
-                Score:"38-41",
-                Chaine:"Espn"}
+            nextEvent:{
+                }
             }
     }
-    /* charger les fonctions tri par date */
-    componentDidMount(){
-        this.setState({
-            donnees:this.orderMatch(this.state.donnees), 
-            nextEvent:this.state.donnees[this.nextMatch()]
-        })
-    } 
-/* fonction tri par date croissante */
-    orderMatch(){
+    /* fonction tri par date croissante */
+    orderMatch(arg){
         let da='';
         let db='';
+
         function SortTime(a,b){ 
-            da=new Date(a.DateMatch);
-            db=new Date(b.DateMatch);
+            da=new Date(a.dateMatch);
+            db=new Date(b.dateMatch);
             return (da>db)?1:-1;
             }
-        let result=this.state.donnees.sort(SortTime);
+        let result=arg.sort(SortTime);
+        //console.log('fonction ordermatch executée')
+
         return result;
         }
     //fonction qui rend le prochain match
-    nextMatch(){
-        for (let i=0;i<this.state.donnees.length;i++){
-            if(new Date(this.state.donnees[i].DateMatch)>new Date){
+    nextMatch(arg){
+        for (let i=0;i<arg.length;i++){
+            if(new Date(arg[i].dateMatch)>new Date){
                return(i)
             }
         }    
     }
-
     
+    /* charger les fonctions tri par date */
+    componentDidMount(){
+        fetch("http://92.175.11.66:3000/reaction/api/calendriers")
+        .then(response  =>  response.json())
+        //.then(step1=>console.log(step1,'step1'))
+        .then(data  => this.orderMatch(data))
+        //.then(step2=>console.log(step2,'step2'))
+        .then(trie => trie[this.nextMatch(trie)])
+        //.then(step3=>console.log(step3,'step3'))
+        .then(acharger=>{
+            this.setState({
+              nextEvent:acharger,
+            });
+        })
+    }
     
+ 
 
     render(){
+        console.log(this.state.nextEvent,'le prochain event dans render')
         return(
             <Container fluid>
                 <Row  className="Bandeau">
                     <Col lg="3" xs="12" className="Bandeau_calendrier">
                         <Row  >
                             <Col >
-                                <h6 className="m-0">{this.state.nextEvent.DateMatch.substring(8,10)}</h6>     
-                                <p>{tab_mois[this.state.nextEvent.DateMatch.substring(5,7)]}</p>  
+                                <h6 className="m-0">{this.state.nextEvent.dateMatch.substring(8,10)}</h6>     
+                                <p>{tab_mois[this.state.nextEvent.dateMatch.substring(5,7)]}</p>  
                             </Col>
                             <Col >
-                                <p className="m-0 domicile">{this.state.nextEvent.EquipeA}</p>  
-                                <p>{this.state.nextEvent.EquipeB}</p>
+                                <p className="m-0 domicile">{this.state.nextEvent.equipeA}</p>  
+                                <p>{this.state.nextEvent.equipeB}</p>
                             </Col>
                             <Col >
-                                <h3>{this.state.nextEvent.DateMatch.substring(11,16)}</h3>
+                                <h3>{this.state.nextEvent.dateMatch.substring(11,16)}</h3>
                             </Col>
                             <Col >
                             <NavLink to="/Calendrier"> <button className="bouton"> + </button> </NavLink>  

@@ -6,7 +6,7 @@ const logo = {
     "Jets":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-jets-equipe.png", 
     "Patriots":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-patriots.png",
     "Bears":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-bears.png",
-    "Miami":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-miamidolphins.png",
+    "Dolphins":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-miamidolphins.png",
     "Bengals":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-bengals.png"
 }
 
@@ -24,64 +24,68 @@ const chaineTV = {
 class Calendrier extends Component{
     constructor(props){
         super(props)
-        this.state={donnees:props.aPasseracalendrier}
-        this.nextMatch=this.nextMatch.bind(this)
-        this.orderMatch=this.orderMatch.bind(this)
+        this.state={donneesCalendrier:[]}
+        //console.log(this.state.donnees,'dans constructor de calendrier')
+        //console.log(this.props.apasser,"dans constructor,props de app")
     }
-    
     
     orderMatch(){
         let da='';
         let db='';
 
         function SortTime(a,b){ 
-            da=new Date(a.DateMatch);
-            db=new Date(b.DateMatch);
+            da=new Date(a.dateMatch);
+            db=new Date(b.dateMatch);
             return (da>db)?1:-1;
             }
-        let result=this.state.donnees.sort(SortTime);
+        let result=this.state.donneesCalendrier.sort(SortTime);
+        //console.log('fonction ordermatch executée')
+
         return result;
         }
     
-    nextMatch(){
-        for (let i=0;i<this.state.donnees.length;i++){
-            if(new Date(this.state.donnees[i].DateMatch)>new Date){
-                return(i)
-            }
-        }    
-    }
+   
 
     componentDidMount(){
+            fetch("http://92.175.11.66:3000/reaction/api/calendriers")
+            .then(response  =>  response.json())
+            .then(data  => {
+              this.setState({
+                donneesCalendrier:data,
+              });
+          });
+        const matchTrie=this.orderMatch;
         this.setState({
-            donnees:this.orderMatch(this.state.donnees), 
+            donnees:matchTrie,
         })
+        
     } 
 
-    render(){
+    render (){
         return(
             <div className="GlobalCalendrier">
                 <Container >
                     <h1 className="Calendrier-title">Calendrier des matchs</h1>
                     <div className="Calendrier">
-                <ul>
-                    {this.state.donnees.map((match)=>
+                <ul className="Calendrier_contour">
+                    {this.state.donneesCalendrier.map((match)=>
                     <Row className="Calendrier_ligneTableau">
                         <Col lg="2" xs="12" className="colonne1">
                                 <div>
-                                        <p className="DateMatchDesktop">{match.DateMatch.substring(8,10)} {tab_mois[match.DateMatch.substring(5,7)]} {match.DateMatch.substring(0,4)}</p>
+                                        <p className="dateMatchDesktop">{match.dateMatch.substring(8,10)} {tab_mois[match.dateMatch.substring(5,7)]} {match.dateMatch.substring(0,4)}</p>
                                 </div> 
                         </Col>
                         <Col lg="3" xs="4" className="colonne2">
-                            <p> <img className="imgCalendrier" src={logo[match.EquipeA]}></img> {match.EquipeA} </p>
+                            <p> <img className="imgCalendrier" src={logo[match.equipeA]}></img> {match.equipeA} </p>
                         </Col>
                         <Col lg="2" xs="4" className="colonne3">
-                            <p> {match.Score} </p>
+                            <p> {match.score} </p>
                         </Col>
                         <Col lg="3" xs="4" className="colonne4">
-                            <p> {match.EquipeB}<img className="imgCalendrier" src={logo[match.EquipeB]} ></img> </p>
+                            <p> {match.equipeB}<img className="imgCalendrier" src={logo[match.equipeB]} ></img> </p>
                         </Col> 
                         <Col lg="2" className="colonne5">
-                            <p>  <img className="imgCalendrier" src={chaineTV[match.Chaine]}></img> </p>
+                            <p>  <img className="imgCalendrier" src={chaineTV[match.chaine]}></img> </p>
                         </Col> 
                     </Row>)
                 }
@@ -91,7 +95,8 @@ class Calendrier extends Component{
             </div>
         )
     }
-    
+
+
 }
 
 export default Calendrier;
