@@ -15,6 +15,7 @@ import Historique from './components/Historique';
 import Equipe from './components/Equipe';
 
 import AdminJoueurs from './components/AdminJoueurs';
+import AdminCalendrier from './components/AdminCalendrier';
 
 const dataCalendrier = [
   {
@@ -102,20 +103,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Bandeau aPasserDansBandeau={this.state.donneesPourCalendrier} />
-        <NavbarMain />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/historique" component={Historique} />
-          <Route path="/news" component={News} />
-          <Route path="/equipe" component={Equipe} />
-          <Route path="/newszoom" component={NewsZoom} />
-          <Route path="/calendrier" render={() => <Calendrier aPasseracalendrier={this.state.donneesPourCalendrier} />} />
-          <Route path="/adminjoueurs" component={AdminJoueurs} />
-          <Route path="/profiljoueur" component={ProfilJoueur} />
-        </Switch>
-        <Footer />
-      </div>
+        <Bandeau aPasserDansBandeau={this.state.donneesPourCalendrier}/>
+        <NavbarMain />   
+                <Switch>
+                  <Route exact path="/" component={Home}/>
+                  <Route path="/historique" component={Historique}/>
+                  <Route path="/equipe" component={Equipe}/>
+                  <Route path="/news" component={News}/>
+                  <Route path="/newszoom/:id" component={NewsZoom}/>
+                  <Route path="/calendrier" render={()=><Calendrier aPasseracalendrier={this.state.donneesPourCalendrier}/>}/>
+                  <Route path="/historique" component={Historique}/>
+                  <Route path="/adminjoueurs" component={AdminJoueurs}/>
+                  <Route path="/equipe" component={Equipe}/>
+                  <Route path="/profiljoueur" component={ProfilJoueur}/>
+                  <Route path="/admincalendrier" component={AdminCalendrier}/>
+                </Switch>
+         <Footer />
+         </div>    
     );
   }
 }
