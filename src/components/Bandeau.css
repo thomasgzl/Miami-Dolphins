@@ -19,7 +19,7 @@
 
 .bouton:hover {
     color: #f5811f;
-    transform: rotate(46deg) scale(3);
+    transform: rotate(90deg) scale(2);
     transition: transform 0.6s; 
     outline: none;
 }

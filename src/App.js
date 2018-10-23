@@ -29,9 +29,10 @@ class App extends Component {
                 <Switch>
                   <Route exact path="/" component={Home}/>
                   <Route path="/historique" component={Historique}/>
+                  <Route path="/equipe" component={Equipe}/>
                   <Route path="/news" component={News}/>
-                  <Route path="/newszoom" component={NewsZoom}/>
                   <Route path="/calendrier" component={Calendrier}/>  
+                  <Route path="/newszoom/:id" component={NewsZoom}/>
                   <Route path="/historique" component={Historique}/>
                   <Route path="/adminjoueurs" component={AdminJoueurs}/>
                   <Route path="/equipe" component={Equipe}/>
