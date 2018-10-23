@@ -43,18 +43,8 @@
   text-decoration: none;
   color: #f68220;
 }
-
-.backgroundNews {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 1%;
-  margin-top: 2%;
-  margin-left: 2%;
-  margin-right: 2%;
-  margin-bottom: 2%;
-  padding-top: 2%;
-}
-.background_news_zoom {
-  background-color: rgba(255, 255, 255, 0.95);
+.backgroundNewsZoom {
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 1%;
   margin-top: 2%;
   margin-left: 2%;
@@ -63,6 +53,7 @@
   padding-top: 2%;
   padding-bottom: 2%;
 }
+
 .button_news_zoom {
   
   padding-top: 60px;
