@@ -9,9 +9,29 @@
     padding-left: 2%;
     padding-right: 2%;
     padding-bottom: 2%;
+    height:500px;
+    position: absolute;
+    top:300px;
+    left:0;
   }
   
-  .PremiereLigne {
-    padding-bottom: 2%;
-    padding-top: 2%;
+  .Admin_EquipeB,.Admin_EquipeA,.Admin_ChaineTV{
+      margin-right:30px;
+      position: relative;
+      top:200px;
+  }
+
+  .Admin_DatePicker{
+      position: relative;
+      top:0px;
+  }
+
+  .Admin_inputs{
+      position:relative;
+      top:250px;
+  }
+
+  .Admin_Boutons{
+      position:relative;
+      top:400px;
   }

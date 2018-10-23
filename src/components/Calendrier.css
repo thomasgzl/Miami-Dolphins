@@ -1,3 +1,8 @@
+.Calendrier_contour{
+    padding-right:50px;
+    padding-left:50px;
+}
+
 .GlobalCalendrier {
         background-color: rgba(255, 255, 255, 0.95);
         border-radius: 1%;
@@ -91,6 +96,12 @@
 
 
 @media (max-width: 640px) {
+
+    .Calendrier_contour{
+        padding-right:10px;
+        padding-left:10px;
+    }
+
     .colonne5, .colonne1:after, .colonne4:after  {
         display: none;
     }

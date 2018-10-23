@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
+import {Link} from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
 import {
   InputGroup,
@@ -24,8 +25,11 @@ class AdminCalendrier extends Component {
         this.toggleDropDown = this.toggleDropDown.bind(this);
         this.state = {
           dropdownOpen: false,
-          splitButtonOpen: false
+          splitButtonOpen: false,
+          recudeAPI:''
+        
         };
+        console.log(this.state.recudeAPI,"ca state à mort")
       }
     
       toggleDropDown() {
@@ -34,13 +38,32 @@ class AdminCalendrier extends Component {
         });
       }
 
+
+   
+   
+
     render() { 
+        
         return ( 
 
                 <div className="AdminCalendrier">
+                    <h1>Gestion du calendrier</h1>
+                     <div className="Admin_listeChoix">
+                     <Link to ={{
+                            pathname: "/Calendrier", 
+                            state: { 
+                                nouveau:this.state.recudeAPI, 
+                            }
+                            
+                            
+                        }} >maj calendrier
+                        </Link>
+                            
+                            
+
                             <InputGroup>
                                 <InputGroupButtonDropdown addonType="append" isOpen={this.state.dropdownOpen} toggle={this.toggleDropDown}>
-                                       <div className="Calendrier-EquipeA">
+                                       <div className="Admin_EquipeA">
                                             <DropdownToggle caret>
                                                 EquipeA
                                             </DropdownToggle>
@@ -54,7 +77,7 @@ class AdminCalendrier extends Component {
                                                     <DropdownItem>Patriots</DropdownItem>
                                             </DropdownMenu>
                                         </div>
-                                        <div className="Calendrier-EquipeB">
+                                        <div className="Admin_EquipeB">
                                             <DropdownToggle caret>
                                                 EquipeB
                                             </DropdownToggle>
@@ -68,7 +91,7 @@ class AdminCalendrier extends Component {
                                                     <DropdownItem>Patriots</DropdownItem>
                                             </DropdownMenu>
                                         </div>
-                                        <div className="Calendrier-ChaineTV">
+                                        <div className="Admin_ChaineTV">
                                             <DropdownToggle caret>
                                                 Chaine TV
                                             </DropdownToggle>
@@ -80,39 +103,43 @@ class AdminCalendrier extends Component {
                                                     <DropdownItem>Eleven</DropdownItem>
                                             </DropdownMenu>
                                         </div>
-                                        <div className="Calendrier-DateMatch">
-                                            <DatePicker
-                                                selected={this.state.startDate}
-                                                onChange={this.handleChange}
-                                                showTimeSelect
-                                                timeFormat="HH:mm"
-                                                timeIntervals={15}
-                                                dateFormat="LLL"
-                                                timeCaption="time"/>
-                                        </div>
-                                            <Input placeholder="Score teamA"/>
-                                            <Input placeholder="Score teamB"/>
-
                                 </InputGroupButtonDropdown>
-                             </InputGroup>
+                            </InputGroup>
+                        </div>
+                         <div className="Admin_DatePicker">
+                                 <DatePicker
+                                      selected={this.state.startDate}
+                                       onChange={this.handleChange}
+                                       showTimeSelect
+                                        timeFormat="HH:mm"
+                                        timeIntervals={15}
+                                        dateFormat="LLL"
+                                       timeCaption="time"/>
+                        </div>
+                        <div className="Admin_inputs">
+                                <InputGroup>
 
-                   
-                        <InputGroup>
-                            <InputGroupAddon addonType="prepend">['']</InputGroupAddon>
-                            <Input placeholder="Nom/Prénom" />
+                                            <Input placeholder="Equipe A"/>
+                                            <Input placeholder="Equipe B"/>
+                                            <Input placeholder="Score Equipe A"/>
+                                            <Input placeholder="Score Equipe B"/>
+                                            <Input placeholder="Date du match"/>
+                                            <Input placeholder="Chaine TV"/>
+                                 </InputGroup>
+                         </div>
+
+
                             
-                        </InputGroup>
-             
-
-
-                            <Button color="success">Ajouter</Button>
-                            <Button color="danger">X</Button>
-                            <Button color="warning">Modifier</Button>
-
+                         <div className="Admin_Boutons">
+            
+                                <Button color="success">Ajouter</Button>
+                                <Button color="danger">X</Button>
+                                <Button color="warning">Modifier</Button>
+                         </div>
                         
 
 
-                        </div>
+                   </div>
 
          );
     }
