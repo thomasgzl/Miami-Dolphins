@@ -4,7 +4,7 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption
+
 } from 'reactstrap';
 import './Home.css';
 import { NavLink } from 'react-router-dom';
@@ -12,15 +12,15 @@ import { NavLink } from 'react-router-dom';
 const items = [
   {
     src: "Bobby McCain, l'homme volant",
-    caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet leo velit. Aliquam mattis finibus consequat. Suspendisse ullamcorper nunc ligula, fermentum ullamcorper tellus iaculis imperdiet. Sed est enim, faucibus quis suscipit quis, interdum sit amet ligula. Maecenas imperdiet tellus purus, eu condimentum nibh tincidunt sed. Curabitur in risus vel dolor auctor bibendum. Quisque viverra nisl id porta dapibus. Cras aliquam at est vitae condimentum. Donec nec consequat tellus, vel scelerisque elit. Pellentesque vitae justo tincidunt, rutrum lacus eu, elementum ipsum."
+    caption: "Bobby McCain le récidiviste. On joue la 19 ème minute quand Bobby McCain s'envole litéralement par dessus la défense des Broncos pour inscrire le premier Touchdown de la partie.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pharetra, ex sed vulputate efficitur, nisl elit consectetur augue, porttitor aliquet arcu eros sed ante. Sed odio dolor, malesuada nec velit quis, convallis scelerisque tellus. Curabitur interdum nibh et arcu cursus eleifend. Donec eu sollicitudin turpis. Proin placerat rutrum odio, sed commodo erat. Aliquam non mi eros."
   },
   {
-    src: "Le Hard Rock Stadium fait peau neuve !",
-    caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet leo velit. Aliquam mattis finibus consequat. Suspendisse ullamcorper nunc ligula, fermentum ullamcorper tellus iaculis imperdiet. Sed est enim, faucibus quis suscipit quis, interdum sit amet ligula. Maecenas imperdiet tellus purus, eu condimentum nibh tincidunt sed. Curabitur in risus vel dolor auctor bibendum. Quisque viverra nisl id porta dapibus. Cras aliquam at est vitae condimentum. Donec nec consequat tellus, vel scelerisque elit. Pellentesque vitae justo tincidunt, rutrum lacus eu, elementum ipsum."
+    src: "Huitième Touchdown pour Kenyan Drake",
+    caption: "Kenyan Drake enflamme les statistiques de la ligue cette saison avec déjà son huitième Touchdown. Aliquam mattis finibus consequat. Suspendisse ullamcorper nunc ligula, fermentum ullamcorper tellus iaculis imperdiet. Sed est enim, faucibus quis suscipit quis, interdum sit amet ligula. Maecenas imperdiet tellus purus, eu condimentum nibh tincidunt sed. Curabitur in risus vel dolor auctor bibendum. Quisque viverra nisl id porta dapibus. Cras aliquam at est vitae condimentum. Donec nec consequat tellus, vel scelerisque elit. Pellentesque vitae justo tincidunt, rutrum lacus eu, elementum ipsum."
   },
   {
-    src: "Adam Mer-Gase, le nouveau coach !",
-    caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet leo velit. Aliquam mattis finibus consequat. Suspendisse ullamcorper nunc ligula, fermentum ullamcorper tellus iaculis imperdiet. Sed est enim, faucibus quis suscipit quis, interdum sit amet ligula. Maecenas imperdiet tellus purus, eu condimentum nibh tincidunt sed. Curabitur in risus vel dolor auctor bibendum. Quisque viverra nisl id porta dapibus. Cras aliquam at est vitae condimentum. Donec nec consequat tellus, vel scelerisque elit. Pellentesque vitae justo tincidunt, rutrum lacus eu, elementum ipsum."
+    src: "Adam Gase, le nouveau coach !",
+    caption: "Parmis les nouveautés de cette saison à venir c'est peut être la plus excitante, l'arrivée du nouveau coach qui sucite quelques intérrogations chez nos supporters. Suspendisse ullamcorper nunc ligula, fermentum ullamcorper tellus iaculis imperdiet. Sed est enim, faucibus quis suscipit quis, interdum sit amet ligula. Maecenas imperdiet tellus purus, eu condimentum nibh tincidunt sed. Curabitur in risus vel dolor auctor bibendum. Quisque viverra nisl id porta dapibus. Cras aliquam at est vitae condimentum. Donec nec consequat tellus, vel scelerisque elit."
   }
 ];
 
@@ -74,7 +74,6 @@ class CarouselHome extends Component {
         >
           <h1 className="TitreCarousel">{item.src}</h1>
           <p className="TextCarousel"> {item.caption} </p>
-          <NavLink to="/newszoom" className="linkNav"><button className="BoutonCarousel">Voir l'article</button></NavLink>
         </CarouselItem>
       );
     });
