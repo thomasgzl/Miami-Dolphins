@@ -40,9 +40,14 @@ margin-bottom: 3%;
 
 
 .BoutonIndiv {
-
+background-color: rgba(01, 86, 121, 0.7);
 align-items: center;
+color: white;
+margin-right: 1%;
+}
 
+.BoutonIndiv:hover {
+    background-color: #fc6e16d8;
 }
 .image_joueur {
 height: 100%;
@@ -60,6 +65,7 @@ padding-bottom: 1px;
 position: center;
 border: 3px solid #fc6e16;
 border-radius: 3px;
+background: url(http://image.noelshack.com/fichiers/2018/43/3/1540390668-logoequipejj.png);
 background-color: rgba(255, 255, 255, 0.7);
 padding: 0px;
 transition: transform 1s;
@@ -76,4 +82,8 @@ margin-bottom: 0px;
 div.Colonne-player {
 margin: 2px;
 margin-right: 0px;
+}
+
+.numero_player {
+    color: #fc6e16;
 }
