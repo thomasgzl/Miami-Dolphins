@@ -57,8 +57,7 @@ class Equipe extends Component {
         this.state.liste.sort((a, b) => (a.lastName > b.lastName) - (a.lastName < b.lastName));
         this.setState({ liste2: this.state.liste, titre: "Equipe Ordre Alphabétique" })
     }
-
-
+  
     render() {
         if (this.state.isloading) {
             return (
@@ -74,7 +73,6 @@ class Equipe extends Component {
 
                         <h2 className="titre_poste_dynamique">{this.state.titre}</h2>
                     </div>
-
 
                     <Container className="AllPlayer" fluid>
 

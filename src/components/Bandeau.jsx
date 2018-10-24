@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import './Bandeau.css';
 import { Container, Row, Col } from 'reactstrap';
-import Example from './CarouselBandeau';
 import { NavLink } from 'react-router-dom';
 
 
@@ -84,7 +83,6 @@ class Bandeau extends Component{
                         </Row>
                     </Col>
                     <Col lg="9" className="Bandeau_sponsors" >
-                    <Example />
                         <Container fluid>
                         <Row  className="sponsors">
                         <Col lg={6} className="sponsorFont">
