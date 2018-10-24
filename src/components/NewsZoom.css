@@ -2,6 +2,13 @@
   width: 100%;
   display: flex;
   text-align: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.paragraphe_news {
+  color: white;
 }
 .flyM {
   display: flex;
@@ -44,7 +51,7 @@
   color: #f68220;
 }
 .backgroundNewsZoom {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(01, 86, 121, 0.7);
   border-radius: 1%;
   margin-top: 2%;
   margin-left: 2%;
@@ -55,16 +62,21 @@
 }
 
 .button_news_zoom {
-  
-  padding-top: 60px;
+  margin-top: 40px;
   display:flex;
   justify-content: center;
-}
-.button1 {
-  margin-right: 40px;
+  margin-left: 40%;
   background-color: #F57700!important;
 }
-.button2 {
-  margin-right: 40px;
-  background-color: #008B92!important;
+
+.btn {
+  background-color: #F57700!important;
+  text-decoration: none;
+  
+}
+
+.btn:hover {
+  background-color: white!important;
+  color: #F57700!important;
+  text-decoration: none!important;
 }
