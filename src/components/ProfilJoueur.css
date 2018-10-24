@@ -37,7 +37,8 @@
 }
 
 .categorie {
-    font-weight: bold;    
+    font-weight: bold; 
+    font-size : 1.2em;   
 }
 
 .tableau_stats {
@@ -45,11 +46,11 @@
 }
 
 th {
-    font-size : 0.9em;
+    font-size : 1em;
 }
 
 td {
-    font-size: 0.8em;
+    font-size: 0.9em;
     text-align: left;
 }
 
