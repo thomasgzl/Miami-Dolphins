@@ -62,16 +62,21 @@
 }
 
 .button_news_zoom {
-  
-  padding-top: 60px;
+  margin-top: 40px;
   display:flex;
   justify-content: center;
-}
-.button1 {
-  margin-right: 40px;
+  margin-left: 40%;
   background-color: #F57700!important;
 }
-.button2 {
-  margin-right: 40px;
-  background-color: #008B92!important;
+
+.btn {
+  background-color: #F57700!important;
+  text-decoration: none;
+  
+}
+
+.btn:hover {
+  background-color: white!important;
+  color: #F57700!important;
+  text-decoration: none!important;
 }
