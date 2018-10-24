@@ -104,9 +104,8 @@ class Equipe extends Component {
                                         <div className="container no gutter infos-joueur">
                                             <img className="image_joueur" src={joueur.image} alt="Player"></img>
                                             <div className="bloc-name info">
-                                                <p className="numero_player">{joueur.numero}</p>
-                                                <p className="name_player">{joueur.firstName}</p>
-                                                <p className="lastname_player">{joueur.lastName}</p>
+                                                <p className="numero_player">#{joueur.numero}</p>
+                                                <p className="name_player">{joueur.firstName} {joueur.lastName}</p>
                                             </div>
                                         </div>
                                     </NavLink>
