@@ -96,9 +96,9 @@ class ProfilJoueur extends Component {
                             <Collapse isOpen={this.state.collapse}>
                                 <Card>
                                     <CardBody className="body_card_joueur">
-                                        <p><span className="categorie">Yard:</span>{this.state.yard}</p>
-                                        <p><span className="categorie">Interceptions:</span>{this.state.int}</p>
-                                        <p><span className="categorie">Tacles:</span> {this.state.tackle}</p>
+                                        <p><span className="categorie">Yard : </span>{this.state.yard}</p>
+                                        <p><span className="categorie">Interceptions : </span>{this.state.int}</p>
+                                        <p><span className="categorie">Tacles : </span> {this.state.tackle}</p>
                                     </CardBody>
                                 </Card>
                             </Collapse>

@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 class Equipe extends Component {
     constructor(props) {
         super(props);
-        this.triquatterback = this.triquatterback.bind(this);
+        this.triquarterback = this.triquarterback.bind(this);
         this.triWideReceiver = this.triWideReceiver.bind(this);
         this.triGeneral = this.triGeneral.bind(this);
 
@@ -39,9 +39,9 @@ class Equipe extends Component {
     }
 
 
-    triquatterback() {
+    triquarterback() {
 
-        const listtriquatterback = this.state.liste.filter(s => s.poste === "Quaterback");
+        const listtriquatterback = this.state.liste.filter(s => s.poste === "Quarterback");
         this.setState({ liste2: listtriquatterback, titre: "Quarterback" });
     }
 
@@ -80,7 +80,7 @@ class Equipe extends Component {
 
                         <div className="Boutons">
 
-                            <button className="BoutonIndiv" onClick={() => this.triquatterback()}>Quatterback</button>
+                            <button className="BoutonIndiv" onClick={() => this.triquarterback()}>Quarterback</button>
                             <button className="BoutonIndiv" onClick={() => this.triWideReceiver()}>Wide Receiver</button>
                             <button className="BoutonIndiv" onClick={() => this.triGeneral()}>Tri Général</button>
                         </div>
@@ -115,12 +115,8 @@ class Equipe extends Component {
                                 </Col>
                             )}
                         </Row>
-
-
                     </Container>
-
                 </div>
-
             )
         }
     }
