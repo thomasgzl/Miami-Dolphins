@@ -51,4 +51,5 @@ class NewsZoom extends Component {
   }
 }
 
+
 export default NewsZoom;

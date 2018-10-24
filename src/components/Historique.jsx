@@ -119,7 +119,6 @@ class Historique extends Component{
                                     <p>No pro football club in history ever advanced more quickly from the first-year dregs every expansion team faces to the ultimate achievement in its sport than the Miami Dolphins did in the six-year period between 1966 and 1972. In 1966, they began their pro football life as the ninth member of the American Football League. Six years later, Miami became the only National Football League team ever to record a perfect season... </p>
                                 </Col>
 
-
                             
                                 <Col lg={8} className="Historique-carousel">
                                 <h1 className="Historique-titre">L'historique du club</h1>
