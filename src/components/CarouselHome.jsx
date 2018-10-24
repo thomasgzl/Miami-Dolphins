@@ -4,7 +4,7 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption
+
 } from 'reactstrap';
 import './Home.css';
 import { NavLink } from 'react-router-dom';

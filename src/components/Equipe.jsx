@@ -169,7 +169,7 @@ class Equipe extends Component {
             <div className="backgroundPlayers">
                 <div className="TitrePoste">
 
-                    <h2 className="titre_poste_dynamique">{this.state.titre}</h2>
+                    <h1 className="titre_poste_dynamique">{this.state.titre}</h1>
                 </div>
 
 
@@ -206,9 +206,7 @@ class Equipe extends Component {
                                     <div className="container no gutter infos-joueur">
                                         <img className="image_joueur" src={joueur.image} alt="Image player"></img>
                                         <div className="bloc-name info">
-                                            <p className="numero_player">{joueur.numero}</p>
-                                            <p className="name_player">{joueur.first_name}</p>
-                                            <p className="lastname_player">{joueur.last_name}</p>
+                                            <p className="numero_player">#{joueur.numero} {joueur.first_name} {joueur.last_name}</p>
                                         </div>
                                     </div>
                                 </NavLink>
