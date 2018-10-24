@@ -241,8 +241,9 @@
   text-align: center;
   justify-content: center;
   position:absolute;
-  left:540px;
+  left:510px;
   z-index: 12;
+  padding-top: 2%;
 }
 
 .rowCarouselImage{
