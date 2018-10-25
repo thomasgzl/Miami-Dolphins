@@ -1,0 +1,16 @@
+.admin_titre {
+    color: rgba(255, 255, 255, 0.836);
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+.admin_cards {
+    padding-bottom: 75px;
+}
+.card_title {
+    color: #1D5672;
+    font-size: 2em;
+    padding-bottom: 25px;
+}
+.card_body {
+    background-color: rgba(255, 255, 255, 0.800);
+}

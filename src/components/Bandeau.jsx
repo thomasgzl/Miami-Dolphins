@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import './Bandeau.css';
 import { Container, Row, Col } from 'reactstrap';
-import Example from './CarouselBandeau';
 import { NavLink } from 'react-router-dom';
 
 
@@ -13,10 +12,7 @@ class Bandeau extends Component{
         super(props)
         this.orderMatch=this.orderMatch.bind(this)
         this.nextMatch=this.nextMatch.bind(this)
-        this.state={
-            nextEvent:{
-                }
-            }
+        this.state={nextEvent:{dateMatch:"2018-09-14T11:49:44.000Z"}}
     }
     /* fonction tri par date croissante */
     orderMatch(arg){
@@ -34,9 +30,11 @@ class Bandeau extends Component{
         return result;
         }
     //fonction qui rend le prochain match
+
     nextMatch(arg){
         for (let i=0;i<arg.length;i++){
             if(new Date(arg[i].dateMatch)>new Date){
+            if(new Date(arg[i].dateMatch)>new Date()){
                return(i)
             }
         }    
@@ -67,24 +65,23 @@ class Bandeau extends Component{
                 <Row  className="Bandeau">
                     <Col lg="3" xs="12" className="Bandeau_calendrier">
                         <Row  >
-                            <Col >
+                            <Col xs="3" >
                                 <h6 className="m-0">{this.state.nextEvent.dateMatch.substring(8,10)}</h6>     
                                 <p>{tab_mois[this.state.nextEvent.dateMatch.substring(5,7)]}</p>  
                             </Col>
-                            <Col >
+                            <Col  xs="3" >
                                 <p className="m-0 domicile">{this.state.nextEvent.equipeA}</p>  
                                 <p>{this.state.nextEvent.equipeB}</p>
                             </Col>
-                            <Col >
+                            <Col  xs="4" >
                                 <h3>{this.state.nextEvent.dateMatch.substring(11,16)}</h3>
                             </Col>
-                            <Col >
+                            <Col  xs="1">
                             <NavLink to="/Calendrier"> <button className="bouton"> + </button> </NavLink>  
                             </Col>
                         </Row>
                     </Col>
-                    <Col lg="9" className="Bandeau_sponsors" >
-                    <Example />
+                    <Col lg="9" xs="0" className="Bandeau_sponsors" >
                         <Container fluid>
                         <Row  className="sponsors">
                         <Col lg={6} className="sponsorFont">

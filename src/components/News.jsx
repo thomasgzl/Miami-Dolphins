@@ -40,7 +40,8 @@ class News extends Component {
                     </CardImgOverlay>
                     </div>
                     </NavLink>
-                    </Col> )}
+                    </Col>
+                     )}
             )}
         </Row> 
         </Container> 

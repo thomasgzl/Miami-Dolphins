@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 class Equipe extends Component {
     constructor(props) {
         super(props);
-        this.triquatterback = this.triquatterback.bind(this);
+        this.triquarterback = this.triquarterback.bind(this);
         this.triWideReceiver = this.triWideReceiver.bind(this);
         this.triGeneral = this.triGeneral.bind(this);
 
@@ -39,9 +39,9 @@ class Equipe extends Component {
     }
 
 
-    triquatterback() {
+    triquarterback() {
 
-        const listtriquatterback = this.state.liste.filter(s => s.poste === "Quaterback");
+        const listtriquatterback = this.state.liste.filter(s => s.poste === "Quarterback");
         this.setState({ liste2: listtriquatterback, titre: "Quarterback" });
     }
 
@@ -57,8 +57,7 @@ class Equipe extends Component {
         this.state.liste.sort((a, b) => (a.lastName > b.lastName) - (a.lastName < b.lastName));
         this.setState({ liste2: this.state.liste, titre: "Equipe Ordre Alphabétique" })
     }
-
-
+  
     render() {
         if (this.state.isloading) {
             return (
@@ -75,12 +74,11 @@ class Equipe extends Component {
                         <h2 className="titre_poste_dynamique">{this.state.titre}</h2>
                     </div>
 
-
                     <Container className="AllPlayer" fluid>
 
                         <div className="Boutons">
 
-                            <button className="BoutonIndiv" onClick={() => this.triquatterback()}>Quatterback</button>
+                            <button className="BoutonIndiv" onClick={() => this.triquarterback()}>Quarterback</button>
                             <button className="BoutonIndiv" onClick={() => this.triWideReceiver()}>Wide Receiver</button>
                             <button className="BoutonIndiv" onClick={() => this.triGeneral()}>Tri Général</button>
                         </div>
@@ -106,21 +104,16 @@ class Equipe extends Component {
                                         <div className="container no gutter infos-joueur">
                                             <img className="image_joueur" src={joueur.image} alt="Player"></img>
                                             <div className="bloc-name info">
-                                                <p className="numero_player">{joueur.numero}</p>
-                                                <p className="name_player">{joueur.firstName}</p>
-                                                <p className="lastname_player">{joueur.lastName}</p>
+                                                <p className="numero_player">#{joueur.numero}</p>
+                                                <p className="name_player">{joueur.firstName} {joueur.lastName}</p>
                                             </div>
                                         </div>
                                     </NavLink>
                                 </Col>
                             )}
                         </Row>
-
-
                     </Container>
-
                 </div>
-
             )
         }
     }

@@ -29,7 +29,8 @@ class Calendrier extends Component{
         //console.log(this.props.apasser,"dans constructor,props de app")
     }
     
-    orderMatch(){
+      /* fonction tri par date croissante */
+      orderMatch(arg){
         let da='';
         let db='';
 
@@ -38,27 +39,21 @@ class Calendrier extends Component{
             db=new Date(b.dateMatch);
             return (da>db)?1:-1;
             }
-        let result=this.state.donneesCalendrier.sort(SortTime);
+        let result=arg.sort(SortTime);
         //console.log('fonction ordermatch executée')
 
         return result;
-        }
-    
-   
+        }    
 
     componentDidMount(){
             fetch("http://92.175.11.66:3000/reaction/api/calendriers")
             .then(response  =>  response.json())
+            .then(aloa  => this.orderMatch(aloa))
             .then(data  => {
               this.setState({
                 donneesCalendrier:data,
               });
-          });
-        const matchTrie=this.orderMatch;
-        this.setState({
-            donnees:matchTrie,
-        })
-        
+          });    
     } 
 
     render (){
@@ -76,17 +71,18 @@ class Calendrier extends Component{
                                 </div> 
                         </Col>
                         <Col lg="3" xs="4" className="colonne2">
-                            <p> <img className="imgCalendrier" src={logo[match.equipeA]}></img> {match.equipeA} </p>
+
+                            <p className="texteCentralCalendrier"> <img className="imgCalendrier" src={logo[match.equipeA]} alt="logoequipeA"></img> {match.equipeA} </p>
                         </Col>
                         <Col lg="2" xs="4" className="colonne3">
-                            <p> {match.score} </p>
+                            <p className="texteCentralCalendrier"> {match.score} </p>
                         </Col>
                         <Col lg="3" xs="4" className="colonne4">
-                            <p> {match.equipeB}<img className="imgCalendrier" src={logo[match.equipeB]} ></img> </p>
+                            <p className="texteCentralCalendrier"> {match.equipeB}<img className="imgCalendrier" src={logo[match.equipeB]} alt="logoequipeB"></img> </p>
                         </Col> 
                         <Col lg="2" className="colonne5">
-                            <p>  <img className="imgCalendrier" src={chaineTV[match.chaine]}></img> </p>
-                        </Col> 
+                            <p>  <img className="imgCalendrier" src={chaineTV[match.chaine]} alt="logoChaine"></img> </p>
+                        </Col>                        
                     </Row>)
                 }
                 </ul>
@@ -95,8 +91,6 @@ class Calendrier extends Component{
             </div>
         )
     }
-
-
 }
 
 export default Calendrier;

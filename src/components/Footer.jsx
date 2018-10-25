@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import './Footer.css';
 
+
 class Footer extends Component {
     render() { 
         return (
@@ -10,6 +11,7 @@ class Footer extends Component {
                     <Col lg="4" md="4" sm="4" className="lien_section_footer">
                         <img src="https://i.imgur.com/JXboZ1e.png" alt="logo" />
                     </Col>
+
                     <Col lg="2" md="2" sm="2" className="lien_section_footer">
                         <a href="https://www.facebook.com/MiamiDolphins/" target="_blank"><img className="logo_reseau_fb" src="https://i.imgur.com/jrjKEda.png" alt="logo"></img></a>
                     </Col>
