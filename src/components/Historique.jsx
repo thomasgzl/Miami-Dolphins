@@ -10,48 +10,48 @@ const data={ "historique":[
         "_id":"01",
         "index":0,
         "date":"1953",
-        "texte":"je code pour la wild code school et c'est pas tous les jours dimanche",
-        "titre":"c'était chaud cette annee là",
+        "texte":"Premier match face aux Patriots",
+        "titre":"Cette annee là",
         "image":"https://image.noelshack.com/fichiers/2018/42/2/1539713042-historique4.jpg"
 },
 {
     "_id":"02",
     "index":1,
     "date":"1963",
-    "texte":"je code pour la wild code school et c'est pas tous les jours dimanche",
-    "titre":"c'était froid cette annee là",
+    "texte":"On a gagné la coupe d'Amérique",
+    "titre":"L'année la plus froide de l'histoire",
     "image":"https://image.noelshack.com/fichiers/2018/42/2/1539713042-historique3.jpeg"
 },
 {
     "_id":"03",
     "index":2,
     "date":"1993",
-    "texte":"je me suis mis au football americain et c'est trop dla balle",
-    "titre":"une annee à l'hopital",
+    "texte":"Une année desastreuse avec la perte de notre meilleur Quaterback",
+    "titre":"Une année catastrophique",
     "image":"https://image.noelshack.com/fichiers/2018/42/2/1539713042-historique5.jpg"
 },
 {
     "_id":"04",
     "index":3,
     "date":"1933",
-    "texte":"je code pour la wild code school et c'est pas tous les jours dimanche",
-    "titre":"c'était chaud cette annee là",
+    "texte":"On a atteint des records de température",
+    "titre":"C'était la canicule",
     "image":"https://image.noelshack.com/fichiers/2018/42/2/1539713042-historique2.jpeg"
 },
 {
 "_id":"05",
 "index":4,
 "date":"1960",
-"texte":"je code pour la wild code school et c'est pas tous les jours dimanche",
-"titre":"c'était froid cette annee là",
+"texte":"On a terminé premier pour la 3ieme année consécutive",
+"titre":"Une année de folie",
 "image":"https://image.noelshack.com/fichiers/2018/42/2/1539713042-historique1.jpeg"
 },
 {
 "_id":"06",
 "index":5,
 "date":"2003",
-"texte":"je me suis mis au football americain et c'est trop dla balle",
-"titre":"une annee à l'hopital",
+"texte":"300 millions d'euros pour un transfert historique",
+"titre":"Le plus gros transfert de l'Histoire",
 "image":"https://image.noelshack.com/fichiers/2018/42/2/1539713042-historique6.jpg"
 }
 ]}
@@ -153,12 +153,12 @@ class Historique extends Component{
                                         <Button className="boutonsPrev"
                                                 onClick={()=> this.prevProperty()}
                                                 disabled={property.index ===0}
-                                                >Prev</Button>
+                                                >&larr;</Button>
                                             <Button className="boutonsNext"
                                                 onClick={()=> this.nextProperty()}
                                                 disabled={property.index ===
                                                 data.historique.length-1}
-                                                >Next</Button>
+                                                >&rarr;</Button>
                                     </div>
                                     
                                 </Col>

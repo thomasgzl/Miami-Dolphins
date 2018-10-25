@@ -72,16 +72,16 @@ class Calendrier extends Component{
                         </Col>
                         <Col lg="3" xs="4" className="colonne2">
 
-                            <p> <img className="imgCalendrier" src={logo[match.EquipeA]} alt="logoequipeA"></img> {match.EquipeA} </p>
+                            <p className="texteCentralCalendrier"> <img className="imgCalendrier" src={logo[match.equipeA]} alt="logoequipeA"></img> {match.equipeA} </p>
                         </Col>
                         <Col lg="2" xs="4" className="colonne3">
-                            <p> {match.score} </p>
+                            <p className="texteCentralCalendrier"> {match.score} </p>
                         </Col>
                         <Col lg="3" xs="4" className="colonne4">
-                            <p> {match.EquipeB}<img className="imgCalendrier" src={logo[match.EquipeB]} alt="logoequipeB"></img> </p>
+                            <p className="texteCentralCalendrier"> {match.equipeB}<img className="imgCalendrier" src={logo[match.equipeB]} alt="logoequipeB"></img> </p>
                         </Col> 
                         <Col lg="2" className="colonne5">
-                            <p>  <img className="imgCalendrier" src={chaineTV[match.Chaine]} alt="logoChaine"></img> </p>
+                            <p>  <img className="imgCalendrier" src={chaineTV[match.chaine]} alt="logoChaine"></img> </p>
                         </Col>                        
                     </Row>)
                 }
