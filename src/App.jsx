@@ -16,6 +16,9 @@ import ProfilJoueur from './components/ProfilJoueur';
 
 import GlobalAdmin from './components/GlobalAdmin';
 import AdminJoueurs from './components/AdminJoueurs';
+import AdminJoueurModifie from './components/AdminJoueurModifie';
+import AdminJoueurNew from './components/AdminJoueurNew';
+import AdminEquipe from './components/AdminEquipe';
 import AdminCalendrier from './components/AdminCalendrier';
 import AdminNews from './components/AdminNews';
 
@@ -26,24 +29,27 @@ class App extends Component {
     return (
       <div className="App">
         <Bandeau />
-        <NavbarMain />   
-                <Switch>
-                  <Route exact path="/" component={Home}/>
-                  <Route path="/historique" component={Historique}/>
-                  <Route path="/equipe" component={Equipe}/>
-                  <Route path="/news" component={News}/>
-                  <Route path="/calendrier" component={Calendrier}/>  
-                  <Route path="/newszoom/:id" component={NewsZoom}/>
-                  <Route path="/historique" component={Historique}/>
-                  <Route path="/equipe" component={Equipe}/>
-                  <Route path="/profiljoueur" component={ProfilJoueur}/>
-                  <Route path="/globaladmin" component={GlobalAdmin}/>
-                  <Route path="/adminjoueurs" component={AdminJoueurs}/>
-                  <Route path="/admincalendrier" component={AdminCalendrier}/>
-                  <Route path="/admin-news" component={AdminNews}/>
-                </Switch>
-         <Footer />
-         </div>    
+        <NavbarMain />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/historique" component={Historique} />
+          <Route path="/equipe" component={Equipe} />
+          <Route path="/news" component={News} />
+          <Route path="/calendrier" component={Calendrier} />
+          <Route path="/newszoom/:id" component={NewsZoom} />
+          <Route path="/historique" component={Historique} />
+          <Route path="/equipe" component={Equipe} />
+          <Route path="/profiljoueur" component={ProfilJoueur} />
+          <Route path="/globaladmin" component={GlobalAdmin} />
+          <Route path="/adminjoueurs" component={AdminJoueurs} />
+          <Route path="/adminjoueurnew" component={AdminJoueurNew} />
+          <Route path="/adminequipe" component={AdminEquipe} />
+          <Route path="/adminjoueurmodifie" component={AdminJoueurModifie} />
+          <Route path="/admincalendrier" component={AdminCalendrier} />
+          <Route path="/admin-news" component={AdminNews} />
+        </Switch>
+        <Footer />
+      </div>
     );
   }
 }
