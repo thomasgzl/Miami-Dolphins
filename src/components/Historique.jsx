@@ -128,7 +128,7 @@ class Historique extends Component{
                                             <div className="allerAgauche">
                                                 <div onMouseMove={()=>this.onHoverPrev()}
                                                     onMouseOut={()=>this.onHoverPrevOut()}
-                                                ><img src="http://image.noelshack.com/fichiers/2018/43/3/1540392522-pngeeeeeeee.png" width='100px' height='300px'></img></div>
+                                                ><img src="http://image.noelshack.com/fichiers/2018/43/3/1540392522-pngeeeeeeee.png" width='100px' height='300px' alt="img1"></img></div>
                                             </div>
                                         </Col>
                                         <Col lg={8}>
