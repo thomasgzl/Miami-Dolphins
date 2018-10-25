@@ -43,9 +43,7 @@ class Calendrier extends Component{
         //console.log('fonction ordermatch executée')
 
         return result;
-        }
-    
-   
+        }    
 
     componentDidMount(){
             fetch("http://92.175.11.66:3000/reaction/api/calendriers")
@@ -73,17 +71,18 @@ class Calendrier extends Component{
                                 </div> 
                         </Col>
                         <Col lg="3" xs="4" className="colonne2">
-                            <p> <img className="imgCalendrier" src={logo[match.equipeA]} alt="img2"></img> {match.equipeA} </p>
+
+                            <p> <img className="imgCalendrier" src={logo[match.EquipeA]} alt="logoequipeA"></img> {match.EquipeA} </p>
                         </Col>
                         <Col lg="2" xs="4" className="colonne3">
                             <p> {match.score} </p>
                         </Col>
                         <Col lg="3" xs="4" className="colonne4">
-                            <p> {match.equipeB}<img className="imgCalendrier" src={logo[match.equipeB]} alt="img3" ></img> </p>
+                            <p> {match.EquipeB}<img className="imgCalendrier" src={logo[match.EquipeB]} alt="logoequipeB"></img> </p>
                         </Col> 
                         <Col lg="2" className="colonne5">
-                            <p>  <img className="imgCalendrier" src={chaineTV[match.chaine]} alt="img4"></img> </p>
-                        </Col> 
+                            <p>  <img className="imgCalendrier" src={chaineTV[match.Chaine]} alt="logoChaine"></img> </p>
+                        </Col>                        
                     </Row>)
                 }
                 </ul>
@@ -92,8 +91,6 @@ class Calendrier extends Component{
             </div>
         )
     }
-
-
 }
 
 export default Calendrier;

@@ -17,6 +17,7 @@ import ProfilJoueur from './components/ProfilJoueur';
 
 import AdminJoueurs from './components/AdminJoueurs';
 import AdminCalendrier from './components/AdminCalendrier';
+import AdminNews from './components/AdminNews';
 
 
 
@@ -29,14 +30,16 @@ class App extends Component {
                 <Switch>
                   <Route exact path="/" component={Home}/>
                   <Route path="/historique" component={Historique}/>
+                  <Route path="/equipe" component={Equipe}/>
                   <Route path="/news" component={News}/>
-                  <Route path="/newszoom" component={NewsZoom}/>
                   <Route path="/calendrier" component={Calendrier}/>  
+                  <Route path="/newszoom/:id" component={NewsZoom}/>
                   <Route path="/historique" component={Historique}/>
                   <Route path="/adminjoueurs" component={AdminJoueurs}/>
                   <Route path="/equipe" component={Equipe}/>
                   <Route path="/profiljoueur" component={ProfilJoueur}/>
                   <Route path="/admincalendrier" component={AdminCalendrier}/>
+                  <Route path="/admin-news" component={AdminNews}/>
                 </Switch>
          <Footer />
          </div>    

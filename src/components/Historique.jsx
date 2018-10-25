@@ -113,12 +113,11 @@ class Historique extends Component{
         const {historique,property}=this.state;
         return(
             <Container fluid>
-                <div >
+                <div className="backgroundHistorique" >
                         <Row className="Historique-page">
                                 <Col lg={3}className="Historique-texteGauche">
                                     <p>No pro football club in history ever advanced more quickly from the first-year dregs every expansion team faces to the ultimate achievement in its sport than the Miami Dolphins did in the six-year period between 1966 and 1972. In 1966, they began their pro football life as the ninth member of the American Football League. Six years later, Miami became the only National Football League team ever to record a perfect season... </p>
                                 </Col>
-
 
                             
                                 <Col lg={8} className="Historique-carousel">
@@ -129,7 +128,7 @@ class Historique extends Component{
                                             <div className="allerAgauche">
                                                 <div onMouseMove={()=>this.onHoverPrev()}
                                                     onMouseOut={()=>this.onHoverPrevOut()}
-                                                ><img src="https://image.noelshack.com/fichiers/2018/42/3/1539780298-transparent-image8.png" width='100px' height='300px' alt="img1"></img></div>
+                                                ><img src="http://image.noelshack.com/fichiers/2018/43/3/1540392522-pngeeeeeeee.png" width='100px' height='300px' alt="img1"></img></div>
                                             </div>
                                         </Col>
                                         <Col lg={8}>
@@ -145,7 +144,7 @@ class Historique extends Component{
                                             <div className="allerAdroite">
                                                 <div onMouseMove={()=>this.onHoverNext()}
                                                     onMouseOut={()=>this.onHoverPrevOut()}
-                                                ><img src="https://image.noelshack.com/fichiers/2018/42/3/1539780298-transparent-image8.png" width='100px' height='300px' alt="img0"></img></div>
+                                                ><img src="http://image.noelshack.com/fichiers/2018/43/3/1540392522-pngeeeeeeee.png" width='100px' height='300px'></img></div>
                                             </div>
                                         </Col>
                                         

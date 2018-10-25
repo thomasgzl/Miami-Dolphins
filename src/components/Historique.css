@@ -2,10 +2,19 @@
 .Historique-page{
     height:500px;
     margin-bottom:50px;
-    background-color: rgba(255,255,255,0.95);
     padding-bottom:50px;
 }
 
+.backgroundHistorique {
+    background-color: rgba(01, 86, 121, 0.7);
+    color: white;
+    border-radius: 1%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    padding-top: 2%;
+ }
 
 .Card-slider-wrapper{
     display:flex;
@@ -58,7 +67,7 @@
 
     .Card-slider.active-slide-0 #card-0 {
         transform: scale(1);
-        background-color: #f3f3f3;
+        background-color: rgba(01, 86, 121, 0.7);
         border-color: #f3f3f3;
         opacity: 1;
         z-index: 10;
@@ -70,7 +79,7 @@
       
       .Card-slider.active-slide-1 #card-1 {
         transform: scale(1);
-        background-color: #f3f3f3;
+        background-color: rgba(01, 86, 121, 0.7);
         border-color: #f3f3f3;
         opacity: 1;
         z-index: 10;
@@ -82,7 +91,7 @@
       
       .Card-slider.active-slide-2 #card-2 {
         transform: scale(1);
-        background-color: #f3f3f3;
+        background-color: rgba(01, 86, 121, 0.7);
         border-color: #f3f3f3;
         opacity: 1;
         z-index: 10;
@@ -94,7 +103,7 @@
       
       .Card-slider.active-slide-3 #card-3 {
         transform: scale(1);
-        background-color: #f3f3f3;
+        background-color: rgba(01, 86, 121, 0.7);
         border-color: #f3f3f3;
         opacity: 1;
         z-index: 10;
@@ -106,7 +115,7 @@
       
       .Card-slider.active-slide-4 #card-4 {
         transform: scale(1);
-        background-color: #f3f3f3;
+        background-color: rgba(01, 86, 121, 0.7);
         border-color: #f3f3f3;
         opacity: 1;
         z-index: 10;
@@ -118,7 +127,7 @@
       
       .Card-slider.active-slide-5 #card-5 {
         transform: scale(1);
-        background-color: #f3f3f3;
+        background-color: rgba(01, 86, 121, 0.7);
         border-color: #f3f3f3;
         opacity: 1;
         z-index: 10;
@@ -130,7 +139,7 @@
       
       .Card-slider.active-slide-6 #card-6 {
         transform: scale(1);
-        background-color: #f3f3f3;
+        background-color: rgba(01, 86, 121, 0.7);
         border-color: #f3f3f3;
         opacity: 1;
         z-index: 10;
@@ -213,6 +222,8 @@
 .histoireDate{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 45px;
+    position:relative;
+    top:-30px;
 }
 
 .Historique-texteGauche{
@@ -228,8 +239,11 @@
 
 .BoutonsPrevNextHistorique{
   text-align: center;
-  position:relative;
+  justify-content: center;
+  position:absolute;
+  left:510px;
   z-index: 12;
+  padding-top: 2%;
 }
 
 .rowCarouselImage{
@@ -237,13 +251,15 @@
 }
 
 
+
 @media (max-width: 640px) {
 
     .BoutonsPrevNextHistorique{
-        top:-20px;
-        left:-90px;
+        top:-100px;
+        left:-270px;
         text-align: none;
     }
+
 
 
     .allerAgauche,.allerAdroite{
@@ -262,6 +278,7 @@
         font-size: 20px;
         font-weight: bold;
         margin-bottom: -10px;
+        text-align: center;
     }
 
     .Historique-page{
@@ -321,7 +338,7 @@
 }
 .Card-slider.active-slide-0 #card-0 {
     transform: scale(1);
-    background-color: #f3f3f3;
+    background-color: rgba(01, 86, 121, 0.7);
     border-color: #f3f3f3;
     opacity: 1;
     margin: 0;

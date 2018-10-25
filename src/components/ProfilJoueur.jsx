@@ -24,8 +24,8 @@ class ProfilJoueur extends Component {
     }
 
     componentDidMount() {
-        const { first_name } = this.props.location.state;
-        const { last_name } = this.props.location.state;
+        const { firstName } = this.props.location.state;
+        const { lastName } = this.props.location.state;
         const { age } = this.props.location.state;
         const { poste } = this.props.location.state;
         const { height } = this.props.location.state;
@@ -33,13 +33,13 @@ class ProfilJoueur extends Component {
         const { image } = this.props.location.state;
         const { yard } = this.props.location.state;
         const { tackle } = this.props.location.state;
-        const { int } = this.props.location.state;
+        const { intPlayer } = this.props.location.state;
         const { numero } = this.props.location.state;
 
 
         this.setState({
-            name: first_name,
-            last_name: last_name,
+            name: firstName,
+            last_name: lastName,
             age: age,
             poste: poste,
             height: height,
@@ -47,7 +47,7 @@ class ProfilJoueur extends Component {
             image: image,
             yard: yard,
             tackle: tackle,
-            int: int,
+            int: intPlayer,
             numero: numero,
         })
 
@@ -96,9 +96,9 @@ class ProfilJoueur extends Component {
                             <Collapse isOpen={this.state.collapse}>
                                 <Card>
                                     <CardBody className="body_card_joueur">
-                                        <p><span className="categorie">Yard:</span>{this.state.yard}</p>
-                                        <p><span className="categorie">Interceptions:</span>{this.state.int}</p>
-                                        <p><span className="categorie">Tacles:</span> {this.state.tackle}</p>
+                                        <p><span className="categorie">Yard : </span>{this.state.yard}</p>
+                                        <p><span className="categorie">Interceptions : </span>{this.state.int}</p>
+                                        <p><span className="categorie">Tacles : </span> {this.state.tackle}</p>
                                     </CardBody>
                                 </Card>
                             </Collapse>
