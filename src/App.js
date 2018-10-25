@@ -38,7 +38,7 @@ class App extends Component {
                   <Route path="/adminjoueurs" component={AdminJoueurs}/>
                   <Route path="/equipe" component={Equipe}/>
                   <Route path="/profiljoueur" component={ProfilJoueur}/>
-                  <Route path="/admincalendrier" component={AdminCalendrier}/>
+                  <Route path="/adminCalendrier" component={AdminCalendrier}/>
                   <Route path="/admin-news" component={AdminNews}/>
                 </Switch>
          <Footer />
