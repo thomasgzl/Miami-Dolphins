@@ -34,7 +34,6 @@ class Bandeau extends Component{
     nextMatch(arg){
         for (let i=0;i<arg.length;i++){
             if(new Date(arg[i].dateMatch)>new Date){
-    dev
                return(i)
             }
         }    
