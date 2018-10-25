@@ -66,13 +66,12 @@ class AdminEquipe extends Component {
                 <Container className="AllPlayer" fluid>
 
                     <div className="Boutons">
-                        <NavLink to={{
-                            pathname: "/adminjoueurnew",
-                        }}
-                            className="linkNav">
+                        <NavLink to={{ pathname: "/adminjoueurnew",}} className="linkNav">
                             <Button className="BoutonIndiv" color="success">Ajouter</Button>
-
                         </NavLink>
+                        <NavLink to="/globaladmin/" className="linkNav">
+                        <Button color="secondary">Retour</Button>
+                    </NavLink>
                     </div>
 
                     <Row className="LinePlayer" >

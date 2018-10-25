@@ -75,7 +75,9 @@ class AdminJoueurNew extends Component {
 
 
       <Form className="AdminJoueurs" onSubmit={this.submitForm}>
-        <div className="AdminJoueurs">Ajout de nouveaux joueurs</div>
+        <div className="TitrePoste">
+          <h2 className="titre_poste_dynamique">Création de Joueurs</h2>
+        </div>
         <div className="Button">
           <Button onClick={this.getSendPlayer} color="success">Ajouter</Button>
           <NavLink to="/adminequipe/" className="linkNav">

@@ -11,25 +11,26 @@ class AdminJoueurModifie extends Component {
 
             firstName: "",
             lastName: "",
-            age: "",
+            age: 0,
             poste: "",
-            height: "",
-            weight: "",
+            height: 0,
+            weight: 0,
             image: "",
-            yard: "",
-            tackle: "",
-            intPlayer: "",
-            numero: "",
+            yard: 0,
+            tackle: 0,
+            intPlayer: 0,
+            numero: 0,
+            id: 0
         };
 
 
         this.onChange = this.onChange.bind(this);
         this.submitForm = this.submitForm.bind(this);
-        // this.getSendPlayer = this.getSendPlayer.bind(this);
+        this.getModifierPlayer = this.getModifierPlayer.bind(this);
 
     }
 
-
+    //fonction qui rappatrie nos propriétés via le navlink parent
     componentDidMount() {
         const { firstName } = this.props.location.state;
         const { lastName } = this.props.location.state;
@@ -41,7 +42,8 @@ class AdminJoueurModifie extends Component {
         const { yard } = this.props.location.state;
         const { tackle } = this.props.location.state;
         const { intPlayer } = this.props.location.state;
-        const { numero } = this.props.location.state;       
+        const { numero } = this.props.location.state;
+        const { id } = this.props.location.state;
 
 
         this.setState({
@@ -56,48 +58,49 @@ class AdminJoueurModifie extends Component {
             tackle: tackle,
             intPlayer: intPlayer,
             numero: numero,
+            id: id,
 
-            
+
         })
 
     }
     submitForm(current) {
         current.preventDefault();
     }
-
+    // fonction qui met a jour le state suivant ce qu'on rentre dans les input 
     onChange(e) {
         this.setState({
             [e.target.name]: e.target.value,
         });
     }
+    //fontion pour modifier le joueur existant
+    getModifierPlayer(id) {
+        const config = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(this.state),
+        };
 
-    /*getPutPlayer() {
-         const config = {
-             method: "PUT",
-             headers: {
-                 "Content-Type": "application/json",
-             },
-             body: JSON.stringify(this.state),
-         };
- 
-         const url = "http://92.175.11.66:3000/reaction/api/joueurs";
- 
-         fetch(url, config)
-             .then(res => res.json())
-             .then(res => {
-                 if (res.error) {
-                     alert(res.error);
-                 }
-                 else {
-                     alert(`Joueur Envoyé avec l'ID ${res}!`);
-                 }
-             })
-             .catch(e => {
-                 console.error(e);
-                 alert('Erreur lors de l\'ajout d\'un joueur');
-             })
- 
-     } */
+        const url = "http://92.175.11.66:3000/reaction/api/joueurs";
+
+        fetch(url + '/' + id, config)
+            .then(res => res.text())
+            .then(res => {
+                if (res.error) {
+                    alert(res.error);
+                }
+                else {
+                    alert(`Joueur modifié!`);
+                }
+            })
+            .catch(e => {
+                console.error(e);
+                alert('Erreur lors de la modification d\'un joueur');
+            })
+
+    }
 
 
 
@@ -108,10 +111,14 @@ class AdminJoueurModifie extends Component {
 
 
             <Form className="AdminJoueurs" onSubmit={this.submitForm}>
-                <div className="AdminJoueurs">Ajout de nouveaux joueurs</div>
+                <div className="TitrePoste">
+                    <h2 className="titre_poste_dynamique">Modification Joueurs</h2>
+                </div>
                 <div className="Button">
-                <NavLink to="/adminequipe/" className="linkNav">
-                    <Button color="secondary">Retour</Button>
+                    <Button onClick={() => this.getModifierPlayer(this.state.id)} color="success">Ajouter</Button>
+
+                    <NavLink to="/adminequipe/" className="linkNav">
+                        <Button color="secondary">Retour</Button>
                     </NavLink>
                 </div>
                 <FormGroup>
@@ -132,7 +139,7 @@ class AdminJoueurModifie extends Component {
                         placeholder="Prenom "
                         onChange={this.onChange}
                         value={this.state.firstName} />
-                      
+
                 </FormGroup>
 
                 <FormGroup>

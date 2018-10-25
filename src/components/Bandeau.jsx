@@ -13,10 +13,7 @@ class Bandeau extends Component{
         super(props)
         this.orderMatch=this.orderMatch.bind(this)
         this.nextMatch=this.nextMatch.bind(this)
-        this.state={
-            nextEvent:{
-                }
-            }
+        this.state={nextEvent:{dateMatch:"2018-09-14T11:49:44.000Z"}} 
     }
     /* fonction tri par date croissante */
     orderMatch(arg){
