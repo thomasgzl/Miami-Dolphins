@@ -6,21 +6,44 @@ import './AdminNews.css';
 
 
 class AdminNews extends Component {
-
-
-    supprimer_news () {
-        if (window.confirm("Etes-vous sûr de vouloir supprimer cette news ?") === true) {
-            alert("La news a bien été supprimée")
-        } else {
-        }
+    constructor(props) {
+        super(props);
+        this.state = {
+            image: "",
+            titre: "",
+            texte: "",
+          };
+        this.onChange = this.onChange.bind(this);
+        this.submitForm = this.submitForm.bind(this);
     }
 
-    ajouter_news () {
-        alert("La news a bien été ajoutée")
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value, });
     }
 
-    modifier_news () {
-        alert("La news a bien été modifiée")
+    submitForm(e) {
+        e.preventDefault();
+        const config = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(this.state),
+        };
+        const url = "http://92.175.11.66:3000/reaction/api/news";
+        
+        fetch(url, config)
+            .then(res => res.json())
+            .then(res => {
+                if (res.error) {
+                    alert(res.error);
+                } else {
+                    alert(`News ajoutée avec l\'ID ${res} !`);
+                }
+            }).catch(e => {
+                console.error(e);
+                alert('Erreur lors de l\'ajout d\'une news');
+            });
     }
 
     render() {
@@ -28,43 +51,24 @@ class AdminNews extends Component {
             <Container className="fond_admin_news">
                 <Row className="formulaire_news">
                     <Col>
-                        <Form>
+                        <Form onSubmit={this.submitForm}>
                             <FormGroup>
                                 <Label for="titre">Titre</Label>
-                                <Input type="email" name="titre" id="titre" placeholder="titre de l'article" />
+                                <Input type="text" name="titre" id="titre" placeholder="titre de l'article" onChange={this.onChange} value={this.state.titre}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="Text_news">Article</Label>
-                                <Input type="textarea" name="text" id="TextNews" />
+                                <Input type="textarea" name="texte" id="texte" onChange={this.onChange} value={this.state.texte}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="Image_news">Image</Label>
-                                <Input type="file" name="file" id="exampleFile" />
-                                <FormText color="muted">
-                                    Sélectionner l'image
-                            </FormText>
+                                <Input type="text" name="image" id="image" placeholder="url de l'image" onChange={this.onChange} value={this.state.image}/>
                             </FormGroup>
                             <FormGroup>
-                                <Button onClick={this.ajouter_news}>Ajouter</Button>
-                                <Button className="bouton_modifier" onClick={this.modifier_news}>Modifier</Button>
-                                <Button className="bouton_supprimer" onClick={this.supprimer_news}>Supprimer</Button>
+                                <Button type="submit" value="Ajouter" >Ajouter</Button>
                             </FormGroup>
                         </Form>
-                    </Col>
-
-                    <Col>
-                        <FormGroup>
-                            <Label for="news">News</Label>
-                            <Input type="select" name="selectMulti" id="selectMultiNews" multiple>
-                                <option>News 1</option>
-                                <option>News 2</option>
-                                <option>News 3</option>
-                                <option>News 4</option>
-                                <option>News 5</option>
-                                <option>News 6</option>
-                            </Input>
-                        </FormGroup>
-                    </Col>
+                    </Col>                  
                 </Row>
             </Container>
         );
