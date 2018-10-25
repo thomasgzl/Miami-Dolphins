@@ -1,75 +1,79 @@
 import React, { Component } from 'react';
-import DatePicker from 'react-datepicker';
-import {Link} from 'react-router-dom';
+import { Container, Row, Col,Input,Button } from 'reactstrap';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Container, Row, Col } from 'reactstrap';
-
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupButtonDropdown,
-  InputGroupDropdown,
-  Input,
-  Button,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
- } from 'reactstrap';
- import './AdminCalendrier.css';
+import './AdminCalendrier.css';
 
 
 class AdminCalendrier extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            equipeA: '',
-            equipeB: '',
-            score: '',
-            dateMatch: '',
-            chaine: '',
+            postit:{
+                dateMatch: '',
+                equipeA: '',
+                equipeB: '',
+                score: '',
+                chaine: '',
+            },
+            modification:{
+                dateMatch: '',
+                equipeA: '',
+                equipeB: '',
+                score: '',
+                chaine: '',
+            },
             donneesCalendrier:[]
           }
+
           this.onChange = this.onChange.bind(this);
+          this.onChange2=this.onChange2.bind(this);
           this.submitForm = this.submitForm.bind(this);
           this.orderMatch=this.orderMatch.bind(this);
+          this.refreshData=this.refreshData.bind(this);
+          this.input = React.createRef();
         }
       
-        //CREATION MATCH
-      
+        //FONCTION POUR MAJ STATE DU COMPOSANT VIA DES CLE DYNAMIQUES DES FORMULAIRES
         onChange(e) {
-          this.setState({
-            [e.target.name]: e.target.value,
-          });
-        }
-      
-        submitForm(e) {
-          e.preventDefault();
-          const url = "http://92.175.11.66:3000/reaction/api/calendriers";
-      
-          const config = {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(this.state),
-           };
-      
-          fetch(url, config)
-            .then(res => res.json())
-            //.then(res=>console.log(res,"res"))
-            .then(res => {
-              if (res.error) {
-                alert(res.error);
-              } else {
-                alert(`Match ajouté avec l'ID ${res}!`);
-              }
-            }).catch(e => {
-              alert('Erreur lors de l\'ajout du match');
-            });
-        }
+            let obj = this.state.postit;
+            obj[e.target.name] = e.target.value
+            this.setState(obj);
+          }
 
-        // FONCTION POUR AFFICHAGE CALENDRIER TRIE
+          onChange2(e) {
+            let obj = this.state.modification;
+            obj[e.target.name] = e.target.value
+            this.setState(obj);
+          }
+          
+           //FONCTION POUR AJOUT D'UN NOUVEAU MATCH VIA FORMULAIRE ***METHODE POST DE FETCH***
+          submitForm(e) {
+            e.preventDefault();
+
+            const url = "http://92.175.11.66:3000/reaction/api/calendriers/";
+        
+            const config = {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(this.state.postit),
+             };
+        
+            fetch(url, config)
+              .then(res => res.json())
+              .then(res => {
+                if (res.error) {
+                  alert(res.error);
+                } else {
+                  alert(`Match ajouté avec l'ID ${res}!`);
+                }
+              }).catch(e => {
+                alert('Erreur lors de l\'ajout du Match');
+              });
+          }
+               
+        // FONCTION POUR AFFICHAGE CALENDRIER TRIE PAR ORDRE CROISSANT DE DATE
         orderMatch(arg){
             let da='';
             let db='';
@@ -85,8 +89,8 @@ class AdminCalendrier extends Component {
             return result;
             }
         
-       
     
+         //FONCTION POUR REACTUALISER LE CALENDRIER AVEC DONNEES DE L'API ***METHODE GET DE FETCH***
         componentDidMount(){
                 fetch("http://92.175.11.66:3000/reaction/api/calendriers")
                 .then(response  =>  response.json())
@@ -97,24 +101,62 @@ class AdminCalendrier extends Component {
                   });
               });    
         }
-        //SUPPRIMER UN MATCH
-
-        deleteData(item, url) {
-            console.log("ca passe dans la deleteData")
-            return fetch(url + '/' + item, {
-            method: 'delete'
-            })
-            .then(response => response.json());
+         //FONCTION POUR REACTUALISER LA PAGE SUITE A MODIFICATION,SUPPRESSION,AJOUT MATCH
+        refreshData(){
+            window.location.reload()
         }
-      
-      
 
+        //FONCTION POUR SUPPRIMER UN MATCH, ***METHODE DELETE DE FETCH***
+        deleteData(item) {
+            const url="http://92.175.11.66:3000/reaction/api/calendriers";
+            fetch(url + '/' + item, {
+                method: 'delete'
+            })
+            .then(response => {
+                return response.json()})
+        }
 
        
+        //FONCTION POUR SELECTIONNER UN MATCH DU CALENDRIER,
+        //ET TRANSFERT MATCH DANS UN FORMULAIRE POUR LE MODIFIER ***METHODE GET DE FETCH***
+        modifyData(yolo){
+            const url="http://92.175.11.66:3000/reaction/api/calendriers";
+            fetch(url + '/' + yolo)
+            .then(res => res.json())
+            //.then(res=>console.log(res,"res"))
+            .then(res => {
+                let a= this.state.modification
+                a.equipeA=res.equipeA;
+                a.equipeB=res.equipeB;
+                a.score=res.score;
+                a.dateMatch=res.dateMatch;
+                a.chaine=res.chaine;
+                return this.setState({modification:a})
+            })
+            this.setState({idEnModification:yolo})
+        }
+        
+        //FONCTION POUR MODIFIER UN MATCH PRESENT DANS L'API, ***METHODE PUT DE FETCH***
+        updateData(){
+            const url="http://92.175.11.66:3000/reaction/api/calendriers"
+            fetch(url + '/' + this.state.idEnModification, {
+                method: 'put',
+                body: JSON.stringify(this.state.modification),
+                headers: {"Content-Type": "application/json"},
+              })
+            .then (body=>{
+                console.log(body,"updatedata");
+                body.json()})
+        }
+
+    
         render() {
           return (
             <div className="AdminCalendrier">
               <h1>Gestion du calendrier des matchs</h1>
+              <div className="nosEntreesPlatsDesserts">
+              <div className="InputsCalendrier">
+                <h5>Déclarer un nouveau match</h5>
                 <form onSubmit={this.submitForm}>
                     <Input 
                         placeholder="Equipe A"
@@ -152,18 +194,62 @@ class AdminCalendrier extends Component {
                          onChange={this.onChange}
                          value={this.state.name}/>                                             
                        <div className="film-data">
-                        <Button type ="submit" color="success">Envoyer</Button>
-                        <Button color="danger">Supprimer</Button>
-                        <Button color="warning">Modifier</Button>                           
+                        <Button type ="submit" color="success">Envoyer</Button>                        
                        </div>                         
                     </form>                                                
-                                            
-                                    
+                 </div>  
+               
+                 <div className="ModifierMatchCalendrier">
+                <h5>Modifier un  match</h5>
+                <form onSubmit={this.submitForm}>
+                    <Input 
+                        placeholder="Equipe A"
+                        type="text"
+                        id="equipeA"
+                        name="equipeA"
+                        onChange={this.onChange2}
+                        value={this.state.modification.equipeA}/>
+                    <Input 
+                        placeholder="Equipe B"
+                        type="text"
+                        id="equipeB"
+                        name="equipeB"
+                        onChange={this.onChange2}
+                        value={this.state.modification.equipeB}/>                           
+                    <Input 
+                       placeholder="Score"
+                       type="text"
+                       id="score"
+                       name="score"
+                       onChange={this.onChange2}
+                       value={this.state.modification.score}/>                         
+                    <Input 
+                        placeholder="Date du match"
+                        type="text"
+                        id="dateMatch"
+                        name="dateMatch"
+                        onChange={this.onChange2}
+                        value={this.state.modification.dateMatch}/>                        
+                    <Input 
+                         placeholder="Chaine TV"
+                         type="text"
+                         id="chaine"
+                         name="chaine"
+                         onChange={this.onChange2}
+                         value={this.state.modification.chaine}/>                                             
+                       <div className="film-data">
+                        <Button onClick={()=>this.updateData()} type ="submit" color="success">Envoyer</Button>
+                        <Button onClick={()=>this.refreshData()}color="warning">Effacer</Button>                           
+                       </div>                         
+                    </form>                                                
+                 </div>       
+                                                          
+               </div>                     
                
              <div className="GlobalCalendrier">
                 <Container >
-                    <h1 className="Calendrier-title">Calendrier des matchs</h1>
-                    <div className="Calendrier">
+                    <h5 className="Calendrier-title">Supprimer ou modifier un match</h5>
+                    <div className="CalendrierAdmin">
                 <ul className="Calendrier_contour">
                     {this.state.donneesCalendrier.map((match)=>
                     <Row className="Calendrier_ligneTableau">
@@ -185,20 +271,22 @@ class AdminCalendrier extends Component {
                             <p>{match.chaine}</p>
                         </Col> 
                         <Col lg="2" className="colonne6">
-                            <Button onClick={()=>this.deleteData(match.id,"http://92.175.11.66:3000/reaction/api/calendriers")} color="danger">Supprimer</Button>
-                            <Button color="warning">Modifier</Button>     
+                            <Button onClick={()=>this.deleteData(match.id)} color="danger">Supprimer</Button>
+                            <Button onClick={()=>this.modifyData(match.id)} color="warning">Modifier</Button>     
                         </Col>
                     </Row>)
                 }
                 </ul>
                 </div>
                 </Container>
+                
             </div>
                                 
   
     
 
     </div>
+    
   )
 
 }
