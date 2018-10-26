@@ -33,7 +33,7 @@ const GlobalAdmin = props => {
               <CardTitle className="card_title">
                 <strong>Calendrier</strong>
               </CardTitle>
-              <NavLink className="bouton_navlink" to="/admincalendrier"><Button>Click</Button></NavLink>
+              <NavLink className="bouton_navlink" to="/admincalendrier"><Button>Accéder</Button></NavLink>
             </CardBody>
           </Card>
         </Col>
@@ -49,7 +49,7 @@ const GlobalAdmin = props => {
               <CardTitle className="card_title">
                 <strong>News</strong>
               </CardTitle>
-              <NavLink className="bouton_navlink" to="/admin-news"><Button>Click</Button></NavLink>
+              <NavLink className="bouton_navlink" to="/admin-news"><Button>Accéder</Button></NavLink>
             </CardBody>
           </Card>
         </Col>
@@ -65,7 +65,7 @@ const GlobalAdmin = props => {
               <CardTitle className="card_title">
                 <strong>Equipe</strong>
               </CardTitle>
-              <NavLink className="bouton_navlink" to="/adminjoueurs"><Button>Click</Button></NavLink>
+              <NavLink className="bouton_navlink" to="/adminjoueurs"><Button>Accéder</Button></NavLink>
             </CardBody>
           </Card>
         </Col>
