@@ -263,24 +263,24 @@ class AdminCalendrier extends Component {
                 <ul className="Calendrier_contour_Admin">
                     {this.state.donneesCalendrier.map((match)=>
                     <Row className="Calendrier_ligneTableau_Admin">
-                        <Col lg="2" xs="5" className="colonne1">
+                        <Col lg="2" xs="5" className="colonne1admin">
                                 <div>
                                         <p className="dateMatchDesktop">{match.dateMatch.substring(8,10)} {match.dateMatch.substring(5,7)} {match.dateMatch.substring(0,4)}</p>
                                 </div> 
                         </Col>
-                        <Col lg="2" xs="2" className="colonne2">
+                        <Col lg="2" xs="2" className="colonne2admin">
                             <p> {match.equipeA} </p>
                         </Col>
-                        <Col lg="2" xs="2" className="colonne3">
+                        <Col lg="2" xs="2" className="colonne3admin">
                             <p> {match.score} </p>
                         </Col>
-                        <Col lg="2" xs="1" className="colonne4">
+                        <Col lg="2" xs="1" className="colonne4admin">
                             <p> {match.equipeB} </p>
                         </Col> 
-                        <Col lg="2" xs="0" className="colonne5">
+                        <Col lg="2" xs="0" className="colonne5admin">
                             <p>{match.chaine}</p>
                         </Col> 
-                        <Col lg="2" xs="2" className="colonne6">
+                        <Col lg="2" xs="2" className="colonne6admin">
                             <Button onClick={()=>this.deleteData(match.id)} color="danger">Supprimer</Button>
                             <Button onClick={()=>this.modifyData(match.id)} color="warning">Modifier</Button>     
                         </Col>

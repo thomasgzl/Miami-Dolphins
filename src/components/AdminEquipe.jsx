@@ -69,7 +69,7 @@ class AdminEquipe extends Component {
                         <NavLink to={{ pathname: "/adminjoueurnew",}} className="linkNav">
                             <Button className="BoutonIndiv vert" color="success">Ajouter</Button>
                         </NavLink>
-                        <NavLink to="/globaladmin/" className="linkNav">
+                        <NavLink to="/admin/" className="linkNav">
                         <Button color="secondary">Retour</Button>
                     </NavLink>
                     </div>

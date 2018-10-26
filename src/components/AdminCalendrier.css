@@ -103,7 +103,7 @@
 
 @media (max-width: 640px) {
 
-    .colonne4, .colonne5, .colonne3, .colonne2{
+    .colonne4admin, .colonne5admin, .colonne3admin, .colonne2admin{
         display: none;
     }
 
