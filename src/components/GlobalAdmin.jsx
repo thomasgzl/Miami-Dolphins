@@ -65,7 +65,8 @@ const GlobalAdmin = props => {
               <CardTitle className="card_title">
                 <strong>Equipe</strong>
               </CardTitle>
-              <NavLink className="bouton_navlink" to="/adminjoueurs"><Button>Accéder</Button></NavLink>
+              <NavLink className="bouton_navlink" to="/adminequipe"><Button>Accéder</Button></NavLink>
+
             </CardBody>
           </Card>
         </Col>
