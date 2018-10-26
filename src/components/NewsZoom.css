@@ -69,13 +69,13 @@
   background-color: #F57700!important;
 }
 
-.btn {
+.btn_accueil {
   background-color: #F57700!important;
   text-decoration: none;
   
 }
 
-.btn:hover {
+.btn_accueil:hover {
   background-color: white!important;
   color: #F57700!important;
   text-decoration: none!important;
