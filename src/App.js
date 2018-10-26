@@ -15,7 +15,6 @@ import Equipe from './components/Equipe';
 import ProfilJoueur from './components/ProfilJoueur';
 
 import GlobalAdmin from './components/GlobalAdmin';
-import AdminJoueurs from './components/AdminJoueurs';
 import AdminJoueurModifie from './components/AdminJoueurModifie';
 import AdminJoueurNew from './components/AdminJoueurNew';
 import AdminEquipe from './components/AdminEquipe';
@@ -41,7 +40,6 @@ class App extends Component {
           <Route path="/equipe" component={Equipe} />
           <Route path="/profiljoueur" component={ProfilJoueur} />
           <Route path="/globaladmin" component={GlobalAdmin} />
-          <Route path="/adminjoueurs" component={AdminJoueurs} />
           <Route path="/adminjoueurnew" component={AdminJoueurNew} />
           <Route path="/adminequipe" component={AdminEquipe} />
           <Route path="/adminjoueurmodifie" component={AdminJoueurModifie} />
