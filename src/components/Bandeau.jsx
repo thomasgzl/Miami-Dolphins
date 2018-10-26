@@ -37,7 +37,8 @@ class Bandeau extends Component{
             if(new Date(arg[i].dateMatch)>new Date()){
                return(i)
             }
-        }    
+        } 
+    }   
     }
     
     /* charger les fonctions tri par date */
@@ -54,6 +55,7 @@ class Bandeau extends Component{
               nextEvent:acharger,
             });
         })
+        
     }
     
  
