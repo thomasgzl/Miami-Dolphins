@@ -116,7 +116,7 @@ class Historique extends Component{
                 <div className="backgroundHistorique" >
                         <Row className="Historique-page">
                                 <Col lg={3}className="Historique-texteGauche">
-                                    <p>No pro football club in history ever advanced more quickly from the first-year dregs every expansion team faces to the ultimate achievement in its sport than the Miami Dolphins did in the six-year period between 1966 and 1972. In 1966, they began their pro football life as the ninth member of the American Football League. Six years later, Miami became the only National Football League team ever to record a perfect season... </p>
+                                    <p>Aucun club de football professionnel de l’histoire n’a jamais progressé plus rapidement que les Dolphins de Miami au cours de la période comprise entre 1966 et 1972. En 1966, ils ont fait leur début dans la ligue professionnel de football en tant que neuvième membre de la Ligue américaine de football. Six ans plus tard, Miami devenait la seule équipe de la Ligue nationale de football à enregistrer une saison parfaite ...</p>
                                 </Col>
 
                             

@@ -56,6 +56,7 @@ class Bandeau extends Component{
               nextEvent:acharger,
             });
         })
+        
     }
     
  
