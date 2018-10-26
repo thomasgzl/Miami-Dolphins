@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, Col } from 'reactstrap';
-import './Equipe.css';
+import './AdminEquipe.css';
 import { NavLink } from 'react-router-dom';
 
 class AdminEquipe extends Component {
@@ -67,7 +67,7 @@ class AdminEquipe extends Component {
 
                     <div className="Boutons">
                         <NavLink to={{ pathname: "/adminjoueurnew",}} className="linkNav">
-                            <Button className="BoutonIndiv" color="success">Ajouter</Button>
+                            <Button className="BoutonIndiv vert" color="success">Ajouter</Button>
                         </NavLink>
                         <NavLink to="/globaladmin/" className="linkNav">
                         <Button color="secondary">Retour</Button>
@@ -83,6 +83,7 @@ class AdminEquipe extends Component {
                                         <p className="name_player">{joueur.firstName}</p>
                                         <p className="lastname_player">{joueur.lastName}</p>
                                     </div>
+                                    <div className="Bouton">
                                     <NavLink to={{
                                         pathname: `/adminjoueurmodifie`,
                                         state: {
@@ -100,13 +101,14 @@ class AdminEquipe extends Component {
                                             id: joueur.id,
                                         }
                                     }}  >
-                                        <Button className="BoutonIndiv" outline color="warning">Modifier</Button>
+                               
+                                        <Button className="BoutonIndiv orange" outline color="link">Modifier</Button>
                                     </NavLink>
 
 
-                                    <Button onClick={() => this.getDeletePlayer(joueur.id)} className="BoutonIndiv" outline color="danger">Supprimer</Button>
+                                    <Button onClick={() => this.getDeletePlayer(joueur.id)} className="BoutonIndiv rouge" outline color="link">Supprimer</Button>
 
-
+                                        </div>
                                 </div>
 
                             </Col>

@@ -85,125 +85,136 @@ class AdminJoueurNew extends Component {
           </NavLink>
         </div>
 
-        <FormGroup>
-          <Input
-            type="text"
-            name="lastName"
-            id="lastName"
-            placeholder="Nom "
-            onChange={this.onChange}
-            value={this.state.lastName} />
-        </FormGroup>
+       <FormGroup>
+                <Label for="exampleFile">Nom:</Label>
+                    <Input
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        placeholder="Nom "
+                        onChange={this.onChange}
+                        value={this.state.lastName} />
+                </FormGroup>
 
-        <FormGroup>
-          <Input
-            type="text"
-            name="firstName"
-            id="firstName"
-            placeholder="Prenom "
-            onChange={this.onChange}
-            value={this.state.firstName} />
-        </FormGroup>
+                <FormGroup>
+                <Label for="exampleFile">Prénom:</Label>
+                    <Input
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        placeholder="Prenom "
+                        onChange={this.onChange}
+                        value={this.state.firstName} />
 
-        <FormGroup>
-          <Input
-            type="text"
-            name="poste"
-            id="poste"
-            placeholder="Poste"
-            onChange={this.onChange}
-            value={this.state.poste} >
+                </FormGroup>
 
-          </Input>
-        </FormGroup>
+                <FormGroup>
+                <Label for="exampleFile">Poste:</Label>
+                    <Input
+                        type="text"
+                        name="poste"
+                        id="poste"
+                        placeholder="Poste"
+                        onChange={this.onChange}
+                        value={this.state.poste} >
 
-        <FormGroup>
-          <Input
-            type="text"
-            name="height"
-            id="height"
-            placeholder="Taille"
-            onChange={this.onChange}
-            value={this.state.height} />
-        </FormGroup>
+                    </Input>
+                </FormGroup>
 
-        <FormGroup>
-          <Input
-            type="text"
-            name="age"
-            id="age"
-            placeholder="Age"
-            onChange={this.onChange}
-            value={this.state.age} />
-        </FormGroup>
+                <FormGroup>
+                <Label for="exampleFile">Taille:</Label>
+                    <Input
+                        type="text"
+                        name="height"
+                        id="height"
+                        placeholder="Taille"
+                        onChange={this.onChange}
+                        value={this.state.height} />
+                </FormGroup>
 
-        <FormGroup>
-          <Input
-            type="text"
-            name="weight"
-            id="weight"
-            placeholder="Poids"
-            onChange={this.onChange}
-            value={this.state.weight} />
-        </FormGroup>
+                <FormGroup>
+                <Label for="exampleFile">Age:</Label>
+                    <Input
+                        type="text"
+                        name="age"
+                        id="age"
+                        placeholder="Age"
+                        onChange={this.onChange}
+                        value={this.state.age} />
+                </FormGroup>
 
-        <FormGroup>
-          <Input
-            className="Stats"
-            type="text"
-            name="yard"
-            id="yard"
-            placeholder="Yard"
-            onChange={this.onChange}
-            value={this.state.yard} />
-        </FormGroup>
+                <FormGroup>
+                <Label for="exampleFile">Poids:</Label>
+                    <Input
+                        type="text"
+                        name="weight"
+                        id="weight"
+                        placeholder="Poids"
+                        onChange={this.onChange}
+                        value={this.state.weight} />
+                </FormGroup>
 
-        <FormGroup>
-          <Input
-            className="Stats"
-            type="text"
-            name="numero"
-            id="numero"
-            placeholder="Numero"
-            onChange={this.onChange}
-            value={this.state.numero} />
-        </FormGroup>
+                <FormGroup>
+                <Label for="exampleFile">Yard gagné:</Label>
+                    <Input
+                        className="Stats"
+                        type="text"
+                        name="yard"
+                        id="yard"
+                        placeholder="Yard"
+                        onChange={this.onChange}
+                        value={this.state.yard} />
+                </FormGroup>
 
-        <FormGroup>
-          <Input
-            className="Stats"
-            type="text"
-            name="tackle"
-            id="tackle"
-            placeholder="Tacles"
-            onChange={this.onChange}
-            value={this.state.tackle} />
-        </FormGroup>
+                <FormGroup>
+                <Label for="exampleFile">Numero:</Label>
+                    <Input
+                        className="Stats"
+                        type="text"
+                        name="numero"
+                        id="numero"
+                        placeholder="Numero"
+                        onChange={this.onChange}
+                        value={this.state.numero} />
+                </FormGroup>
 
-        <FormGroup>
-          <Input
-            className="Stats"
-            type="text"
-            name="intPlayer"
-            id="intPlayer"
-            placeholder="Interception"
-            onChange={this.onChange}
-            value={this.state.intPlayer} />
-        </FormGroup>
+                <FormGroup>
+                <Label for="exampleFile">Plaquage:</Label>
+                    <Input
+                        className="Stats"
+                        type="text"
+                        name="tackle"
+                        id="tackle"
+                        placeholder="Tacles"
+                        onChange={this.onChange}
+                        value={this.state.tackle} />
+                </FormGroup>
 
-        <FormGroup>
-          <Label for="exampleFile">Photo</Label>
-          <Input
-            type="text"
-            name="image"
-            id="image"
-            placeholder="URL de l'image"
-            onChange={this.onChange}
-            value={this.state.image} />
-          <FormText color="muted">
-            Ajouter un portrait du joueur.
+                <FormGroup>
+                <Label for="exampleFile">Interception:</Label>
+                    <Input
+                        className="Stats"
+                        type="text"
+                        name="intPlayer"
+                        id="intPlayer"
+                        placeholder="Interception"
+                        onChange={this.onChange}
+                        value={this.state.intPlayer} />
+                </FormGroup>
+
+                <FormGroup>
+                    <Label for="exampleFile">Adresse de l'image:</Label>
+                    <Input
+                        type="text"
+                        name="image"
+                        id="image"
+                        placeholder="URL de l'image"
+                        onChange={this.onChange}
+                        value={this.state.image} />
+                    <FormText color="muted">
+                        Ajouter un portrait du joueur.
           </FormText>
-        </FormGroup>
+                </FormGroup>
 
       </Form>
     );

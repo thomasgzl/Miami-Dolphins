@@ -122,6 +122,7 @@ class AdminJoueurModifie extends Component {
                     </NavLink>
                 </div>
                 <FormGroup>
+                <Label for="exampleFile">Nom:</Label>
                     <Input
                         type="text"
                         name="lastName"
@@ -132,6 +133,7 @@ class AdminJoueurModifie extends Component {
                 </FormGroup>
 
                 <FormGroup>
+                <Label for="exampleFile">Prénom:</Label>
                     <Input
                         type="text"
                         name="firstName"
@@ -143,6 +145,7 @@ class AdminJoueurModifie extends Component {
                 </FormGroup>
 
                 <FormGroup>
+                <Label for="exampleFile">Poste:</Label>
                     <Input
                         type="text"
                         name="poste"
@@ -155,6 +158,7 @@ class AdminJoueurModifie extends Component {
                 </FormGroup>
 
                 <FormGroup>
+                <Label for="exampleFile">Taille:</Label>
                     <Input
                         type="text"
                         name="height"
@@ -165,6 +169,7 @@ class AdminJoueurModifie extends Component {
                 </FormGroup>
 
                 <FormGroup>
+                <Label for="exampleFile">Age:</Label>
                     <Input
                         type="text"
                         name="age"
@@ -175,6 +180,7 @@ class AdminJoueurModifie extends Component {
                 </FormGroup>
 
                 <FormGroup>
+                <Label for="exampleFile">Poids:</Label>
                     <Input
                         type="text"
                         name="weight"
@@ -185,6 +191,7 @@ class AdminJoueurModifie extends Component {
                 </FormGroup>
 
                 <FormGroup>
+                <Label for="exampleFile">Yard gagné:</Label>
                     <Input
                         className="Stats"
                         type="text"
@@ -196,6 +203,7 @@ class AdminJoueurModifie extends Component {
                 </FormGroup>
 
                 <FormGroup>
+                <Label for="exampleFile">Numero:</Label>
                     <Input
                         className="Stats"
                         type="text"
@@ -207,6 +215,7 @@ class AdminJoueurModifie extends Component {
                 </FormGroup>
 
                 <FormGroup>
+                <Label for="exampleFile">Plaquage:</Label>
                     <Input
                         className="Stats"
                         type="text"
@@ -218,6 +227,7 @@ class AdminJoueurModifie extends Component {
                 </FormGroup>
 
                 <FormGroup>
+                <Label for="exampleFile">Interception:</Label>
                     <Input
                         className="Stats"
                         type="text"
@@ -229,7 +239,7 @@ class AdminJoueurModifie extends Component {
                 </FormGroup>
 
                 <FormGroup>
-                    <Label for="exampleFile">Photo</Label>
+                    <Label for="exampleFile">Adresse de l'image:</Label>
                     <Input
                         type="text"
                         name="image"
