@@ -39,6 +39,7 @@ class Bandeau extends Component{
             }
         }    
     }
+}
     
     /* charger les fonctions tri par date */
     componentDidMount(){
