@@ -42,7 +42,7 @@ class App extends Component {
           <Route path="/profiljoueur" component={ProfilJoueur} />
           <Route path="/admincalendrier" component={AdminCalendrier} />
           <Route path="/admin-news" component={AdminNews} />
-          <Route path="/globaladmin" component={GlobalAdmin} />
+          <Route path="/admin" component={GlobalAdmin} />
           <Route path="/adminjoueurnew" component={AdminJoueurNew} />
           <Route path="/adminequipe" component={AdminEquipe} />
           <Route path="/adminjoueurmodifie" component={AdminJoueurModifie} />
