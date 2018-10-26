@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col,Input,Button } from 'reactstrap';
+import {NavLink} from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
 import './AdminCalendrier.css';
 
@@ -109,7 +110,8 @@ class AdminCalendrier extends Component {
         refreshData(){
             window.location.reload()
         }
-
+    
+        
         //FONCTION POUR SUPPRIMER UN MATCH, ***METHODE DELETE DE FETCH***
         deleteData(item) {
             const url="http://92.175.11.66:3000/reaction/api/calendriers";
@@ -128,7 +130,6 @@ class AdminCalendrier extends Component {
             const url="http://92.175.11.66:3000/reaction/api/calendriers";
             fetch(url + '/' + yolo)
             .then(res => res.json())
-            //.then(res=>console.log(res,"res"))
             .then(res => {
                 let a= this.state.modification
                 a.equipeA=res.equipeA;
@@ -159,6 +160,9 @@ class AdminCalendrier extends Component {
             <div className="AdminCalendrier">
               <h1 className="titreAdminCalendrier">Gestion du calendrier des matchs</h1>
               <div className="nosEntreesPlatsDesserts">
+              <NavLink to="/admin/" className="linkNav">
+                    <Button color="secondary">Retour</Button> 
+              </NavLink>
               <div className="InputsCalendrier">
                 <h5>Déclarer un nouveau match</h5>
                 <form onSubmit={this.submitForm}>
