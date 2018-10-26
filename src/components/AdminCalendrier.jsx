@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col,Input,Button } from 'reactstrap';
+import { Container, Row, Col,Input,Button,Collapse } from 'reactstrap';
 import {NavLink} from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
 import './AdminCalendrier.css';
@@ -23,7 +23,8 @@ class AdminCalendrier extends Component {
                 score: '',
                 chaine: '',
             },
-            donneesCalendrier:[]
+            donneesCalendrier:[],
+            collapse: false, status: 'Closed'
           }
 
           this.onChange = this.onChange.bind(this);
@@ -31,8 +32,16 @@ class AdminCalendrier extends Component {
           this.submitForm = this.submitForm.bind(this);
           this.orderMatch=this.orderMatch.bind(this);
           this.refreshData=this.refreshData.bind(this);
+          this.toggle=this.toggle.bind(this);
           this.input = React.createRef();
         }
+        
+        //FONCTION POUR REDUIRE LE FORMULAIRE DE DECLARATION DE MATCH
+        toggle() {
+            this.setState({collapse:!this.state.collapse });
+          }
+
+
       
         //FONCTION POUR MAJ STATE DU COMPOSANT VIA DES CLE DYNAMIQUES DES FORMULAIRES
         onChange(e) {
@@ -157,140 +166,148 @@ class AdminCalendrier extends Component {
     
         render() {
           return (
-            <div className="AdminCalendrier">
-              <h1 className="titreAdminCalendrier">Gestion du calendrier des matchs</h1>
-              <div className="nosEntreesPlatsDesserts">
-              <div className="boutonRetour">
-              <NavLink to="/admin/" className="linkNav">
-                    <Button color="secondary">Retour</Button> 
-              </NavLink>
-              </div>
-              <div className="InputsCalendrier">
-                <h5  className="soustitreAdminCalendrier">Déclarer un nouveau match</h5>
-                <form onSubmit={this.submitForm}>
-                    <Input 
-                        placeholder="Equipe A"
-                        type="text"
-                        id="equipeA"
-                        name="equipeA"
-                        onChange={this.onChange}
-                        value={this.state.name}/>
-                    <Input 
-                        placeholder="Equipe B"
-                        type="text"
-                        id="equipeB"
-                        name="equipeB"
-                        onChange={this.onChange}
-                        value={this.state.name}/>                           
-                    <Input 
-                       placeholder="Score"
-                       type="text"
-                       id="score"
-                       name="score"
-                       onChange={this.onChange}
-                       value={this.state.name}/>                         
-                    <Input 
-                        placeholder="Date du match"
-                        type="text"
-                        id="dateMatch"
-                        name="dateMatch"
-                        onChange={this.onChange}
-                        value={this.state.name}/>                        
-                    <Input 
-                         placeholder="Chaine TV"
-                         type="text"
-                         id="chaine"
-                         name="chaine"
-                         onChange={this.onChange}
-                         value={this.state.name}/>                                             
-                       <div className="film-data">
-                        <Button type ="submit" color="success" value="envoie">Envoyer</Button>                        
-                       </div>                         
-                    </form>                                                
-                 </div>  
-               
-                 <div className="ModifierMatchCalendrier">
-                <h5  className="soustitreAdminCalendrier">Modifier un  match</h5>
-                <form onSubmit={this.submitForm}>
-                    <Input 
-                        placeholder="Equipe A"
-                        type="text"
-                        id="equipeA"
-                        name="equipeA"
-                        onChange={this.onChange2}
-                        value={this.state.modification.equipeA}/>
-                    <Input 
-                        placeholder="Equipe B"
-                        type="text"
-                        id="equipeB"
-                        name="equipeB"
-                        onChange={this.onChange2}
-                        value={this.state.modification.equipeB}/>                           
-                    <Input 
-                       placeholder="Score"
-                       type="text"
-                       id="score"
-                       name="score"
-                       onChange={this.onChange2}
-                       value={this.state.modification.score}/>                         
-                    <Input 
-                        placeholder="Date du match"
-                        type="text"
-                        id="dateMatch"
-                        name="dateMatch"
-                        onChange={this.onChange2}
-                        value={this.state.modification.dateMatch}/>                        
-                    <Input 
-                         placeholder="Chaine TV"
-                         type="text"
-                         id="chaine"
-                         name="chaine"
-                         onChange={this.onChange2}
-                         value={this.state.modification.chaine}/>                                             
-                       <div className="film-data">
-                        <Button onClick={()=>this.updateData()} type ="submit" color="success">Envoyer</Button>
-                        <Button onClick={()=>this.refreshData()}color="warning">Effacer</Button>                           
-                       </div>                         
-                    </form>                                                
-                 </div>       
-                                                          
-               </div>                     
-               
-             <div className="GlobalCalendrier_Admin">
-                <Container className="Container_Admin">
-                    <h5  className="soustitreAdminCalendrier">Supprimer ou modifier un match</h5>
-                    <div className="CalendrierAdmin">
-                <ul className="Calendrier_contour_Admin">
-                    {this.state.donneesCalendrier.map((match)=>
-                    <Row className="Calendrier_ligneTableau_Admin">
-                        <Col lg="2" xs="5" className="colonne1admin">
-                                <div>
-                                        <p className="dateMatchDesktop">{match.dateMatch.substring(8,10)} {match.dateMatch.substring(5,7)} {match.dateMatch.substring(0,4)}</p>
-                                </div> 
-                        </Col>
-                        <Col lg="2" xs="2" className="colonne2admin">
-                            <p> {match.equipeA} </p>
-                        </Col>
-                        <Col lg="2" xs="2" className="colonne3admin">
-                            <p> {match.score} </p>
-                        </Col>
-                        <Col lg="2" xs="1" className="colonne4admin">
-                            <p> {match.equipeB} </p>
-                        </Col> 
-                        <Col lg="2" xs="0" className="colonne5admin">
-                            <p>{match.chaine}</p>
-                        </Col> 
-                        <Col lg="2" xs="2" className="colonne6admin">
-                            <Button onClick={()=>this.deleteData(match.id)} color="danger">Supprimer</Button>
-                            <Button onClick={()=>this.modifyData(match.id)} color="warning">Modifier</Button>     
-                        </Col>
-                    </Row>)
-                }
-                </ul>
-                </div>
-                </Container>  
-            </div>
-    </div>
+            <Container>
+
+            <div className="PageAdminCalendrier">
+                 <h1 className="titreAdminCalendrier">Gestion du calendrier des matchs</h1>
+                    <div className="boutonRetour">
+                       <NavLink to="/admin/" className="linkNav">
+                            <Button color="secondary">Acceuil admin</Button> 
+                        </NavLink>
+                    </div>
+            <Row>                                
+              <div className="Form_Declaration_Match">
+              <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Déclarer un match</Button>
+                    <Collapse isOpen={this.state.collapse}>
+                        <form onSubmit={this.submitForm}>
+                            <Input 
+                                placeholder="Equipe A"
+                                type="text"
+                                id="equipeA"
+                                name="equipeA"
+                                onChange={this.onChange}
+                                value={this.state.name}/>
+                            <Input 
+                                placeholder="Equipe B"
+                                type="text"
+                                id="equipeB"
+                                name="equipeB"
+                                onChange={this.onChange}
+                                value={this.state.name}/>                           
+                            <Input 
+                                placeholder="Score"
+                                type="text"
+                                id="score"
+                                name="score"
+                                onChange={this.onChange}
+                                value={this.state.name}/>                         
+                            <Input 
+                                placeholder="Date du match"
+                                type="text"
+                                id="dateMatch"
+                                name="dateMatch"
+                                onChange={this.onChange}
+                                value={this.state.name}/>                        
+                            <Input 
+                                placeholder="Chaine TV"
+                                type="text"
+                                id="chaine"
+                                name="chaine"
+                                onChange={this.onChange}
+                                value={this.state.name}/>                                             
+                            <div className="Envoyer_Form_Declaration_Match">
+                                <Button type ="submit" onClick={this.toggle} color="success" value="envoie">Envoyer</Button>                        
+                            </div>                         
+                            </form>                                                
+                        
+                    </Collapse>
+                    </div>  
+                </Row>
+                <Row>
+                   
+                    <Col lg="8">
+
+                                <div className="Calendrier_Admin">
+                                        <h5  className="soustitreAdminCalendrier">Supprimer ou modifier un match</h5>
+                                            <ul className="sousCalendrier_Admin">
+                                                {this.state.donneesCalendrier.map((match)=>
+                                                <Row className="Row_Admin_Calendrier">
+                                                    <Col lg="2" xs="5" className="colonne1admin">
+                                                            <div>
+                                                                    <p className="dateMatchDesktop">{match.dateMatch.substring(8,10)} {match.dateMatch.substring(5,7)} {match.dateMatch.substring(0,4)}</p>
+                                                            </div> 
+                                                    </Col>
+                                                    <Col lg="2" xs="2" className="colonne2admin">
+                                                        <p> {match.equipeA} </p>
+                                                    </Col>
+                                                    <Col lg="1" xs="2" className="colonne3admin">
+                                                        <p> {match.score} </p>
+                                                    </Col>
+                                                    <Col lg="3" xs="1" className="colonne4admin">
+                                                        <p> {match.equipeB} </p>
+                                                    </Col> 
+                                                    <Col lg="2" xs="0" className="colonne5admin">
+                                                        <p>{match.chaine}</p>
+                                                    </Col> 
+                                                    <Col lg="1" xs="2" className="colonne6admin">
+                                                        <Button onClick={()=>this.deleteData(match.id)} color="danger">Supprimer</Button>
+                                                        <Button onClick={()=>this.modifyData(match.id)} color="warning">Modifier</Button>     
+                                                    </Col>
+                                                </Row>)
+                                            }
+                                            </ul>
+                                         </div>
+                            </Col>
+                            <Col lg="4">
+                        <div className="Form_Modification-Match">
+                        <h5  className="soustitreAdminCalendrier">Modifier un  match</h5>
+                        <form onSubmit={this.submitForm}>
+                            <Input 
+                                placeholder="Equipe A"
+                                type="text"
+                                id="equipeA"
+                                name="equipeA"
+                                onChange={this.onChange2}
+                                value={this.state.modification.equipeA}/>
+                            <Input 
+                                placeholder="Equipe B"
+                                type="text"
+                                id="equipeB"
+                                name="equipeB"
+                                onChange={this.onChange2}
+                                value={this.state.modification.equipeB}/>                           
+                            <Input 
+                                placeholder="Score"
+                                type="text"
+                                id="score"
+                                name="score"
+                                onChange={this.onChange2}
+                                value={this.state.modification.score}/>                         
+                            <Input 
+                                placeholder="Date du match"
+                                type="text"
+                                id="dateMatch"
+                                name="dateMatch"
+                                onChange={this.onChange2}
+                                value={this.state.modification.dateMatch}/>                        
+                            <Input 
+                                placeholder="Chaine TV"
+                                type="text"
+                                id="chaine"
+                                name="chaine"
+                                onChange={this.onChange2}
+                                value={this.state.modification.chaine}/>                                             
+                            <div className="Boutons_Form_Modification-Match">
+                                <Button onClick={()=>this.updateData()} type ="submit" color="success">Envoyer</Button>
+                                <Button onClick={()=>this.refreshData()}color="warning">Effacer</Button>                           
+                            </div>                         
+                            </form>                                                
+                    </div>     
+                    </Col>
+                            </Row>
+                
+           </div>                                                 
+    </Container>
   )
 }
 }
