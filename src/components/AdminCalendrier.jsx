@@ -160,11 +160,13 @@ class AdminCalendrier extends Component {
             <div className="AdminCalendrier">
               <h1 className="titreAdminCalendrier">Gestion du calendrier des matchs</h1>
               <div className="nosEntreesPlatsDesserts">
+              <div className="boutonRetour">
               <NavLink to="/admin/" className="linkNav">
                     <Button color="secondary">Retour</Button> 
               </NavLink>
+              </div>
               <div className="InputsCalendrier">
-                <h5>Déclarer un nouveau match</h5>
+                <h5  className="soustitreAdminCalendrier">Déclarer un nouveau match</h5>
                 <form onSubmit={this.submitForm}>
                     <Input 
                         placeholder="Equipe A"
@@ -208,7 +210,7 @@ class AdminCalendrier extends Component {
                  </div>  
                
                  <div className="ModifierMatchCalendrier">
-                <h5>Modifier un  match</h5>
+                <h5  className="soustitreAdminCalendrier">Modifier un  match</h5>
                 <form onSubmit={this.submitForm}>
                     <Input 
                         placeholder="Equipe A"
@@ -256,29 +258,29 @@ class AdminCalendrier extends Component {
                
              <div className="GlobalCalendrier_Admin">
                 <Container className="Container_Admin">
-                    <h5 className="Calendrier-title">Supprimer ou modifier un match</h5>
+                    <h5  className="soustitreAdminCalendrier">Supprimer ou modifier un match</h5>
                     <div className="CalendrierAdmin">
                 <ul className="Calendrier_contour_Admin">
                     {this.state.donneesCalendrier.map((match)=>
                     <Row className="Calendrier_ligneTableau_Admin">
-                        <Col lg="2" xs="12" className="colonne1">
+                        <Col lg="2" xs="5" className="colonne1">
                                 <div>
                                         <p className="dateMatchDesktop">{match.dateMatch.substring(8,10)} {match.dateMatch.substring(5,7)} {match.dateMatch.substring(0,4)}</p>
                                 </div> 
                         </Col>
-                        <Col lg="2" xs="5" className="colonne2">
+                        <Col lg="2" xs="2" className="colonne2">
                             <p> {match.equipeA} </p>
                         </Col>
-                        <Col lg="2" xs="3" className="colonne3">
+                        <Col lg="2" xs="2" className="colonne3">
                             <p> {match.score} </p>
                         </Col>
-                        <Col lg="2" xs="4" className="colonne4">
+                        <Col lg="2" xs="1" className="colonne4">
                             <p> {match.equipeB} </p>
                         </Col> 
-                        <Col lg="2" className="colonne5">
+                        <Col lg="2" xs="0" className="colonne5">
                             <p>{match.chaine}</p>
                         </Col> 
-                        <Col lg="2" className="colonne6">
+                        <Col lg="2" xs="2" className="colonne6">
                             <Button onClick={()=>this.deleteData(match.id)} color="danger">Supprimer</Button>
                             <Button onClick={()=>this.modifyData(match.id)} color="warning">Modifier</Button>     
                         </Col>
