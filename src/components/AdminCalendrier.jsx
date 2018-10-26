@@ -70,7 +70,11 @@ class AdminCalendrier extends Component {
                 }
               }).catch(e => {
                 alert('Erreur lors de l\'ajout du Match');
-              });
+              })
+              .then(()=>fetch(url)
+                    .then(response => response.json())
+                    .then(data=>this.setState({donneesCalendrier:data}))
+            )   ;
           }
                
         // FONCTION POUR AFFICHAGE CALENDRIER TRIE PAR ORDRE CROISSANT DE DATE
@@ -112,11 +116,12 @@ class AdminCalendrier extends Component {
             fetch(url + '/' + item, {
                 method: 'delete'
             })
-            .then(response => {
-                return response.json()})
-        }
-
-       
+            .then(response =>response)
+            .then(()=>fetch(url)
+                    .then(doubs => doubs.json())
+                    .then(data=>this.setState({donneesCalendrier:data}))
+            )   
+        }    
         //FONCTION POUR SELECTIONNER UN MATCH DU CALENDRIER,
         //ET TRANSFERT MATCH DANS UN FORMULAIRE POUR LE MODIFIER ***METHODE GET DE FETCH***
         modifyData(yolo){
@@ -144,16 +149,15 @@ class AdminCalendrier extends Component {
                 body: JSON.stringify(this.state.modification),
                 headers: {"Content-Type": "application/json"},
               })
-            .then (body=>{
-                console.log(body,"updatedata");
-                body.json()})
+            .then (body=>body)
+            
         }
 
     
         render() {
           return (
             <div className="AdminCalendrier">
-              <h1>Gestion du calendrier des matchs</h1>
+              <h1 className="titreAdminCalendrier">Gestion du calendrier des matchs</h1>
               <div className="nosEntreesPlatsDesserts">
               <div className="InputsCalendrier">
                 <h5>Déclarer un nouveau match</h5>
@@ -194,7 +198,7 @@ class AdminCalendrier extends Component {
                          onChange={this.onChange}
                          value={this.state.name}/>                                             
                        <div className="film-data">
-                        <Button type ="submit" color="success">Envoyer</Button>                        
+                        <Button type ="submit" color="success" value="envoie">Envoyer</Button>                        
                        </div>                         
                     </form>                                                
                  </div>  
@@ -246,22 +250,22 @@ class AdminCalendrier extends Component {
                                                           
                </div>                     
                
-             <div className="GlobalCalendrier">
-                <Container >
+             <div className="GlobalCalendrier_Admin">
+                <Container className="Container_Admin">
                     <h5 className="Calendrier-title">Supprimer ou modifier un match</h5>
                     <div className="CalendrierAdmin">
-                <ul className="Calendrier_contour">
+                <ul className="Calendrier_contour_Admin">
                     {this.state.donneesCalendrier.map((match)=>
-                    <Row className="Calendrier_ligneTableau">
+                    <Row className="Calendrier_ligneTableau_Admin">
                         <Col lg="2" xs="12" className="colonne1">
                                 <div>
                                         <p className="dateMatchDesktop">{match.dateMatch.substring(8,10)} {match.dateMatch.substring(5,7)} {match.dateMatch.substring(0,4)}</p>
                                 </div> 
                         </Col>
-                        <Col lg="2" xs="4" className="colonne2">
+                        <Col lg="2" xs="5" className="colonne2">
                             <p> {match.equipeA} </p>
                         </Col>
-                        <Col lg="2" xs="4" className="colonne3">
+                        <Col lg="2" xs="3" className="colonne3">
                             <p> {match.score} </p>
                         </Col>
                         <Col lg="2" xs="4" className="colonne4">
@@ -278,21 +282,12 @@ class AdminCalendrier extends Component {
                 }
                 </ul>
                 </div>
-                </Container>
-                
+                </Container>  
             </div>
-                                
-  
-    
-
     </div>
-    
   )
-
 }
-
 }
- 
 export default AdminCalendrier;
 
 
