@@ -19,13 +19,13 @@ class Bandeau extends Component {
         let da = '';
         let db = '';
 
-        function SortTime(a, b) {
-            da = new Date(a.dateMatch);
-            db = new Date(b.dateMatch);
-            return (da > db) ? 1 : -1;
-        }
-        let result = arg.sort(SortTime);
-        //console.log('fonction ordermatch executée')
+
+        function SortTime(a,b){ 
+            da=new Date(a.dateMatch);
+            db=new Date(b.dateMatch);
+            return (da>db)?1:-1;
+            }
+        let result=arg.sort(SortTime);
 
         return result;
     }
@@ -45,18 +45,15 @@ class Bandeau extends Component {
     /* charger les fonctions tri par date */
     componentDidMount() {
         fetch("http://92.175.11.66:3000/reaction/api/calendriers")
-            .then(response => response.json())
-            //.then(step1=>console.log(step1,'step1'))
-            .then(data => this.orderMatch(data))
-            //.then(step2=>console.log(step2,'step2'))
-            .then(trie => trie[this.nextMatch(trie)])
-            //.then(step3=>console.log(step3,'step3'))
-            .then(acharger => {
-                this.setState({
-                    nextEvent: acharger,
-                });
-            })
-
+        .then(response  =>  response.json())
+        .then(data  => this.orderMatch(data))
+        .then(trie => trie[this.nextMatch(trie)])
+        .then(acharger=>{
+            this.setState({
+              nextEvent:acharger,
+            });
+        })
+        
     }
 
 
