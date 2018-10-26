@@ -9,14 +9,36 @@
 }
 
 .formulaire_news {
-    justify-content: center;
-    padding-bottom : 30px;
+    padding: 20px;
+    margin: 3%;
+    border: 3px solid #ff731a;
 }
 
-.bouton_supprimer {
-    margin-left: 1%;
+.titre_form {
+    text-decoration: underline;
+    margin-bottom: 5%;
 }
 
-.bouton_modifier {
-    margin-left: 1%;
+.supprimer {
+    margin-right: 1%;
+}
+
+.affichage_news img {
+    width: 40%;
+}
+
+.titre_gestion {
+    text-align: center;
+}
+
+.image_article {
+    margin-bottom: 60px;
+}
+
+.ajouter {
+    margin-right: 10px;
+}
+
+.supprimer {
+    margin-left: 20px;
 }
