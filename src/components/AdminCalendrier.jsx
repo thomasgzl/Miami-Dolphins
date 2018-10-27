@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Container, Row, Col,Input,Button,Collapse } from 'reactstrap';
+import { Container,Row,Col,Input,Button,Collapse,Modal,ModalHeader,ModalBody,ModalFooter} from 'reactstrap';
 import {NavLink} from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
 import './AdminCalendrier.css';
+import AbortController from "abort-controller"
+
 
 
 class AdminCalendrier extends Component {
@@ -26,6 +28,7 @@ class AdminCalendrier extends Component {
             donneesCalendrier:[],
             collapse: false, status: 'Closed',
             showModify:false,
+            modal: false
           }
 
           this.onChange = this.onChange.bind(this);
@@ -33,16 +36,23 @@ class AdminCalendrier extends Component {
           this.submitForm = this.submitForm.bind(this);
           this.orderMatch=this.orderMatch.bind(this);
           this.refreshData=this.refreshData.bind(this);
-          this.toggle=this.toggle.bind(this);
+          this.toggleCollapse=this.toggleCollapse.bind(this);
+          this.toggleModal=this.toggleModal.bind(this);
           this.input = React.createRef();
+          this.abortFetching=this.abortFetching.bind(this);
         }
         
         //FONCTION POUR REDUIRE LE FORMULAIRE DE DECLARATION DE MATCH
-        toggle() {
+        toggleCollapse() {
             this.setState({collapse:!this.state.collapse });
           }
+        
+        //FONCTION POUR DEPLOYER UN POPUP A LA VALIDATION OU SUPPRESSION
+        toggleModal(){
+            this.setState({modal:!this.state.modal});
+        }
 
-
+ 
       
         //FONCTION POUR MAJ STATE DU COMPOSANT VIA DES CLE DYNAMIQUES DES FORMULAIRES
         onChange(e) {
@@ -56,11 +66,19 @@ class AdminCalendrier extends Component {
             obj[e.target.name] = e.target.value
             this.setState(obj);
           }
+
+           abortFetching() {
+            const controller = new AbortController()
+            const signal = controller.signal
+            controller.abort()
+            }
           
            //FONCTION POUR AJOUT D'UN NOUVEAU MATCH VIA FORMULAIRE ***METHODE POST DE FETCH***
           submitForm(e) {
+          
             e.preventDefault();
-
+            const controller = new AbortController()
+            const signal = controller.signal
             const url = "http://92.175.11.66:3000/reaction/api/calendriers/";
         
             const config = {
@@ -76,8 +94,9 @@ class AdminCalendrier extends Component {
               .then(res => {
                 if (res.error) {
                   alert(res.error);
-                } else {
-                  alert(`Match ajouté avec l'ID ${res}!`);
+                }
+                else {
+                    this.setState({modal:!this.state.modal})
                 }
               }).catch(e => {
                 alert('Erreur lors de l\'ajout du Match');
@@ -146,7 +165,7 @@ class AdminCalendrier extends Component {
                 a.equipeA=res.equipeA;
                 a.equipeB=res.equipeB;
                 a.score=res.score;
-                a.dateMatch=res.dateMatch.substring(0,res.dateMatch.indexOf('T'));
+                a.dateMatch=res.dateMatch.substring(0,20);
                 a.chaine=res.chaine;
                 return this.setState({modification:a,})
             })
@@ -162,73 +181,79 @@ class AdminCalendrier extends Component {
                 headers: {"Content-Type": "application/json"},
               })
             .then (body=>body)
-            
         }
-
-    
         render() {
-          return (
+          return (    
             <Container>
 
             <div className="PageAdminCalendrier">
                  <h1 className="titreAdminCalendrier">Gestion du calendrier des matchs</h1>
+                 <Row>
                     <div className="boutonRetour">
                        <NavLink to="/admin/" className="linkNav">
                             <Button color="secondary">Acceuil admin</Button> 
                         </NavLink>
                     </div>
-            <Row>                                
-              <div className="Form_Declaration_Match">
-              <Button color="primary" onClick={this.toggle} style={{ marginBottom: '2rem'}}>Déclarer un match</Button>
-                    <Collapse isOpen={this.state.collapse}>
-                        <form onSubmit={this.submitForm}>
-                            <Input 
-                                placeholder="Equipe A"
-                                type="text"
-                                id="equipeA"
-                                name="equipeA"
-                                onChange={this.onChange}
-                                value={this.state.name}/>
-                            <Input 
-                                placeholder="Equipe B"
-                                type="text"
-                                id="equipeB"
-                                name="equipeB"
-                                onChange={this.onChange}
-                                value={this.state.name}/>                           
-                            <Input 
-                                placeholder="Score"
-                                type="text"
-                                id="score"
-                                name="score"
-                                onChange={this.onChange}
-                                value={this.state.name}/>                         
-                            <Input 
-                                placeholder="Date du match"
-                                type="text"
-                                id="dateMatch"
-                                name="dateMatch"
-                                onChange={this.onChange}
-                                value={this.state.name}/>                        
-                            <Input 
-                                placeholder="Chaine TV"
-                                type="text"
-                                id="chaine"
-                                name="chaine"
-                                onChange={this.onChange}
-                                value={this.state.name}/>                                             
-                            <div className="Envoyer_Form_Declaration_Match">
-                                <Button type ="submit" onClick={this.toggle} color="success" value="envoie">Envoyer</Button>                        
-                            </div>                         
-                            </form>                                                
-                        
-                    </Collapse>
-                    </div>  
-                </Row>
-                <Row>
-                   
-                    <Col lg="8">
-
+                    <Modal isOpen={this.state.modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}
+                        toggle={this.toggleModal} className={this.props.className}>
+                        <ModalBody> 
+                            La base de données a pris en compte votre changement
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button color="primary" onClick={this.toggleModal}>OK</Button>{' '}
+                            <Button color="secondary" onClick={this.abortFetching}>Cancel</Button>
+                        </ModalFooter>
+                    </Modal>
+                                            
+                    <div className="Form_Declaration_Match">
+                    <Button color="primary" onClick={this.toggleCollapse} style={{ marginBottom: '2rem'}}>Déclarer un match</Button>
+                            <Collapse isOpen={this.state.collapse}>
+                                <form onSubmit={this.submitForm}>
+                                    <Input 
+                                        placeholder="Equipe A"
+                                        type="text"
+                                        id="equipeA"
+                                        name="equipeA"
+                                        onChange={this.onChange}
+                                        value={this.state.name}/>
+                                    <Input 
+                                        placeholder="Equipe B"
+                                        type="text"
+                                        id="equipeB"
+                                        name="equipeB"
+                                        onChange={this.onChange}
+                                        value={this.state.name}/>                           
+                                    <Input 
+                                        placeholder="Score"
+                                        type="text"
+                                        id="score"
+                                        name="score"
+                                        onChange={this.onChange}
+                                        value={this.state.name}/>                         
+                                    <Input 
+                                        placeholder="Date du match"
+                                        type="text"
+                                        id="dateMatch"
+                                        name="dateMatch"
+                                        onChange={this.onChange}
+                                        value={this.state.name}/>                        
+                                    <Input 
+                                        placeholder="Chaine TV"
+                                        type="text"
+                                        id="chaine"
+                                        name="chaine"
+                                        onChange={this.onChange}
+                                        value={this.state.name}/>                                             
+                                    <div className="Envoyer_Form_Declaration_Match">
+                                        <Button type ="submit" onClick={this.toggleCollapse} color="success" value="envoie">Envoyer</Button>                        
+                                    </div>                         
+                                    </form>                                                
+                                
+                            </Collapse>
+                            </div>  
+                        </Row>
+                        <Row>
+                            <Col lg="8">
                                 <div className="Calendrier_Admin">
                                         <h5  className="soustitreAdminCalendrier">Supprimer ou modifier un match</h5>
                                             <ul className="sousCalendrier_Admin">
@@ -259,57 +284,57 @@ class AdminCalendrier extends Component {
                                             }
                                             </ul>
                                          </div>
-                            </Col>
+                             </Col>
                             <Col lg="4">
-                        <div className="Form_Modification-Match" style={{display:this.state.showModify?'block':'none'}}>
-                        <h5  className="soustitreAdminCalendrier">Modifier un  match</h5>
-                        <form onSubmit={this.submitForm}>
-                            <Input 
-                                placeholder="Equipe A"
-                                type="text"
-                                id="equipeA"
-                                name="equipeA"
-                                onChange={this.onChange2}
-                                value={this.state.modification.equipeA}/>
-                            <Input 
-                                placeholder="Equipe B"
-                                type="text"
-                                id="equipeB"
-                                name="equipeB"
-                                onChange={this.onChange2}
-                                value={this.state.modification.equipeB}/>                           
-                            <Input 
-                                placeholder="Score"
-                                type="text"
-                                id="score"
-                                name="score"
-                                onChange={this.onChange2}
-                                value={this.state.modification.score}/>                         
-                            <Input 
-                                placeholder="Date du match"
-                                type="text"
-                                id="dateMatch"
-                                name="dateMatch"
-                                onChange={this.onChange2}
-                                value={this.state.modification.dateMatch}/>                        
-                            <Input 
-                                placeholder="Chaine TV"
-                                type="text"
-                                id="chaine"
-                                name="chaine"
-                                onChange={this.onChange2}
-                                value={this.state.modification.chaine}/>                                             
-                            <div className="Boutons_Form_Modification-Match">
-                                <Button onClick={()=>this.updateData()} type ="submit" color="success">Envoyer</Button>
-                                <Button onClick={()=>this.refreshData()}color="warning">Abandonner</Button>                           
-                            </div>                         
-                            </form>                                                
-                    </div>     
-                    <div className="DolphinsReplace_Form_Modification-Match" style={{display:this.state.showModify?'none':'block'}}>
-                            <img src="https://i.imgur.com/JXboZ1e.png" alt="logoDolphins"></img>
-                    </div>
+                                <div className="Form_Modification-Match" style={{display:this.state.showModify?'block':'none'}}>
+                                <h5  className="soustitreAdminCalendrier">Modifier un  match</h5>
+                                <form onSubmit={this.submitForm}>
+                                    <Input 
+                                        placeholder="Equipe A"
+                                        type="text"
+                                        id="equipeA"
+                                        name="equipeA"
+                                        onChange={this.onChange2}
+                                        value={this.state.modification.equipeA}/>
+                                    <Input 
+                                        placeholder="Equipe B"
+                                        type="text"
+                                        id="equipeB"
+                                        name="equipeB"
+                                        onChange={this.onChange2}
+                                        value={this.state.modification.equipeB}/>                           
+                                    <Input 
+                                        placeholder="Score"
+                                        type="text"
+                                        id="score"
+                                        name="score"
+                                        onChange={this.onChange2}
+                                        value={this.state.modification.score}/>                         
+                                    <Input 
+                                        placeholder="Date du match"
+                                        type="text"
+                                        id="dateMatch"
+                                        name="dateMatch"
+                                        onChange={this.onChange2}
+                                        value={this.state.modification.dateMatch}/>                        
+                                    <Input 
+                                        placeholder="Chaine TV"
+                                        type="text"
+                                        id="chaine"
+                                        name="chaine"
+                                        onChange={this.onChange2}
+                                        value={this.state.modification.chaine}/>                                             
+                                    <div className="Boutons_Form_Modification-Match">
+                                        <Button onClick={()=>this.updateData()} type ="submit" color="success">Envoyer</Button>
+                                        <Button onClick={()=>this.refreshData()}color="warning">Abandonner</Button>                           
+                                    </div>                         
+                                    </form>                                                
+                            </div>     
+                            <div className="DolphinsReplace_Form_Modification-Match" style={{display:this.state.showModify?'none':'block'}}>
+                                    <img src="https://i.imgur.com/JXboZ1e.png" alt="logoDolphins"></img>
+                            </div>
                     </Col>
-                            </Row>
+                </Row>
                 
            </div>                                                 
     </Container>
