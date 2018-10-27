@@ -24,7 +24,8 @@ class AdminCalendrier extends Component {
                 chaine: '',
             },
             donneesCalendrier:[],
-            collapse: false, status: 'Closed'
+            collapse: false, status: 'Closed',
+            showModify:false,
           }
 
           this.onChange = this.onChange.bind(this);
@@ -136,6 +137,7 @@ class AdminCalendrier extends Component {
         //FONCTION POUR SELECTIONNER UN MATCH DU CALENDRIER,
         //ET TRANSFERT MATCH DANS UN FORMULAIRE POUR LE MODIFIER ***METHODE GET DE FETCH***
         modifyData(yolo){
+            this.setState({showModify:true})
             const url="http://92.175.11.66:3000/reaction/api/calendriers";
             fetch(url + '/' + yolo)
             .then(res => res.json())
@@ -144,9 +146,9 @@ class AdminCalendrier extends Component {
                 a.equipeA=res.equipeA;
                 a.equipeB=res.equipeB;
                 a.score=res.score;
-                a.dateMatch=res.dateMatch;
+                a.dateMatch=res.dateMatch.substring(0,res.dateMatch.indexOf('T'));
                 a.chaine=res.chaine;
-                return this.setState({modification:a})
+                return this.setState({modification:a,})
             })
             this.setState({idEnModification:yolo})
         }
@@ -177,7 +179,7 @@ class AdminCalendrier extends Component {
                     </div>
             <Row>                                
               <div className="Form_Declaration_Match">
-              <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Déclarer un match</Button>
+              <Button color="primary" onClick={this.toggle} style={{ marginBottom: '2rem'}}>Déclarer un match</Button>
                     <Collapse isOpen={this.state.collapse}>
                         <form onSubmit={this.submitForm}>
                             <Input 
@@ -259,7 +261,7 @@ class AdminCalendrier extends Component {
                                          </div>
                             </Col>
                             <Col lg="4">
-                        <div className="Form_Modification-Match">
+                        <div className="Form_Modification-Match" style={{display:this.state.showModify?'block':'none'}}>
                         <h5  className="soustitreAdminCalendrier">Modifier un  match</h5>
                         <form onSubmit={this.submitForm}>
                             <Input 
@@ -299,10 +301,13 @@ class AdminCalendrier extends Component {
                                 value={this.state.modification.chaine}/>                                             
                             <div className="Boutons_Form_Modification-Match">
                                 <Button onClick={()=>this.updateData()} type ="submit" color="success">Envoyer</Button>
-                                <Button onClick={()=>this.refreshData()}color="warning">Effacer</Button>                           
+                                <Button onClick={()=>this.refreshData()}color="warning">Abandonner</Button>                           
                             </div>                         
                             </form>                                                
                     </div>     
+                    <div className="DolphinsReplace_Form_Modification-Match" style={{display:this.state.showModify?'none':'block'}}>
+                            <img src="https://i.imgur.com/JXboZ1e.png" alt="logoDolphins"></img>
+                    </div>
                     </Col>
                             </Row>
                 
