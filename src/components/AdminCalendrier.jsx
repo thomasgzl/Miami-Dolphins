@@ -90,6 +90,7 @@ class AdminCalendrier extends Component {
                 modal1:false,
                 modal2:false,
                 modal3:false,
+                showModify:false,
             })
             }
             //FONCTION POUR MAJ AFFICHAGE TABLEAU DES MATCHS ET FORMULAIRE DE MODIFICATION
