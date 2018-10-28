@@ -210,6 +210,7 @@ class AdminCalendrier extends Component {
                 .then(data=>this.setState({
                     idEnModification:'',
                     donneesCalendrier:data,
+                    showModify:!this.state.showModify,
                 })))     
         }
         render() {
