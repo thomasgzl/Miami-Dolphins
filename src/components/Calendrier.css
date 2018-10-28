@@ -80,12 +80,13 @@
     transform:scale(1, 1);
     transition: 0.5s;
     height:120px;
+    margin-bottom:10px;
 }
 
   .Calendrier_ligneTableau:hover{
     transform:scale(1.05, 1.05);
-    padding-bottom:10px;
-    padding-top:10px;
+    padding-bottom:5px;
+    padding-top:5px;
     height:140px;
 }
 

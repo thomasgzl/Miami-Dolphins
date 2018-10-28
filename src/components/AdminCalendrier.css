@@ -14,8 +14,13 @@
     left:0;
   }
 
-.titreAdminCalendrier{
+.boutonRetour{
+    transform:scale(1, 1);
+    transition: 0.5s;
+}
 
+.boutonRetour:hover{
+    transform:scale(1.1, 1.1);
 }
 
 .Calendrier_Admin {
@@ -43,34 +48,56 @@
 .Row_Admin_Calendrier{
     transform:scale(1, 1);
     transition: 0.5s;
+    padding-right:10px;
     height:80px;
     width:650px;
-    padding-bottom:2px;
+    margin-bottom:3px;
     text-align:center;
+    background-color:rgb(254,124,0,0.8)
+
 }
-  
-    .colonne1admin,.colonne2admin,.colonne3admin,.colonne4admin,.colonne5admin,.colonne6admin{
-        background-color:rgb(254,124,0,0.8)
-    }
-   
 
-    .dateMatchDesktop{
+.Row_Admin_Calendrier:hover{
+    transform:scale(1.02, 1.02);
+    height:95px;
+    padding-left:10px;
+    padding-bottom:5px;
+    padding-top:5px;
+    text-align:center;
+    background-color:rgb(254,124,0,1)
 
+}
+
+    .Form_Declaration_Match>button{
+        transform:scale(1, 1);
+        transition: 0.5s;
+    }
+    .Form_Declaration_Match>button:hover{
+        transform:scale(1.1, 1.1);
     }
 
-    .Form_Declaration_Match{
-        
-    }
     .Envoyer_Form_Declaration_Match{
-
-    }
+            margin-top:10px;
+            transform:scale(1, 1);
+            transition: 0.5s;
+        }
+    .Envoyer_Form_Declaration_Match:hover{
+            transform:scale(1.02, 1.02);
+        }
 
     .Form_Modification-Match{
         width:300px;
     }
 
     .Boutons_Form_Modification-Match{
-
+        margin-top:10px;
+        display:flex;
+        justify-content: space-around;
+        transform:scale(1, 1);
+        transition: 0.5s;
+    }
+    .Boutons_Form_Modification-Match:hover{
+        transform:scale(1.1,1.1);
     }
 
 @media (max-width: 640px) {
@@ -86,7 +113,7 @@
         padding-right: 2%;
         padding-bottom: 2%;
         height:620px;
-        width:1200px;
+        width:340px;
         top:300px;
         left:0;
       }
@@ -97,51 +124,39 @@
     }
     
     .Calendrier_Admin {
-        width:270px;
+        width:310px;
 
     }
     
-    
-    
     .sousCalendrier_Admin{
-        height:120px;
-        width:250px;
+        height:420px;
+        width:290px;
         overflow-y: auto;
     }
     
     
     .Row_Admin_Calendrier{
-        width:300px;
-        padding-bottom:120px;
+        height:120px;
+        margin:0;
+        padding:0;
     }
-      
-        .colonne1admin,.colonne2admin,.colonne3admin,.colonne4admin,.colonne5admin,.colonne6admin{
-    
-        }
-        .colonne4admin, .colonne5admin, .colonne3admin, .colonne2admin{
-            display: none;
-        }
-        .dateMatchDesktop{
-    
-        }
+    .Row_Admin_Calendrier:hover{
+        height:140px;
+        padding:0;
+        margin:0;
+
+        
+    }
     
         .Form_Declaration_Match{
             position:relative;
             top:250px;
         }
-        .Envoyer_Form_Declaration_Match{
-    
-        }
-    
+     
         .Form_Modification-Match{
             width:300px;
         }
     
-        .Boutons_Form_Modification-Match{
-    
-        }
-    
-   
     .boutonRetour{
         display:none;
     }
