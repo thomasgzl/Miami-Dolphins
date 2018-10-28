@@ -22,7 +22,8 @@ class AdminCalendrier extends Component {
                 score: '',
                 chaine: '',
             },
-            donneesCalendrier:[],
+            donneesCalendrier:[
+            ],
             collapse:false,
             showModify:false,
             modal1:false,
@@ -190,7 +191,7 @@ class AdminCalendrier extends Component {
                 a.equipeA=res.equipeA;
                 a.equipeB=res.equipeB;
                 a.score=res.score;
-                a.dateMatch=res.dateMatch.substring(0,20);
+                a.dateMatch=res.dateMatch.substring(0,10);
                 a.chaine=res.chaine;
                 return this.setState({modification:a,});
         })
@@ -202,7 +203,8 @@ class AdminCalendrier extends Component {
             const url="http://92.175.11.66:3000/reaction/api/calendriers";
             fetch(url + '/' + id, {
                 method: 'put',
-                headers: {"Content-Type": "application/json",},
+                headers: {"Content-Type": "application/json",
+            },
                 body: JSON.stringify(this.state.modification),
               })
             .then (body=>body)
@@ -321,7 +323,7 @@ class AdminCalendrier extends Component {
                                                 <Row className="Row_Admin_Calendrier">
                                                     <Col lg="2" xs="3" className="colonne1admin">
                                                             <div>
-                                                                    <p className="dateMatchDesktop">{match.dateMatch.substring(8,10)} {match.dateMatch.substring(5,7)} {match.dateMatch.substring(0,4)} {match.dateMatch.substring(11,19)}</p>
+                                                                    <p className="dateMatchDesktop">{match.dateMatch.substring(8,10)} {match.dateMatch.substring(5,7)} {match.dateMatch.substring(0,4)}</p>
                                                             </div> 
                                                     </Col>
                                                     <Col lg="2" xs="3" className="colonne2admin">
