@@ -279,7 +279,8 @@
 
     .HistoryCard{
         background-color:rgba(01, 86, 121, 0.7);
-        width:270px;
+        width:300px;
+        margin-left:-70px;  
         padding-left:1%;
         padding-right:1%;
 
@@ -293,8 +294,8 @@
     }
 
     .Historique-page{
-        height:350px;
-        margin-bottom:20px;
+        height:400px;
+        margin-bottom:190px;
 
     }
     .Historique-page::after, .Historique-page::before {

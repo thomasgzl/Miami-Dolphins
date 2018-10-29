@@ -12,7 +12,8 @@ class Bandeau extends Component {
         super(props)
         this.orderMatch = this.orderMatch.bind(this)
         this.nextMatch = this.nextMatch.bind(this)
-        this.state = { nextEvent: { dateMatch: "2018-09-14T11:49:44.000Z" } }
+        this.state = { nextEvent: { dateMatch: "2018-09-14T11:49:44.000Z" }
+}
     }
     /* fonction tri par date croissante */
     orderMatch(arg) {
@@ -50,16 +51,12 @@ class Bandeau extends Component {
         .then(trie => trie[this.nextMatch(trie)])
         .then(acharger=>{
             this.setState({
-              nextEvent:acharger,
+              nextEvent:acharger.length===0?{ dateMatch: "2018-09-14T11:49:44.000Z" }:acharger,
             });
         })
         
     }
-
-
-
     render() {
-        console.log(this.state.nextEvent, 'le prochain event dans render')
         return (
             <Container fluid>
                 <Row className="Bandeau">
@@ -74,7 +71,7 @@ class Bandeau extends Component {
                                 <p>{this.state.nextEvent.equipeB}</p>
                             </Col>
                             <Col xs="4" >
-                                <h3>{this.state.nextEvent.dateMatch.substring(11, 16)}</h3>
+                                <h3>21:00</h3>
                             </Col>
                             <Col xs="1">
                                 <NavLink to="/Calendrier"> <button className="bouton"> + </button> </NavLink>

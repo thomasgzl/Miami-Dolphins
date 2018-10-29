@@ -25,8 +25,6 @@ class Calendrier extends Component{
     constructor(props){
         super(props)
         this.state={donneesCalendrier:[]}
-        //console.log(this.state.donnees,'dans constructor de calendrier')
-        //console.log(this.props.apasser,"dans constructor,props de app")
     }
     
       /* fonction tri par date croissante */
@@ -40,8 +38,6 @@ class Calendrier extends Component{
             return (da>db)?1:-1;
             }
         let result=arg.sort(SortTime);
-        //console.log('fonction ordermatch executée')
-
         return result;
         }    
 

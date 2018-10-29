@@ -31,14 +31,12 @@ class AdminNews extends Component {
         let obj = this.state.depart;
         obj[e.target.name] = e.target.value
         this.setState(obj);
-        console.log(obj);
     }
 
     onChangeModif(e) {
         let obj = this.state.modification;
         obj[e.target.name] = e.target.value
         this.setState(obj);
-        console.log(obj);
     };
 
     submitForm(e) {
