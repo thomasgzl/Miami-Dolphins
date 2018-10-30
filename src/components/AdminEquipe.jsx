@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Button, Container, Row, Col } from 'reactstrap';
+import { Button, Container, Row, Col, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import './AdminEquipe.css';
 import { NavLink } from 'react-router-dom';
+import ModalJoueurDelete from './ModalJoueurDelete'
 
 class AdminEquipe extends Component {
     constructor(props) {
@@ -10,9 +11,13 @@ class AdminEquipe extends Component {
         this.state = {
             liste: [],
             isloading: true,
+            modalDelete: false,
         };
 
         this.getDeletePlayer = this.getDeletePlayer.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+        this.toggleDelete = this.toggleDelete.bind(this);
+
 
     }
 
@@ -33,20 +38,36 @@ class AdminEquipe extends Component {
             .catch(err => console.error('Caught error: ', err))
     }
 
+    closeModal() {
+        this.setState({
+            modalDelete: false,
+
+        })
+    }
+    //FONCTION POUR DEPLOYER UN POPUP DE CONFIRMATION SUPPRESSION JOUEUR
+    toggleDelete(id) {
+        this.setState({
+            modalDelete: true,
+        });
+    }
+
+
+    //fonction pour supprimer un joueur
+
     getDeletePlayer(id) {
         const url = "http://92.175.11.66:3000/reaction/api/joueurs";
         return fetch(url + '/' + id, {
             method: 'DELETE'
         })
-        .then(res => {
-            if (res.error) {
-              alert(res.error);
-            }
-            else {
-              alert(`Joueur supprimé!`)
-              window.location.reload(); 
-            }
-          })
+            .then(res => {
+                if (res.error) {
+                    alert(res.error);
+                }
+                else {
+                    alert(`Joueur supprimé!`)
+                    window.location.reload();
+                }
+            })
 
     }
 
@@ -66,13 +87,15 @@ class AdminEquipe extends Component {
                 <Container className="AllPlayer" fluid>
 
                     <div className="Boutons">
-                        <NavLink to={{ pathname: "/adminjoueurnew",}} className="linkNav">
+                        <NavLink to={{ pathname: "/adminjoueurnew", }} className="linkNav">
                             <Button className="BoutonIndiv vert" color="success">Ajouter</Button>
                         </NavLink>
                         <NavLink to="/admin/" className="linkNav">
-                        <Button color="secondary">Retour</Button>
-                    </NavLink>
+                            <Button color="secondary">Retour</Button>
+                        </NavLink>
                     </div>
+
+
 
                     <Row className="LinePlayer" >
                         {this.state.liste.map((joueur) =>
@@ -84,31 +107,35 @@ class AdminEquipe extends Component {
                                         <p className="lastname_player">{joueur.lastName}</p>
                                     </div>
                                     <div className="Bouton">
-                                    <NavLink to={{
-                                        pathname: `/adminjoueurmodifie`,
-                                        state: {
-                                            firstName: joueur.firstName,
-                                            lastName: joueur.lastName,
-                                            age: joueur.age,
-                                            poste: joueur.poste,
-                                            numero: joueur.numero,
-                                            height: joueur.height,
-                                            weight: joueur.weight,
-                                            image: joueur.image,
-                                            yard: joueur.yard,
-                                            tackle: joueur.tackle,
-                                            intPlayer: joueur.intPlayer,
-                                            id: joueur.id,
-                                        }
-                                    }}  >
-                               
-                                        <Button className="BoutonIndiv orange" outline color="link">Modifier</Button>
-                                    </NavLink>
+                                        <NavLink to={{
+                                            pathname: `/adminjoueurmodifie`,
+                                            state: {
+                                                firstName: joueur.firstName,
+                                                lastName: joueur.lastName,
+                                                age: joueur.age,
+                                                poste: joueur.poste,
+                                                numero: joueur.numero,
+                                                height: joueur.height,
+                                                weight: joueur.weight,
+                                                image: joueur.image,
+                                                yard: joueur.yard,
+                                                tackle: joueur.tackle,
+                                                intPlayer: joueur.intPlayer,
+                                                id: joueur.id,
+                                            }
+                                        }}  >
+
+                                            <Button className="BoutonIndiv orange" outline color="link">Modifier</Button>
+                                        </NavLink>
 
 
-                                    <Button onClick={() => this.getDeletePlayer(joueur.id)} className="BoutonIndiv rouge" outline color="link">Supprimer</Button>
+                                        
 
-                                        </div>
+                                        <ModalJoueurDelete buttonLabel="Supprimer" className="BoutonIndiv rouge"
+                                            joueurId={joueur.id}
+                                             />
+                                           
+                                    </div>
                                 </div>
 
                             </Col>
