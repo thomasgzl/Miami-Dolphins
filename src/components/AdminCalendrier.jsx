@@ -3,6 +3,9 @@ import { Container,Row,Col,Input,Button,Collapse,Modal,ModalBody,ModalFooter} fr
 import {NavLink} from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
 import './AdminCalendrier.css';
+import { defaultFormatUtc } from 'moment';
+
+let moment = require('moment');
 
 class AdminCalendrier extends Component {
     constructor(props) {
@@ -187,11 +190,11 @@ class AdminCalendrier extends Component {
             fetch(url + '/' + id)
             .then(res => res.json())
             .then(res => {
-                let a= this.state.modification
+                let a=this.state.modification
                 a.equipeA=res.equipeA;
                 a.equipeB=res.equipeB;
                 a.score=res.score;
-                a.dateMatch=res.dateMatch.substring(0,10);
+                a.dateMatch=res.dateMatch.substring(0,20);
                 a.chaine=res.chaine;
                 return this.setState({modification:a,});
         })
@@ -228,11 +231,15 @@ class AdminCalendrier extends Component {
                  <Row>
                      <Col lg={{size:'2',offset:'1'}}>
                     <div className="boutonRetour">
+                       <NavLink to="/admin/" className="linkNav">
+                            <Button color="secondary">Accueil admin</Button> 
+                        </NavLink>
+
                     </div>
                     </Col>
                     <Col lg={{size:'3',offset:'2'}}>
                     {/*MODALE 1 POUR VALIDATION OU ABANDON CREATION D'UN MATCH*/}
-                    <Modal isOpen={this.state.modal1} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}
+                    <Modal isOpen={this.state.modal1} modalTransition={{ timeout: 400 }} backdropTransition={{ timeout: 700 }}
                         toggle={this.toggle1} className={this.props.className}>
                         <ModalBody> 
                             Voulez-vous confirmer l'ajout de ce match ?
@@ -243,7 +250,7 @@ class AdminCalendrier extends Component {
                         </ModalFooter>
                     </Modal>
                     {/*MODALE 2 POUR VALIDATION OU ABANDON MODIFICATION D'UN MATCH*/}
-                    <Modal isOpen={this.state.modal2} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}
+                    <Modal isOpen={this.state.modal2} modalTransition={{ timeout: 400 }} backdropTransition={{ timeout: 700 }}
                         toggle={this.toggle2} className={this.props.className}>
                         <ModalBody> 
                             Voulez-vous confirmer la modification de ce match ?
@@ -254,7 +261,7 @@ class AdminCalendrier extends Component {
                         </ModalFooter>
                     </Modal>
                     {/*MODALE 3 POUR VALIDATION OU ABANDON SUPPRESSION D'UN MATCH*/}
-                    <Modal isOpen={this.state.modal3} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}
+                    <Modal isOpen={this.state.modal3} modalTransition={{ timeout: 400 }} backdropTransition={{ timeout: 700 }}
                         toggle={this.toggle3} className={this.props.className}>
                         <ModalBody> 
                             Voulez-vous confirmer la suppression de ce match ?
@@ -292,7 +299,7 @@ class AdminCalendrier extends Component {
                                         value={this.state.name}/>                         
                                     <Input 
                                         placeholder="Date du match"
-                                        type="text"
+                                        type="datetime"
                                         id="dateMatch"
                                         name="dateMatch"
                                         onChange={this.onChange}
