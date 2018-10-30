@@ -25,8 +25,6 @@ class Calendrier extends Component{
     constructor(props){
         super(props)
         this.state={donneesCalendrier:[]}
-        //console.log(this.state.donnees,'dans constructor de calendrier')
-        //console.log(this.props.apasser,"dans constructor,props de app")
     }
     
       /* fonction tri par date croissante */
@@ -40,8 +38,6 @@ class Calendrier extends Component{
             return (da>db)?1:-1;
             }
         let result=arg.sort(SortTime);
-        //console.log('fonction ordermatch executée')
-
         return result;
         }    
 
@@ -65,22 +61,22 @@ class Calendrier extends Component{
                 <ul className="Calendrier_contour">
                     {this.state.donneesCalendrier.map((match)=>
                     <Row className="Calendrier_ligneTableau">
-                        <Col lg="2" xs="12" className="colonne1">
+                        <Col lg="2" md="2" xs="12" className="colonne1">
                                 <div>
                                         <p className="dateMatchDesktop">{match.dateMatch.substring(8,10)} {tab_mois[match.dateMatch.substring(5,7)]} {match.dateMatch.substring(0,4)}</p>
                                 </div> 
                         </Col>
-                        <Col lg="3" xs="4" className="colonne2">
+                        <Col lg="3" md="2" xs="4" className="colonne2">
 
                             <p className="texteCentralCalendrier"> <img className="imgCalendrier" src={logo[match.equipeA]} alt="logoequipeA"></img> {match.equipeA} </p>
                         </Col>
-                        <Col lg="2" xs="4" className="colonne3">
+                        <Col lg="2" xs="4" md="2" className="colonne3">
                             <p className="texteCentralCalendrier"> {match.score} </p>
                         </Col>
-                        <Col lg="3" xs="4" className="colonne4">
+                        <Col lg="3" xs="4" md="4" className="colonne4">
                             <p className="texteCentralCalendrier"> {match.equipeB}<img className="imgCalendrier" src={logo[match.equipeB]} alt="logoequipeB"></img> </p>
                         </Col> 
-                        <Col lg="2" className="colonne5">
+                        <Col lg="2"  className="colonne5">
                             <p>  <img className="imgCalendrier" src={chaineTV[match.chaine]} alt="logoChaine"></img> </p>
                         </Col>                        
                     </Row>)

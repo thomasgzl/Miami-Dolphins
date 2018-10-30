@@ -71,7 +71,7 @@ class Equipe extends Component {
                 <div className="backgroundPlayers">
                     <div className="TitrePoste">
 
-                        <h2 className="titre_poste_dynamique">{this.state.titre}</h2>
+                        <h1 className="titre_poste_dynamique">{this.state.titre}</h1>
                     </div>
 
                     <Container className="AllPlayer" fluid>

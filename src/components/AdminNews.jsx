@@ -31,14 +31,12 @@ class AdminNews extends Component {
         let obj = this.state.depart;
         obj[e.target.name] = e.target.value
         this.setState(obj);
-        console.log(obj);
     }
 
     onChangeModif(e) {
         let obj = this.state.modification;
         obj[e.target.name] = e.target.value
         this.setState(obj);
-        console.log(obj);
     };
 
     submitForm(e) {
@@ -77,12 +75,11 @@ class AdminNews extends Component {
                 .then(data => {
                     this.setState({
                         donneesNews: data,
-                    });
+                    })
+                    if (window.confirm("Voulez-vous confirmer la suppression de la news ?")) {
+                        alert(`La news a bien été supprimée`);
+                    }                   
                 }))
-            .then(() => fetch(url)
-                .then(res => res.json())
-                .then(res => this.setState({ donneesNews: res })
-                ))
     }
 
     componentDidMount() {
@@ -105,7 +102,7 @@ class AdminNews extends Component {
                 i.titre = data.titre;
                 return this.setState({ modification: i })
             })
-            this.setState({ idModifie: id });                   
+            this.setState({ idModifie: id });                              
     };
 
     updateData() {
@@ -120,6 +117,7 @@ class AdminNews extends Component {
                 .then(res => res.json())
                 .then(res => this.setState({ donneesNews: res })
                 ))
+                alert('La news a bien été modifiée');
     }
 
     render() {

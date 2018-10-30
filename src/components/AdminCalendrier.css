@@ -1,4 +1,4 @@
-.AdminCalendrier {
+.PageAdminCalendrier {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 1%;
     margin-top: 2%;
@@ -9,138 +9,156 @@
     padding-left: 2%;
     padding-right: 2%;
     padding-bottom: 2%;
-    height:620px;
     width:1200px;
-    position: absolute;
     top:300px;
     left:0;
   }
 
-  .Calendrier_ligneTableau_Admin{
+.boutonRetour{
     transform:scale(1, 1);
     transition: 0.5s;
-    height:80px;
-    width:650px;
-    padding-bottom:2px;
 }
-  
-  .Admin_EquipeB,.Admin_EquipeA,.Admin_ChaineTV{
-      margin-right:30px;
-      position: relative;
-      top:200px;
-  }
 
-  .Admin_DatePicker{
-      position: relative;
-      top:0px;
-  }
+.boutonRetour:hover{
+    transform:scale(1.1, 1.1);
+}
 
-  .Admin_inputs{
-      position:relative;
-      top:250px;
-  }
+.Calendrier_Admin {
+    background-color: rgba(01, 86, 121, 0.7);
+    border-radius: 1%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    padding:2%;
+    height:350px;
+    color: white;
+}
 
-  .Admin_Boutons{
-      position:relative;
-      top:400px;
-  }
 
-  .CalendrierAdmin{
-    height:170px;
-    width:710px;
-    overflow-y: auto;
+
+.sousCalendrier_Admin{
+    height:240px;
+    overflow-y:scroll;
     margin: 0;
     padding: 0;
 }
 
-.InputsCalendrier{
-    width:300px;
+
+.Row_Admin_Calendrier{
+    transform:scale(1, 1);
+    transition: 0.5s;
+    padding-right:10px;
+    height:80px;
+    width:650px;
+    margin-bottom:3px;
+    text-align:center;
+    background-color:rgb(254,124,0,0.8)
+
 }
 
-.ModifierMatchCalendrier{
-    width:300px;
+.Row_Admin_Calendrier:hover{
+    transform:scale(1.02, 1.02);
+    height:95px;
+    padding-left:10px;
+    padding-bottom:5px;
+    padding-top:5px;
+    text-align:center;
+    background-color:rgb(254,124,0,1)
+
 }
 
-.nosEntreesPlatsDesserts{
-    display:flex;
-    justify-content: space-around;
-}
+    .Form_Declaration_Match>button{
+        transform:scale(1, 1);
+        transition: 0.5s;
+    }
+    .Form_Declaration_Match>button:hover{
+        transform:scale(1.1, 1.1);
+    }
 
-.Calendrier_contour_Admin{
-    padding-right:50px;
-    padding-left:50px;
-}
+    .Envoyer_Form_Declaration_Match{
+            margin-top:10px;
+            transform:scale(1, 1);
+            transition: 0.5s;
+        }
+    .Envoyer_Form_Declaration_Match:hover{
+            transform:scale(1.02, 1.02);
+        }
 
-.GlobalCalendrier_Admin {
-        background-color: rgba(01, 86, 121, 0.7);
+    .Form_Modification-Match{
+        width:300px;
+    }
+
+    .Boutons_Form_Modification-Match{
+        margin-top:10px;
+        display:flex;
+        justify-content: space-around;
+        transform:scale(1, 1);
+        transition: 0.5s;
+    }
+    .Boutons_Form_Modification-Match:hover{
+        transform:scale(1.1,1.1);
+    }
+
+@media (max-width: 640px) {
+    .PageAdminCalendrier {
+        background-color: rgba(255, 255, 255, 0.8);
         border-radius: 1%;
         margin-top: 2%;
         margin-left: 2%;
         margin-right: 2%;
         margin-bottom: 2%;
         padding-top: 2%;
-        color: white;
-        width:700px;
-}
-
-.GlobalCalendrier_Admin{
-    width:750px;
-}
-
-@media (max-width: 640px) {
-
-    .titreAdminCalendrier{
-        font-weight: 20px;
-    }
-    .AdminCalendrier {
-        background-color: rgba(255, 255, 255, 0.8);
-        height:460px;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-bottom: 2%;
+        height:620px;
         width:340px;
-        position: absolute;
         top:300px;
         left:0;
       }
-      
-      .Admin_EquipeB,.Admin_EquipeA,.Admin_ChaineTV{
-          margin-right:30px;
-          position: relative;
-          top:200px;
-      }
     
-      .Admin_DatePicker{
-          position: relative;
-          top:0px;
-      }
+    .titreAdminCalendrier{
+        font-size: 18px;
+        font-weight:bold;
+    }
     
-      .Admin_inputs{
-          position:relative;
-          top:250px;
-      }
+    .Calendrier_Admin {
+        width:310px;
+
+    }
     
-      .Admin_Boutons{
-          position:relative;
-          top:400px;
-      }
-    
-      .CalendrierAdmin{
-        height:170px;
-        width:430px;
+    .sousCalendrier_Admin{
+        height:420px;
+        width:290px;
         overflow-y: auto;
-        margin: 0;
-        padding: 0;
     }
     
-    .InputsCalendrier{
-        width:300px;
+    
+    .Row_Admin_Calendrier{
+        height:120px;
+        margin:0;
+        padding:0;
+    }
+    .Row_Admin_Calendrier:hover{
+        height:140px;
+        padding:0;
+        margin:0;
+
+        
     }
     
-    .ModifierMatchCalendrier{
-        width:300px;
-    }
+        .Form_Declaration_Match{
+            position:relative;
+            top:250px;
+        }
+     
+        .Form_Modification-Match{
+            width:300px;
+        }
     
-    .nosEntreesPlatsDesserts{
-        display:flex;
-        justify-content: space-around;
+    .boutonRetour{
+        display:none;
     }
 
 }

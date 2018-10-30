@@ -47,3 +47,9 @@
     content: url(https://i.imgur.com/duMfUij.png);
 }
 
+@media (max-width: 640px) {
+    .lien_section_footer {
+        margin:0;
+    }
+
+}

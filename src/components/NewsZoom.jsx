@@ -40,7 +40,7 @@ class NewsZoom extends Component {
                 <p className="paragraphe_news">{this.state.newszoom.texte}</p>
               </Row>
               <Row>
-                <NavLink className="button_news_zoom" to="/News"><Button>Accueil News</Button></NavLink>
+                <NavLink className="button_news_zoom" to="/News"><Button className="btn_accueil">Accueil News</Button></NavLink>
                 
               </Row>
             </Col>

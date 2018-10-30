@@ -1,0 +1,97 @@
+.backgroundPlayers {
+
+    background-color: rgba(01, 86, 121, 0.7);
+    border-radius: 1%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    padding-top: 2%;
+    color: white;
+
+}
+
+.TitrePoste {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.LinePlayer{
+    font-family: 'Exo 2', serif;   font-size: 30px;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.Boutons{   
+    align-items: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 3%;
+}
+.BoutonIndiv.rouge {
+    background-color: red !important;
+    align-items: center;
+    color: white;
+    margin-right: 1%;
+  }
+
+.BoutonIndiv .orange {
+  background-color: orange!important;
+  align-items: center;
+  color: white;
+  margin-right: 1%;
+}
+
+
+
+.BoutonIndiv.vert{
+    background-color: rgba(11, 224, 57, 0.7)!important;
+
+}
+
+
+.image_joueur {
+    height: 100%;
+    width: 100%;
+}
+
+.bloc-name.info{
+  text-align: center;
+  align-content: center;
+  background-color: rgba(01, 86, 121, 0.9);
+  color: white;
+  padding-bottom: 1px;  
+}
+
+.container.infos-joueur {
+  position: center;
+  border: 3px solid #fc6e16;
+  border-radius: 3px;
+  background: url(http://image.noelshack.com/fichiers/2018/43/3/1540390668-logoequipejj.png);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0px;
+  transition: transform 1s;
+}
+
+.container.infos-joueur:hover {
+    transform: scale(0.95);
+    }
+
+.lastname_player {
+    margin-bottom: 0px;
+}
+
+div.Colonne-player {
+    margin: 2px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+}
+
+
