@@ -41,7 +41,6 @@ class Bandeau extends Component {
             }
         }
     }
-    
     /* charger les fonctions tri par date */
     componentDidMount() {
         fetch("http://92.175.11.66:3000/reaction/api/calendriers")
