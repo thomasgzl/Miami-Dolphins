@@ -7,7 +7,8 @@ const logo = {
     "Patriots":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-patriots.png",
     "Bears":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-bears.png",
     "Dolphins":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-miamidolphins.png",
-    "Bengals":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-bengals.png"
+    "Bengals":"https://image.noelshack.com/fichiers/2018/41/4/1539277237-bengals.png",
+    "Stunners":"https://i.imgur.com/f4pEBMu.png"
 }
 
 const chaineTV = {
