@@ -221,13 +221,13 @@ class AdminCalendrier extends Component {
             <Container>
 
             <div className="PageAdminCalendrier">
+            <NavLink to="/admin/" className="linkNav">
+                            <Button color="secondary">Retour</Button> 
+                        </NavLink>
                  <h1 className="titreAdminCalendrier">Gestion du calendrier des matchs</h1>
                  <Row>
                      <Col lg={{size:'2',offset:'1'}}>
                     <div className="boutonRetour">
-                       <NavLink to="/admin/" className="linkNav">
-                            <Button color="secondary">Acceuil admin</Button> 
-                        </NavLink>
                     </div>
                     </Col>
                     <Col lg={{size:'3',offset:'2'}}>

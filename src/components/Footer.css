@@ -26,11 +26,6 @@
     height: 30px;
 }
 
-.logo_reseau_youtube {
-    width : 40px;
-    height: 40px;
-}
-
 .logo_reseau_twitter:hover {
     content: url(https://i.imgur.com/UCOs2Vl.png);
 }
@@ -47,9 +42,22 @@
     content: url(https://i.imgur.com/duMfUij.png);
 }
 
+.mentions {
+    background-color: rgb(0, 52, 75, 0.9)!important;
+    border: none!important;
+}
+
+.mentions:hover {
+    background-color: #159f98!important;
+}
+
 @media (max-width: 640px) {
     .lien_section_footer {
         margin:0;
+    }
+
+    .logoFooter {
+        display: none;
     }
 
 }
