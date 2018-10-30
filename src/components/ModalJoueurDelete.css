@@ -1,0 +1,23 @@
+.Boutons{   
+    align-items: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 3%;
+}
+.BoutonIndiv.rouge {
+    background-color: red !important;
+    align-items: center;
+    color: white;
+    margin-right: 1%;
+  }
+
+.BoutonIndiv .orange {
+  background-color: orange!important;
+  align-items: center;
+  color: white;
+  margin-right: 1%;
+}
