@@ -74,7 +74,7 @@ class AdminNews extends Component {
     onChange(e) {
         let obj = this.state.depart;
         obj[e.target.name] = e.target.value
-        this.setState(obj);
+        this.setState({depart: obj});
     }
 
     onChangeModif(e) {
@@ -104,7 +104,11 @@ class AdminNews extends Component {
             })
             .then(() => fetch(url)
                 .then(res => res.json())
-                .then(res => this.setState({ donneesNews: res })))
+                .then(res => {
+                    const depart = {image: "",
+                    titre: "",
+                    texte: "",}
+                    this.setState({ donneesNews: res, depart: depart})}))
     }
 
     deleteForm() {
@@ -164,10 +168,15 @@ class AdminNews extends Component {
             .then(body => body)
             .then(() => fetch(url)
                 .then(res => res.json())
-                .then(res => this.setState({ 
+                .then(res => {
+                    const depart = {image: "",
+                    titre: "",
+                    texte: "",}
+                    this.setState({ 
                     donneesNews: res, 
                     idEnModification:'', 
-                    showModify:!this.state.showModify })
+                    showModify:!this.state.showModify,
+                    modification: depart })}
                 ))               
     }
 
@@ -220,15 +229,15 @@ class AdminNews extends Component {
                             <h4 className="titre_form">Ajouter une news</h4>
                             <FormGroup>
                                 <Label for="titre">Titre</Label>
-                                <Input type="text" name="titre" id="titre" placeholder="titre de l'article" onChange={this.onChange} />
+                                <Input type="text" name="titre" id="titre" placeholder="titre de l'article" onChange={this.onChange} value={this.state.depart.titre} />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="Text_news">Article</Label>
-                                <Input type="textarea" name="texte" id="texte" onChange={this.onChange} />
+                                <Input type="textarea" name="texte" id="texte" onChange={this.onChange} value={this.state.depart.texte} />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="Image_news">Image</Label>
-                                <Input type="text" name="image" id="image" placeholder="url de l'image" onChange={this.onChange} />
+                                <Input type="text" name="image" id="image" placeholder="url de l'image" onChange={this.onChange} value={this.state.depart.image}/>
                             </FormGroup>
                             <FormGroup>
                                 <Button onClick={this.toggle1} value="Ajouter" className="ajouter" color="success">Ajouter</Button>
